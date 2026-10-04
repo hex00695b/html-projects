@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="zh-Hant" data-theme="light">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>東京・富士五湖親子自駕 Guidebook 2026</title>
+<meta name="description" content="2026/10/12–10/16 東京・富士五湖親子自駕 Guidebook" />
+
+<!-- 1. 密碼鎖 JavaScript 邏輯 -->
+<script>
+    const CORRECT_PASSWORD = "fujikyuu2026"; // 請修改您的密碼
+
+    function checkPassword() {
+        const input = prompt("請輸入存取密碼：");
+        if (input === CORRECT_PASSWORD) {
+            document.getElementById("protected-content").style.display = "block";
+        } else {
+            alert("密碼錯誤，無法檢視內容！");
+            window.location.reload();
+        }
+    }
+
+    window.onload = checkPassword;
+</script>
+
+<style>
+:root{
+  --paper:#f6f1e8;
+  --paper-2:#fbf8f1;
+  --ink:#2d2b28;
+  --muted:#746f67;
+  --line:#d8cfc2;
+  --terracotta:#b85c42;
+  --sage:#6f7e69;
+  --mustard:#c89b4a;
+  --shadow:0 14px 34px rgba(55,45,33,.07);
+  --card:rgba(255,252,246,.76);
+}
+html[data-theme="dark"]{
+  --paper:#24221f;
+  --paper-2:#2b2824;
+  --ink:#f1eadf;
+  --muted:#b9b0a4;
+  --line:#4a443c;
+  --terracotta:#d07b61;
+  --sage:#93a38b;
+  --mustard:#d2ad66;
+  --shadow:0 14px 34px rgba(0,0,0,.22);
+  --card:rgba(47,43,38,.78);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  color:var(--ink);
+  background:
+    radial-gradient(circle at 25% 0%, rgba(184,92,66,.045), transparent 33%),
+    radial-gradient(circle at 80% 18%, rgba(111,126,105,.045), transparent 28%),
+    var(--paper);
+  font-family:"Hiragino Sans","Yu Gothic UI","Yu Gothic","Noto Sans TC",system-ui,sans-serif;
+  line-height:1.75;
+  letter-spacing:.01em;
+}
+body:before{
+  content:"";position:fixed;inset:0;pointer-events:none;opacity:.15;z-index:9999;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140' viewBox='0 0 140 140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.84' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.11'/%3E%3C/svg%3E");
+}
+a{color:inherit;text-decoration:none}.shell{width:min(1120px,calc(100% - 32px));margin:0 auto}
+.topbar{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--paper) 88%,transparent);backdrop-filter:blur(14px);border-bottom:1px solid color-mix(in srgb,var(--line) 72%,transparent)}
+.topbar-inner{height:60px;display:flex;align-items:center;justify-content:space-between;gap:16px}.brand{display:flex;align-items:center;gap:10px;font-size:13px;font-weight:700;letter-spacing:.08em}.brand-mark{width:22px;height:22px;border:1.5px solid var(--ink);border-radius:50% 46% 52% 48%;position:relative;transform:rotate(-4deg)}.brand-mark:after{content:"";position:absolute;width:6px;height:6px;border-radius:50%;background:var(--terracotta);right:-2px;bottom:1px}.toolbar{display:flex;gap:8px}.toggle,.mini-btn{appearance:none;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:999px;padding:8px 12px;font:inherit;font-size:12px;cursor:pointer}.toggle:hover,.mini-btn:hover{border-color:var(--muted)}
+.cover{min-height:calc(100vh - 60px);padding:84px 0 54px;display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center}.kicker{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--terracotta);font-weight:800}.cover h1{font-family:Georgia,"Noto Serif TC","Yu Mincho",serif;font-size:clamp(42px,7vw,82px);line-height:.98;letter-spacing:-.045em;margin:16px 0 22px;font-weight:500}.cover .lead{font-size:18px;max-width:680px;color:var(--muted);margin:0 0 28px}.chips{display:flex;flex-wrap:wrap;gap:8px}.chip{border:1px solid var(--line);border-radius:999px;padding:7px 11px;font-size:12px;background:var(--card)}
+.hero-art{display:flex;align-items:center;justify-content:center;min-height:390px}.art-frame{width:min(410px,100%);aspect-ratio:1/1;display:flex;align-items:center;justify-content:center;position:relative}.art-frame:before{content:"";position:absolute;width:78%;height:78%;border-radius:55% 45% 52% 48%;border:1px solid var(--line);transform:rotate(3deg)}.hero-svg{width:84%;height:auto;filter:drop-shadow(0 10px 22px rgba(55,45,33,.04))}
+.agenda-wrap{padding:68px 0 100px}.section-eyebrow{font-size:12px;text-transform:uppercase;letter-spacing:.16em;color:var(--terracotta);font-weight:800}.section-title{font-family:Georgia,"Noto Serif TC","Yu Mincho",serif;font-size:clamp(32px,5vw,56px);font-weight:500;line-height:1.1;margin:10px 0 18px;letter-spacing:-.025em}.section-intro{color:var(--muted);max-width:760px;margin-bottom:34px}.agenda{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}.agenda-card{min-height:230px;border:1px solid var(--line);border-radius:22px;padding:20px;background:var(--card);position:relative;overflow:hidden;transition:.2s ease;box-shadow:var(--shadow)}.agenda-card:hover{transform:translateY(-3px);border-color:color-mix(in srgb,var(--terracotta) 55%,var(--line))}.agenda-no{font-family:Georgia,serif;font-size:44px;color:var(--terracotta);line-height:1}.agenda-card h3{font-size:16px;margin:28px 0 8px}.agenda-card p{font-size:12.5px;color:var(--muted);margin:0}.agenda-mark{position:absolute;width:70px;height:70px;border-radius:50%;right:-18px;bottom:-18px;background:color-mix(in srgb,var(--sage) 17%,transparent)}
+.day{padding:94px 0;border-top:1px solid var(--line)}.day-head{display:grid;grid-template-columns:1fr 360px;gap:48px;align-items:start;margin-bottom:54px}.day-no{font-family:Georgia,serif;color:var(--terracotta);font-size:13px;letter-spacing:.16em;text-transform:uppercase}.day h2{font-family:Georgia,"Noto Serif TC","Yu Mincho",serif;font-size:clamp(36px,5.5vw,64px);font-weight:500;line-height:1.06;letter-spacing:-.035em;margin:10px 0 12px}.day-summary{font-size:16px;color:var(--muted);max-width:680px}.day-art{border:1px solid var(--line);border-radius:28px;min-height:260px;display:flex;align-items:center;justify-content:center;background:var(--card);box-shadow:var(--shadow)}.day-art svg{width:80%;height:auto}
+.timeline{position:relative;max-width:920px;margin:0 auto}.timeline:before{content:"";position:absolute;left:92px;top:10px;bottom:10px;width:1px;background:var(--line)}.t-row{display:grid;grid-template-columns:72px 40px 1fr;gap:18px;padding:0 0 30px}.t-time{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;color:var(--muted);padding-top:4px;text-align:right}.t-dot{position:relative}.t-dot:before{content:"";position:absolute;top:7px;left:14px;width:9px;height:9px;border-radius:50%;background:var(--paper);border:2px solid var(--terracotta);z-index:2}.t-row.key .t-dot:before{background:var(--terracotta)}.t-card{padding:0 0 4px}.t-card h3{font-size:17px;margin:0 0 5px}.t-card p{margin:0;color:var(--muted);font-size:13.5px}.tag{display:inline-block;margin-top:8px;padding:3px 8px;border:1px solid var(--line);border-radius:999px;font-size:11px;color:var(--muted)}
+.details{margin-top:46px;display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.detail{border:1px solid var(--line);border-radius:18px;background:var(--card);padding:20px}.detail h4{font-size:14px;margin:0 0 10px}.detail p,.detail li{font-size:13px;color:var(--muted)}.detail ul{margin:8px 0 0;padding-left:18px}.detail.full{grid-column:1/-1}.route{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;padding:14px 16px;border-radius:12px;background:color-mix(in srgb,var(--sage) 9%,transparent);border:1px solid color-mix(in srgb,var(--sage) 30%,var(--line));overflow:auto}
+.checklist{padding:96px 0;border-top:1px solid var(--line)}.check-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.check-card{border:1px solid var(--line);border-radius:22px;background:var(--card);padding:24px}.check-card h3{margin:0 0 16px;font-size:16px}.check-item{display:flex;gap:10px;align-items:flex-start;margin:10px 0;color:var(--muted);font-size:13.5px}.box{width:17px;height:17px;flex:0 0 17px;border:1.5px solid var(--line);border-radius:5px;margin-top:2px;position:relative}.done .box{border-color:var(--sage);background:color-mix(in srgb,var(--sage) 18%,transparent)}.done .box:after{content:"✓";position:absolute;font-size:12px;left:2px;top:-2px;color:var(--sage);font-weight:800}
+.info{padding:0 0 100px}.info-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.info-card{border-top:1px solid var(--line);padding-top:18px}.info-card h3{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--terracotta);margin:0 0 10px}.info-card p{font-size:13px;color:var(--muted);margin:4px 0}.footer{border-top:1px solid var(--line);padding:28px 0 42px;color:var(--muted);font-size:11px}.footer-inner{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap}.footer a{text-decoration:underline;text-underline-offset:3px}
+.backtop{display:inline-flex;margin-top:28px;font-size:12px;color:var(--muted);border-bottom:1px solid var(--line)}
+
+/* 2. 密碼鎖預設隱藏保護內容 */
+#protected-content {
+    display: none;
+}
+
+@media(max-width:900px){.cover{grid-template-columns:1fr;padding-top:58px}.hero-art{min-height:260px}.agenda{grid-template-columns:repeat(2,1fr)}.agenda-card:last-child{grid-column:1/-1}.day-head{grid-template-columns:1fr}.day-art{min-height:220px}.details,.check-grid,.info-grid{grid-template-columns:1fr}.detail.full{grid-column:auto}}
+@media(max-width:560px){.shell{width:min(100% - 22px,1120px)}.topbar-inner{height:54px}.brand{font-size:11px}.cover{padding:44px 0 32px}.cover h1{font-size:48px}.cover .lead{font-size:15px}.agenda{grid-template-columns:1fr}.agenda-card:last-child{grid-column:auto}.day{padding:72px 0}.timeline:before{left:68px}.t-row{grid-template-columns:52px 28px 1fr;gap:10px}.t-dot:before{left:7px}.day h2{font-size:40px}.toolbar .mini-btn{display:none}}
+@media print{.topbar,.toggle,.mini-btn,.backtop{display:none!important}body{background:#fff;color:#222}.cover{min-height:auto}.day{break-before:page}.agenda-card,.day-art,.detail,.check-card{box-shadow:none;background:#fff}.timeline:before{background:#bbb}}
+</style>
+</head>
+<body>
+<div id="top"></div>
+<header class="topbar">
+  <div class="shell topbar-inner">
+    <a class="brand" href="#top"><span class="brand-mark"></span><span>TOKYO · FUJI 2026</span></a>
+    <div class="toolbar">
+      <a class="mini-btn" href="#agenda">Agenda</a>
+      <button class="toggle" id="themeToggle" type="button" aria-label="切換深色淺色模式">Light / Dark</button>
+    </div>
+  </div>
+</header>
+
+<!-- 受保護的主要內容區塊 -->
+<div id="protected-content">
+<main>
+<section class="cover shell">
+  <div>
+    <div class="kicker">Family Road Guide · 12–16 Oct 2026</div>
+    <h1>東京・富士五湖<br>親子自駕</h1>
+    <p class="lead">2 大＋5 歲＋2 歲。從成田、御殿場、富士山腳到河口湖，再回到成田。不是把景點塞滿，而是把移動、午睡、吃飯與 buffer 排成一條舒服的路。</p>
+    <div class="chips">
+      <span class="chip">Toyota SUV1</span><span class="chip">5 Days / 4 Nights</span><span class="chip">Child Seat + Junior Seat</span><span class="chip">ETC Card</span>
+    </div>
+  </div>
+  <div class="hero-art" aria-hidden="true">
+    <div class="art-frame">
+      <svg class="hero-svg" viewBox="0 0 520 520" role="img">
+        <path d="M94 358 C150 341, 224 346, 289 355 C345 363, 392 361, 430 350" fill="none" stroke="var(--ink)" stroke-width="3" stroke-linecap="round" opacity=".8"/>
+        <path d="M164 321 L245 185 L294 259 L321 224 L390 329 Z" fill="var(--sage)" opacity=".92"/>
+        <path d="M232 207 L245 185 L262 211 L252 207 L246 219 Z" fill="var(--paper-2)"/>
+        <path d="M142 337 C144 308 170 291 199 291 H269 C297 291 318 306 329 330 L343 337 L343 365 H135 L135 346 Z" fill="var(--terracotta)"/>
+        <path d="M190 292 L215 258 H272 L301 297" fill="none" stroke="var(--ink)" stroke-width="3" stroke-linecap="round"/>
+        <circle cx="180" cy="365" r="20" fill="var(--paper-2)" stroke="var(--ink)" stroke-width="3"/><circle cx="305" cy="365" r="20" fill="var(--paper-2)" stroke="var(--ink)" stroke-width="3"/>
+        <path d="M391 315 C403 288 418 273 437 266 C438 294 432 318 416 339" fill="var(--mustard)" opacity=".9"/>
+        <path d="M407 335 C419 318 435 307 455 302" fill="none" stroke="var(--ink)" stroke-width="2.5" stroke-linecap="round"/>
+        <path d="M112 159 C126 135 147 125 174 128" fill="none" stroke="var(--mustard)" stroke-width="10" stroke-linecap="round" opacity=".75"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<section class="agenda-wrap shell" id="agenda">
+  <div class="section-eyebrow">Overview</div>
+  <h2 class="section-title">Agenda</h2>
+  <p class="section-intro">每天只有一個清楚主題。點選日期可直接跳到該日時間軸；交通、備案、兒童節奏與還車等細節收在每一天最後。</p>
+  <div class="agenda">
+    <a class="agenda-card" href="#day1"><div class="agenda-no">01</div><h3>成田 → 御殿場</h3><p>先取車、T2 P2 會合、Outlet 晚餐與購物。</p><span class="agenda-mark"></span></a>
+    <a class="agenda-card" href="#day2"><div class="agenda-no">02</div><h3>Safari → 河口湖</h3><p>13:30 Navi Car 作為固定錨點，晚上吃ほうとう。</p><span class="agenda-mark"></span></a>
+    <a class="agenda-card" href="#day3"><div class="agenda-no">03</div><h3>富士急完整日</h3><p>Thomas Land、午睡與低強度設施，完全照小孩節奏。</p><span class="agenda-mark"></span></a>
+    <a class="agenda-card" href="#day4"><div class="agenda-no">04</div><h3>成田購物 → 還車</h3><p>Birthday、AEON、飯店卸貨，最後 Driver only 還 Toyota。</p><span class="agenda-mark"></span></a>
+    <a class="agenda-card" href="#day5"><div class="agenda-no">05</div><h3>NRT → KHH</h3><p>不塞景點，所有 buffer 都留給機場與兩個小孩。</p><span class="agenda-mark"></span></a>
+  </div>
+</section>
+
+<section class="day" id="day1"><div class="shell">
+  <div class="day-head"><div><div class="day-no">Day 01 · Mon 12 Oct</div><h2>成田會合，<br>直奔御殿場。</h2><p class="day-summary">Kenzie 在 Anti＋兩個小孩抵達前完成租車。全員在 NRT T2 P2 會合後直接上高速，不先進飯店。</p></div>
+  <div class="day-art" aria-hidden="true"><svg viewBox="0 0 420 260"><path d="M55 192 C120 178 211 185 352 179" fill="none" stroke="var(--ink)" stroke-width="2.5" stroke-linecap="round"/><path d="M91 172 C94 144 118 130 144 130 H230 C256 130 280 145 291 168 L309 174 L309 198 H83 L83 181 Z" fill="var(--terracotta)"/><circle cx="131" cy="199" r="18" fill="var(--paper-2)" stroke="var(--ink)" stroke-width="2.5"/><circle cx="266" cy="199" r="18" fill="var(--paper-2)" stroke="var(--ink)" stroke-width="2.5"/><path d="M139 130 L163 100 H222 L250 134" fill="none" stroke="var(--ink)" stroke-width="2.5"/><rect x="303" y="74" width="45" height="77" rx="5" fill="var(--mustard)" opacity=".9"/><path d="M303 94 H348 M315 74 V151" stroke="var(--ink)" stroke-width="2" opacity=".7"/></svg></div></div>
+  <div class="timeline">
+    <div class="t-row key"><div class="t-time">12:00</div><div class="t-dot"></div><div class="t-card"><h3>Kenzie 開始 Toyota 取車</h3><p>NRT T2 Arrival Lobby B Zone 報到，北口 2 → 29 號巴士站搭 Toyota Shuttle。</p><span class="tag">預約 12:00 保留</span></div></div>
+    <div class="t-row"><div class="t-time">12:20</div><div class="t-dot"></div><div class="t-card"><h3>Toyota 成田空港店</h3><p>正式辦租約與交車。確認兩張兒童座椅、行李廂、ETC、手機導航與車況。</p></div></div>
+    <div class="t-row"><div class="t-time">12:40</div><div class="t-dot"></div><div class="t-card"><h3>Anti＋小孩抵達 NRT T2</h3><p>IT280：KHH 08:05 → NRT 12:40。</p></div></div>
+    <div class="t-row key"><div class="t-time">13:15</div><div class="t-dot"></div><div class="t-card"><h3>Kenzie 回到 T2 P2</h3><p>停 P2 等人，不在 Arrival curb 久停。預估 Anti 一行 13:30–13:50 出來。</p></div></div>
+    <div class="t-row key"><div class="t-time">14:00</div><div class="t-dot"></div><div class="t-card"><h3>全員出發 → 御殿場</h3><p>不先進 Dormy Inn。途中若 Driver 累，就在實際路線上的 SA / PA 短休。</p></div></div>
+    <div class="t-row"><div class="t-time">傍晚</div><div class="t-dot"></div><div class="t-card"><h3>御殿場 Premium Outlets</h3><p>購物＋晚餐。若逛不完，Day 2 上午再回來補。</p></div></div>
+    <div class="t-row"><div class="t-time">20:00</div><div class="t-dot"></div><div class="t-card"><h3>Outlet 收尾 → Dormy Inn</h3><p>飯店沒有 Outlet 的硬關門壓力，今晚只做 Check-in、洗澡、睡覺。</p></div></div>
+  </div>
+  <div class="details">
+    <article class="detail"><h4>Toyota 取車順序</h4><ul><li>T2 Toyota 櫃台平板受付</li><li>北口 2 → 29 號巴士站</li><li>Shuttle → 取香530-13</li><li>租約／付款／車況／兒童座椅</li><li>插自備 ETC Card</li><li>回 T2 P2 會合</li></ul></article>
+    <article class="detail"><h4>Day 1 風險</h4><p>10/12 是「スポーツの日」、三連休最後一天。成田→御殿場不要用無塞車 ETA 當保證；安全與 Driver 體力優先。</p></article>
+  </div><a class="backtop" href="#agenda">↑ Back to Agenda</a>
+</div></section>
+
+<section class="day" id="day2"><div class="shell">
+  <div class="day-head"><div><div class="day-no">Day 02 · Tue 13 Oct</div><h2>Safari 之後，<br>去河口湖吃一碗熱的。</h2><p class="day-summary">把 13:30 Navigation Car 當整天錨點。上午補 Outlet，下午 Safari，傍晚河口湖，晚餐是ほうとう蔵 歩成。</p></div>
+  <div class="day-art" aria-hidden="true"><svg viewBox="0 0 420 260"><path d="M59 199 C135 182 228 191 360 184" fill="none" stroke="var(--ink)" stroke-width="2.5"/><path d="M130 169 L207 72 L265 160 Z" fill="var(--sage)"/><path d="M196 86 L207 72 L218 89 L210 86 L205 96 Z" fill="var(--paper-2)"/><path d="M91 174 L118 142 H195 L222 176 L241 181 L241 202 H81 V183 Z" fill="var(--mustard)"/><circle cx="119" cy="203" r="16" fill="var(--paper-2)" stroke="var(--ink)" stroke-width="2.5"/><circle cx="205" cy="203" r="16" fill="var(--paper-2)" stroke="var(--ink)" stroke-width="2.5"/><path d="M300 138 C331 139 351 154 351 173 C351 193 329 207 299 207 C270 207 249 193 249 173 C249 154 269 139 300 138 Z" fill="var(--terracotta)" opacity=".9"/><path d="M263 167 C284 176 320 177 341 167" fill="none" stroke="var(--paper-2)" stroke-width="3"/><path d="M277 132 C284 117 283 107 279 96 M298 130 C306 114 306 104 302 94 M320 133 C326 118 327 109 324 99" fill="none" stroke="var(--ink)" stroke-width="2" stroke-linecap="round"/></svg></div></div>
+  <div class="timeline">
+    <div class="t-row"><div class="t-time">10:00</div><div class="t-dot"></div><div class="t-card"><h3>Outlet 補逛</h3><p>Day 1 已完成就直接縮短；沒有必要為了「有排」而硬逛。</p></div></div>
+    <div class="t-row"><div class="t-time">11:15</div><div class="t-dot"></div><div class="t-card"><h3>Outlet 午餐</h3><p>先把兩個小孩餵飽，再移動到 Safari。</p></div></div>
+    <div class="t-row"><div class="t-time">12:00</div><div class="t-dot"></div><div class="t-card"><h3>出發 → Fuji Safari Park</h3><p>目標 12:30–12:45 抵達。</p></div></div>
+    <div class="t-row key"><div class="t-time">13:00</div><div class="t-dot"></div><div class="t-card"><h3>Navi Car 報到完成</h3><p>目標在出發前至少 30 分鐘完成報到。</p></div></div>
+    <div class="t-row key"><div class="t-time">13:30</div><div class="t-dot"></div><div class="t-card"><h3>Navigation Car</h3><p>約 60 分鐘。這是 Day 2 的固定錨點。</p><span class="tag">目標預約時段</span></div></div>
+    <div class="t-row"><div class="t-time">14:30</div><div class="t-dot"></div><div class="t-card"><h3>Safari 園內自由活動</h3><p>抓約 45 分鐘，不再加第二個大型活動。</p></div></div>
+    <div class="t-row"><div class="t-time">15:30</div><div class="t-dot"></div><div class="t-card"><h3>離開 Safari → 河口湖</h3><p>河口湖只選一個停靠點，約 45–60 分鐘。</p></div></div>
+    <div class="t-row key"><div class="t-time">18:00</div><div class="t-dot"></div><div class="t-card"><h3>ほうとう蔵 歩成 河口湖店</h3><p>把原本想吃的午餐改成晚餐後，路線更順也更從容。</p></div></div>
+    <div class="t-row"><div class="t-time">19:15</div><div class="t-dot"></div><div class="t-card"><h3>Highland Resort</h3><p>Check-in，之後不再安排景點。</p></div></div>
+  </div>
+  <div class="details">
+    <article class="detail"><h4>路線骨架</h4><div class="route">Dormy Inn → Outlet → Fuji Safari Park → 河口湖 → 歩成 → Highland Resort</div></article>
+    <article class="detail"><h4>第一個可壓縮項目</h4><p>如果 Safari 延遲、塞車或孩子累，優先縮短河口湖停留；不要犧牲 Navi Car 報到 buffer。</p></article>
+    <article class="detail full"><h4>待確認</h4><p>10/13 13:30 左右 Navigation Car 是否有票，以及 2 歲幼童在 Navi Car 上的安全座椅／乘坐方式。</p></article>
+  </div><a class="backtop" href="#agenda">↑ Back to Agenda</a>
+</div></section>
+
+<section class="day" id="day3"><div class="shell">
+  <div class="day-head"><div><div class="day-no">Day 03 · Wed 14 Oct</div><h2>今天只有一件事：<br>好好玩富士急。</h2><p class="day-summary">不追求從開園玩到閉園，也不再硬塞河口湖。Thomas Land、午睡、吃飯與臨時回飯店，都可以自然發生。</p></div>
+  <div class="day-art" aria-hidden="true"><svg viewBox="0 0 420 260"><path d="M52 204 C113 185 226 189 363 198" fill="none" stroke="var(--ink)" stroke-width="2.5"/><path d="M115 181 C135 143 153 121 177 95 C210 59 257 74 273 111 C286 139 281 164 267 184" fill="none" stroke="var(--terracotta)" stroke-width="11" stroke-linecap="round"/><path d="M268 183 C289 150 311 128 345 112" fill="none" stroke="var(--terracotta)" stroke-width="11" stroke-linecap="round"/><rect x="126" y="159" width="50" height="28" rx="7" fill="var(--mustard)" stroke="var(--ink)" stroke-width="2"/><circle cx="142" cy="188" r="8" fill="var(--paper-2)" stroke="var(--ink)" stroke-width="2"/><circle cx="163" cy="188" r="8" fill="var(--paper-2)" stroke="var(--ink)" stroke-width="2"/><path d="M233 190 L292 112 L337 186 Z" fill="var(--sage)" opacity=".9"/></svg></div></div>
+  <div class="timeline">
+    <div class="t-row"><div class="t-time">早上</div><div class="t-dot"></div><div class="t-card"><h3>Highland Resort 早餐</h3><p>不追求過度早起；若住宿客優先入園制度當日適用就利用。</p></div></div>
+    <div class="t-row key"><div class="t-time">AM</div><div class="t-dot"></div><div class="t-card"><h3>Thomas Land / 低年齡設施</h3><p>2 歲＋5 歲精神最好時先處理最想玩的。</p></div></div>
+    <div class="t-row"><div class="t-time">11:30</div><div class="t-dot"></div><div class="t-card"><h3>提早午餐</h3><p>避免「餓＋想睡＋餐廳排隊」同時發生。</p></div></div>
+    <div class="t-row"><div class="t-time">PM</div><div class="t-dot"></div><div class="t-card"><h3>彈性區</h3><p>嬰兒車午睡、回飯店、繼續玩低強度設施，都可以。</p></div></div>
+    <div class="t-row"><div class="t-time">傍晚</div><div class="t-dot"></div><div class="t-card"><h3>依體力收尾</h3><p>不用為了票價硬撐到閉園；住 Highland 的價值就是可以隨時撤退。</p></div></div>
+  </div>
+  <div class="details"><article class="detail"><h4>Day 3 原則</h4><p>今天不安排河口湖。Day 2 已完成 Safari＋河口湖，Day 3 就讓富士急真正成為「完整日」。</p></article><article class="detail"><h4>親子策略</h4><p>不要把 5 歲與 2 歲都綁在同一個遊玩節奏。需要時可以分組玩，再於固定地點會合。</p></article></div><a class="backtop" href="#agenda">↑ Back to Agenda</a>
+</div></section>
+
+<section class="day" id="day4"><div class="shell">
+  <div class="day-head"><div><div class="day-no">Day 04 · Thu 15 Oct</div><h2>一路回成田，<br>把最後一天變簡單。</h2><p class="day-summary">Anti 的主線是 Birthday＋AEON。還車前先回東橫INN，把兩個小孩、行李、嬰兒車與戰利品全部卸下。</p></div>
+  <div class="day-art" aria-hidden="true"><svg viewBox="0 0 420 260"><path d="M54 198 C122 186 226 189 362 181" fill="none" stroke="var(--ink)" stroke-width="2.5"/><path d="M88 103 H166 L177 193 H77 Z" fill="var(--terracotta)"/><path d="M103 111 C107 82 147 81 151 111" fill="none" stroke="var(--ink)" stroke-width="2.5"/><path d="M221 116 H294 L306 194 H208 Z" fill="var(--mustard)"/><path d="M235 123 C239 98 274 97 279 123" fill="none" stroke="var(--ink)" stroke-width="2.5"/><path d="M315 147 H361 V198 H315 Z" fill="var(--sage)"/><path d="M325 132 H351 V147 H325 Z" fill="var(--sage)"/><rect x="327" y="162" width="10" height="18" fill="var(--paper-2)"/><rect x="343" y="162" width="10" height="18" fill="var(--paper-2)"/></svg></div></div>
+  <div class="timeline">
+    <div class="t-row key"><div class="t-time">08:30</div><div class="t-dot"></div><div class="t-card"><h3>Highland Resort 出發</h3><p>當天以 Google Maps / Toyota Navi 決定實際高速路線；途中安排 15–20 分鐘 SA / PA 休息。</p></div></div>
+    <div class="t-row"><div class="t-time">11:30</div><div class="t-dot"></div><div class="t-card"><h3>Birthday 公津之杜店</h3><p>抓 30–45 分鐘。若塞車，這是第一個可壓縮／取消點。</p></div></div>
+    <div class="t-row key"><div class="t-time">12:30</div><div class="t-dot"></div><div class="t-card"><h3>AEON MALL 成田</h3><p>午餐仍 TBD；下午保留約 2–3 小時購物。</p></div></div>
+    <div class="t-row"><div class="t-time">16:30+</div><div class="t-dot"></div><div class="t-card"><h3>晚餐判斷</h3><p>Plan A：AEON 早晚餐。Plan B：直接買便當／壽司／熟食回飯店。</p></div></div>
+    <div class="t-row"><div class="t-time">之後</div><div class="t-dot"></div><div class="t-card"><h3>加油 → 東橫INN</h3><p>Check-in、卸下兩大行李箱、嬰兒車、所有戰利品。Anti＋小孩留飯店。</p></div></div>
+    <div class="t-row key"><div class="t-time">18:15±</div><div class="t-dot"></div><div class="t-card"><h3>Driver only → Toyota</h3><p>目標把還車預約從 18:00 改為 19:00，保留最後一小時 buffer。</p><span class="tag">待修改預約</span></div></div>
+  </div>
+  <div class="details">
+    <article class="detail"><h4>固定順序</h4><div class="route">Highland → Birthday → AEON → 加油 → 東橫INN卸貨 → Driver only → Toyota</div></article>
+    <article class="detail"><h4>Plan B 很重要</h4><p>如果高速公路晚、孩子累或 AEON 還沒逛完，不要硬坐餐廳。直接買晚餐回東橫INN，還車完成後在房間吃。</p></article>
+    <article class="detail full"><h4>Day 4 壓縮順序</h4><p>安全駕駛 → Toyota 準時還車 → AEON 至少約 2 小時 → 飯店先卸貨 → Birthday 最先縮短。</p></article>
+  </div><a class="backtop" href="#agenda">↑ Back to Agenda</a>
+</div></section>
+
+<section class="day" id="day5"><div class="shell">
+  <div class="day-head"><div><div class="day-no">Day 05 · Fri 16 Oct</div><h2>不塞景點，<br>從容回家。</h2><p class="day-summary">前一晚把車還掉、行李整理好。今天只做飯店 Shuttle、機場報到與回高雄。</p></div>
+  <div class="day-art" aria-hidden="true"><svg viewBox="0 0 420 260"><path d="M63 195 C132 181 245 187 361 180" fill="none" stroke="var(--ink)" stroke-width="2.5"/><path d="M89 154 L218 119 L330 73 L344 84 L253 139 L342 165 L337 178 L234 157 L173 204 L159 200 L194 151 L94 167 Z" fill="var(--terracotta)"/><path d="M118 89 C130 73 147 67 167 70" fill="none" stroke="var(--mustard)" stroke-width="8" stroke-linecap="round" opacity=".85"/></svg></div></div>
+  <div class="timeline">
+    <div class="t-row"><div class="t-time">早上</div><div class="t-dot"></div><div class="t-card"><h3>早餐＋最後整理</h3><p>大部分行李前一晚完成，避免早上重新打包。</p></div></div>
+    <div class="t-row"><div class="t-time">08:20</div><div class="t-dot"></div><div class="t-card"><h3>全員 Lobby Ready</h3><p>依最終東橫INN Shuttle 班表微調。</p></div></div>
+    <div class="t-row key"><div class="t-time">08:40</div><div class="t-dot"></div><div class="t-card"><h3>Shuttle → NRT T2</h3><p>目前偏好的班次，兩個小孩＋大型行李＋嬰兒車都留足 buffer。</p></div></div>
+    <div class="t-row key"><div class="t-time">11:50</div><div class="t-dot"></div><div class="t-card"><h3>IT281 NRT → KHH</h3><p>目前採用的返程時間；出發前再以虎航訂位紀錄做最後確認。</p></div></div>
+  </div><a class="backtop" href="#agenda">↑ Back to Agenda</a>
+</div></section>
+
+<section class="checklist" id="checklist"><div class="shell"><div class="section-eyebrow">Before Departure</div><h2 class="section-title">出發前確認</h2><p class="section-intro">把「已經決定」和「還沒鎖定」分開，出發前只處理真正會影響行程的項目。</p>
+<div class="check-grid">
+  <div class="check-card"><h3>已確定</h3>
+    <div class="check-item done"><span class="box"></span><span>全程自駕／Toyota 成田空港店／SUV1</span></div>
+    <div class="check-item done"><span class="box"></span><span>CDW＋NOC 免除</span></div>
+    <div class="check-item done"><span class="box"></span><span>Child Seat ×1＋Junior Seat ×1</span></div>
+    <div class="check-item done"><span class="box"></span><span>自備 ETC Card</span></div>
+    <div class="check-item done"><span class="box"></span><span>Day 1 Outlet＋晚餐</span></div>
+    <div class="check-item done"><span class="box"></span><span>Day 2 Safari＋河口湖＋步成晚餐</span></div>
+    <div class="check-item done"><span class="box"></span><span>Day 3 富士急完整日</span></div>
+    <div class="check-item done"><span class="box"></span><span>Day 4 Birthday＋AEON＋飯店卸貨後還車</span></div>
+  </div>
+  <div class="check-card"><h3>待確認 / 待修改</h3>
+    <div class="check-item"><span class="box"></span><span>10/13 Navigation Car 13:30 左右預約</span></div>
+    <div class="check-item"><span class="box"></span><span>2 歲幼童 Navi Car 的安全座椅／乘坐方式</span></div>
+    <div class="check-item"><span class="box"></span><span>Toyota 還車 18:00 → 19:00</span></div>
+    <div class="check-item"><span class="box"></span><span>Day 4 午餐位置</span></div>
+    <div class="check-item"><span class="box"></span><span>Day 2 河口湖只選 1 個停靠點</span></div>
+    <div class="check-item"><span class="box"></span><span>Day 5 IT281 航班＋飯店 Shuttle 最終確認</span></div>
+    <div class="check-item"><span class="box"></span><span>SUV1 實車：2 大行李箱＋嬰兒車＋2 張兒童座椅</span></div>
+  </div>
+</div></div></section>
+
+<section class="info"><div class="shell"><div class="info-grid">
+  <div class="info-card"><h3>Toyota</h3><p>預約編號 99910165100</p><p>成田市取香530-13</p><p>取車 10/12 12:00</p><p>還車：目前 10/15 18:00 → 計畫改 19:00</p><p>總額 61,441 円（税込）</p></div>
+  <div class="info-card"><h3>Luggage</h3><p>Suitcase ×2：750 × 510 × 700 mm</p><p>Stroller：54 × 49 × 29 cm</p><p>出發前再量一次行李箱尺寸。</p></div>
+  <div class="info-card"><h3>Stay</h3><p>10/12 Dormy Inn Express 富士山御殿場</p><p>10/13–14 Highland Resort Hotel & Spa</p><p>10/15 東橫INN成田機場本館</p></div>
+</div></div></section>
+</main>
+
+<footer class="footer"><div class="shell footer-inner"><span>Tokyo · Fuji Family Road Guide · Current discussion version</span><span><a href="https://rent.toyota.co.jp/shop/route/1_0020.html" target="_blank" rel="noreferrer">Toyota</a> · <a href="https://www.fujisafari.co.jp/tour-safari/navi-car/" target="_blank" rel="noreferrer">Fuji Safari</a> · <a href="https://maps.app.goo.gl/bAiyy68w9Vz2rWyi7" target="_blank" rel="noreferrer">歩成</a></span></div></footer>
+</div>
+
+<script>
+(function(){
+  const root=document.documentElement;
+  const btn=document.getElementById('themeToggle');
+  const stored=localStorage.getItem('trip-theme');
+  const preferred=window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark':'light';
+  const initial=stored || preferred;
+  root.setAttribute('data-theme',initial);
+  btn.textContent=initial==='dark'?'Dark / Light':'Light / Dark';
+  btn.addEventListener('click',()=>{
+    const next=root.getAttribute('data-theme')==='dark'?'light':'dark';
+    root.setAttribute('data-theme',next);
+    localStorage.setItem('trip-theme',next);
+    btn.textContent=next==='dark'?'Dark / Light':'Light / Dark';
+  });
+})();
+</script>
+</body>
+</html>

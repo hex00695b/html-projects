@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>受密碼保護的網頁</title>
+
+    <!-- 1. 密碼鎖 JavaScript 邏輯 -->
+    <script>
+        // 在這裡設定您的密碼（請將 "1234" 改成您想要的密碼）
+        const CORRECT_PASSWORD = "1234";
+
+        function checkPassword() {
+            const input = prompt("請輸入存取密碼：");
+            if (input === CORRECT_PASSWORD) {
+                // 密碼正確，顯示網頁主內容
+                document.getElementById("protected-content").style.display = "block";
+            } else {
+                // 密碼錯誤
+                alert("密碼錯誤，無法檢視內容！");
+                // 重新整理頁面或跳轉離開
+                window.location.reload();
+            }
+        }
+
+        // 網頁載入完成後立即執行密碼檢查
+        window.onload = checkPassword;
+    </script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+            background-color: #f4f4f9;
+        }
+        /* 預設隱藏主內容，防止未輸入密碼時閃爍 */
+        #protected-content {
+            display: none;
+        }
+        h1 { color: #0066cc; }
+    </style>
+</head>
+<body>
+
+    <!-- 2. 受保護的網頁主要內容（包在 #protected-content 裡面） -->
+    <div id="protected-content">
+        <h1>歡迎進入受保護的頁面！</h1>
+        <p>這是我放在 GitHub Pages 上且加上密碼鎖的網頁內容。</p>
+    </div>
+
+</body>
+</html>

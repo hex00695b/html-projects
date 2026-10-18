@@ -1,0 +1,1871 @@
+<!doctype html>
+<html lang="zh-Hant" data-theme="light">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark">
+    <title>東京・富士五湖｜旅程費用結算手帳 2026</title>
+    <meta name="description" content="東京・富士五湖 2026 親子自駕旅行的每日費用、分類統計、租車紀錄與待補明細。可離線編輯及匯出。">
+    <style>
+      :root {
+        --paper: #f6f1e8;
+        --paper-2: #fbf8f1;
+        --ink: #2d2b28;
+        --muted: #746f67;
+        --line: #d8cfc2;
+        --terracotta: #b85c42;
+        --sage: #6f7e69;
+        --mustard: #c89b4a;
+        --shadow: 0 14px 34px rgba(55, 45, 33, .07);
+        --card: rgba(255, 252, 246, .76);
+        --soft: rgba(111, 126, 105, .075);
+        --warm: rgba(184, 92, 66, .065);
+        --input: #fffdfa;
+        --chart-other: #a8a099;
+        --surface-hover: #f3ece1;
+      }
+
+      html[data-theme="dark"] {
+        --paper: #24221f;
+        --paper-2: #2b2824;
+        --ink: #f1eadf;
+        --muted: #b9b0a4;
+        --line: #4a443c;
+        --terracotta: #d07b61;
+        --sage: #93a38b;
+        --mustard: #d2ad66;
+        --shadow: 0 14px 34px rgba(0, 0, 0, .22);
+        --card: rgba(47, 43, 38, .78);
+        --soft: rgba(147, 163, 139, .085);
+        --warm: rgba(208, 123, 97, .085);
+        --input: #34302b;
+        --chart-other: #8e8881;
+        --surface-hover: #35302b;
+      }
+
+      * {
+        box-sizing: border-box
+      }
+
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 84px
+      }
+
+      body {
+        margin: 0;
+        color: var(--ink);
+        background: radial-gradient(circle at 25% 0%, rgba(184, 92, 66, .045), transparent 33%), radial-gradient(circle at 80% 18%, rgba(111, 126, 105, .045), transparent 28%), var(--paper);
+        font-family: "Hiragino Sans", "Yu Gothic UI", "Yu Gothic", "Noto Sans TC", system-ui, sans-serif;
+        line-height: 1.7;
+        letter-spacing: .01em
+      }
+
+      body:before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        opacity: .15;
+        z-index: 9999;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.84' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.11'/%3E%3C/svg%3E")
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none
+      }
+
+      a:hover {
+        text-decoration: underline;
+        text-underline-offset: 4px
+      }
+
+      button,
+      input,
+      select,
+      textarea {
+        font: inherit
+      }
+
+      button {
+        cursor: pointer
+      }
+
+      button:disabled {
+        opacity: .5;
+        cursor: not-allowed
+      }
+
+      :focus-visible {
+        outline: 2px solid var(--terracotta);
+        outline-offset: 3px
+      }
+
+      .shell {
+        width: min(1140px, calc(100% - 36px));
+        margin: 0 auto
+      }
+
+      .topbar {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        background: color-mix(in srgb, var(--paper) 91%, transparent);
+        backdrop-filter: blur(14px);
+        border-bottom: 1px solid var(--line)
+      }
+
+      .topbar-inner {
+        min-height: 62px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: .075em;
+        white-space: nowrap
+      }
+
+      .brand-mark {
+        width: 22px;
+        height: 22px;
+        border: 1.5px solid var(--ink);
+        border-radius: 50% 46% 52% 48%;
+        position: relative;
+        transform: rotate(-4deg)
+      }
+
+      .brand-mark:after {
+        content: "";
+        position: absolute;
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: var(--terracotta);
+        right: -2px;
+        bottom: 1px
+      }
+
+      .toolbar {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: flex-end
+      }
+
+      .mini-btn,
+      .toggle,
+      .quiet-btn,
+      .pill-btn {
+        appearance: none;
+        border: 1px solid var(--line);
+        background: var(--card);
+        color: var(--ink);
+        border-radius: 999px;
+        padding: 8px 12px;
+        font-size: 12px;
+        line-height: 1.4;
+        font-weight: 650;
+        white-space: nowrap;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px
+      }
+
+      .mini-btn:hover,
+      .toggle:hover,
+      .quiet-btn:hover,
+      .pill-btn:hover {
+        background: var(--surface-hover);
+        text-decoration: none;
+        border-color: var(--muted)
+      }
+
+      .pill-btn.primary {
+        border-color: var(--terracotta);
+        color: var(--terracotta)
+      }
+
+      .pill-btn.primary:hover {
+        background: var(--warm)
+      }
+
+      .cover {
+        min-height: 580px;
+        padding: 88px 0 80px;
+        display: grid;
+        grid-template-columns: 1.1fr .9fr;
+        gap: 55px;
+        align-items: center
+      }
+
+      .kicker,
+      .eyebrow {
+        font-size: 11px;
+        letter-spacing: .17em;
+        text-transform: uppercase;
+        color: var(--terracotta);
+        font-weight: 800
+      }
+
+      .cover h1 {
+        font-family: Georgia, "Noto Serif TC", "Yu Mincho", serif;
+        font-size: clamp(45px, 6.6vw, 79px);
+        font-weight: 500;
+        letter-spacing: -.04em;
+        line-height: 1.07;
+        margin: 17px 0 22px
+      }
+
+      .lead {
+        color: var(--muted);
+        font-size: 17px;
+        max-width: 610px;
+        margin: 0 0 25px
+      }
+
+      .chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px
+      }
+
+      .chip {
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        padding: 7px 11px;
+        font-size: 12px;
+        background: var(--card)
+      }
+
+      .hero-art {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 360px
+      }
+
+      .art-frame {
+        width: min(410px, 100%);
+        aspect-ratio: 1;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center
+      }
+
+      .art-frame:before {
+        content: "";
+        position: absolute;
+        width: 82%;
+        height: 82%;
+        border-radius: 55% 45% 52% 48%;
+        border: 1px solid var(--line);
+        transform: rotate(3deg)
+      }
+
+      .hero-svg {
+        width: 91%;
+        height: auto;
+        filter: drop-shadow(0 10px 22px rgba(55, 45, 33, .04))
+      }
+
+      .cover-total {
+        margin-top: 26px;
+        border-top: 1px solid var(--line);
+        padding-top: 17px;
+        display: block
+      }
+
+      .cover-total .amount {
+        font-family: Georgia, "Noto Serif TC", serif;
+        font-size: clamp(32px, 4vw, 50px);
+        font-weight: 500;
+        line-height: 1.2;
+        letter-spacing: -.02em;
+        font-variant-numeric: tabular-nums;
+        display: grid;
+        grid-template-columns: max-content max-content;
+        align-items: baseline;
+        column-gap: 20px
+      }
+
+      .cover-total .amount small {
+        font: 600 12px system-ui, sans-serif;
+        color: var(--muted);
+        display: block;
+        letter-spacing: .04em;
+        margin-bottom: 5px;
+        grid-column: 1 / -1
+      }
+
+      .cover-total .amount .cover-currency {
+        display: block;
+        white-space: nowrap
+      }
+
+      .cover-total .hint {
+        font-size: 12px;
+        color: var(--muted);
+        max-width: 250px;
+        margin-top: 8px
+      }
+
+      .section {
+        padding: 86px 0;
+        border-top: 1px solid var(--line)
+      }
+
+      .section-title {
+        font-family: Georgia, "Noto Serif TC", "Yu Mincho", serif;
+        font-size: clamp(31px, 4.6vw, 52px);
+        font-weight: 500;
+        line-height: 1.12;
+        letter-spacing: -.025em;
+        margin: 12px 0 16px
+      }
+
+      .section-intro {
+        color: var(--muted);
+        max-width: 820px;
+        margin: 0 0 30px;
+        font-size: 14px
+      }
+
+      .summary-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 13px;
+        margin: 25px 0 26px
+      }
+
+      .summary-card {
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        padding: 20px;
+        background: var(--card);
+        box-shadow: var(--shadow);
+        min-width: 0
+      }
+
+      .summary-card .label {
+        display: block;
+        font-size: 12px;
+        color: var(--muted);
+        margin-bottom: 9px
+      }
+
+      .summary-card strong {
+        font-family: Georgia, "Noto Serif TC", serif;
+        font-size: clamp(23px, 2.8vw, 33px);
+        font-weight: 500;
+        letter-spacing: -.025em;
+        font-variant-numeric: tabular-nums;
+        line-height: 1.25;
+        display: block
+      }
+
+      .summary-card .foot {
+        display: block;
+        font-size: 11px;
+        color: var(--muted);
+        margin-top: 9px
+      }
+
+      .report-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        margin-top: 22px
+      }
+
+      .report-card {
+        border: 1px solid var(--line);
+        border-radius: 20px;
+        padding: 23px 25px;
+        background: var(--card);
+        min-width: 0
+      }
+
+      .report-card h3 {
+        font-size: 16px;
+        margin: 0 0 5px;
+        font-weight: 700
+      }
+
+      .report-card .caption {
+        font-size: 12px;
+        color: var(--muted);
+        margin: 0 0 18px
+      }
+
+      .bar-item {
+        display: grid;
+        grid-template-columns: 96px minmax(0, 1fr) 82px;
+        gap: 12px;
+        align-items: center;
+        margin: 13px 0;
+        font-size: 12px
+      }
+
+      .bar-label {
+        font-weight: 600
+      }
+
+      .bar-track {
+        height: 9px;
+        border-radius: 20px;
+        background: color-mix(in srgb, var(--line) 55%, transparent);
+        overflow: hidden
+      }
+
+      .bar-fill {
+        height: 100%;
+        width: 0;
+        border-radius: 20px;
+        transition: width .35s ease;
+        background: var(--terracotta)
+      }
+
+      .bar-value {
+        text-align: right;
+        font-size: 12px;
+        font-variant-numeric: tabular-nums;
+        color: var(--muted)
+      }
+
+      .report-note {
+        font-size: 12px;
+        color: var(--muted);
+        border-top: 1px solid var(--line);
+        padding-top: 14px;
+        margin: 20px 0 0
+      }
+
+      .progress-line {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        margin-top: 17px;
+        font-size: 12px;
+        color: var(--muted)
+      }
+
+      .progress-track {
+        height: 6px;
+        border-radius: 20px;
+        background: var(--line);
+        overflow: hidden;
+        margin-top: 8px
+      }
+
+      .progress-track>span {
+        display: block;
+        background: var(--sage);
+        height: 100%;
+        width: 0;
+        transition: width .3s
+      }
+
+      .tool-panel {
+        margin-top: 22px;
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        padding: 18px 20px;
+        background: var(--soft);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 18px;
+        flex-wrap: wrap
+      }
+
+      .tool-panel p {
+        margin: 3px 0 0;
+        font-size: 12px;
+        color: var(--muted)
+      }
+
+      .tool-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px
+      }
+
+      .agenda {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 13px
+      }
+
+      .agenda-card {
+        min-height: 193px;
+        border: 1px solid var(--line);
+        border-radius: 21px;
+        padding: 22px;
+        background: var(--card);
+        position: relative;
+        overflow: hidden;
+        box-shadow: var(--shadow);
+        transition: transform .2s, border-color .2s
+      }
+
+      .agenda-card:hover {
+        transform: translateY(-3px);
+        text-decoration: none;
+        border-color: var(--terracotta)
+      }
+
+      .agenda-card:after {
+        content: "";
+        position: absolute;
+        width: 70px;
+        height: 70px;
+        right: -18px;
+        bottom: -18px;
+        background: color-mix(in srgb, var(--sage) 17%, transparent);
+        border-radius: 50%
+      }
+
+      .agenda-no {
+        font-family: Georgia, serif;
+        font-size: 38px;
+        line-height: 1;
+        color: var(--terracotta)
+      }
+
+      .agenda-card h3 {
+        font-size: 15px;
+        margin: 14px 0 6px;
+        line-height: 1.45
+      }
+
+      .agenda-card p {
+        font-size: 12px;
+        color: var(--muted);
+        margin: 0
+      }
+
+      .agenda-total {
+        font-size: 16px;
+        font-variant-numeric: tabular-nums;
+        font-weight: 700;
+        margin-top: 12px;
+        display: block
+      }
+
+      .day-section {
+        padding: 86px 0;
+        border-top: 1px solid var(--line)
+      }
+
+      .day-head {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        gap: 22px;
+        margin-bottom: 29px
+      }
+
+      .day-no {
+        font-size: 12px;
+        letter-spacing: .16em;
+        color: var(--terracotta);
+        font-weight: 800;
+        text-transform: uppercase
+      }
+
+      .day-head h2 {
+        font-family: Georgia, "Noto Serif TC", "Yu Mincho", serif;
+        font-size: clamp(30px, 4.4vw, 52px);
+        font-weight: 500;
+        letter-spacing: -.03em;
+        line-height: 1.18;
+        margin: 10px 0 8px
+      }
+
+      .day-head p {
+        font-size: 14px;
+        color: var(--muted);
+        margin: 0
+      }
+
+      .day-side {
+        text-align: right;
+        flex-shrink: 0
+      }
+
+      .day-side strong {
+        display: block;
+        font-size: 28px;
+        letter-spacing: -.03em;
+        font-weight: 550;
+        font-variant-numeric: tabular-nums;
+        line-height: 1.2
+      }
+
+      .day-side small {
+        display: block;
+        font-size: 11px;
+        color: var(--muted);
+        margin-top: 7px
+      }
+
+      .ledger {
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        overflow: hidden;
+        background: var(--card)
+      }
+
+      .ledger-head,
+      .ledger-row {
+        display: grid;
+        grid-template-columns: minmax(210px, 1.5fr) 105px 115px minmax(185px, 1.45fr) 52px;
+        gap: 12px;
+        align-items: center;
+        padding: 13px 18px
+      }
+
+      .ledger-head {
+        background: var(--soft);
+        font-size: 11px;
+        font-weight: 800;
+        color: var(--muted);
+        letter-spacing: .055em
+      }
+
+      .ledger-row {
+        border-top: 1px solid var(--line);
+        font-size: 13px;
+        min-height: 65px
+      }
+
+      .ledger-row:hover {
+        background: var(--soft)
+      }
+
+      .item-name {
+        font-weight: 650;
+        line-height: 1.5;
+        overflow-wrap: anywhere
+      }
+
+      .item-note {
+        color: var(--muted);
+        font-size: 12px;
+        line-height: 1.55;
+        overflow-wrap: anywhere
+      }
+
+      .item-amount {
+        text-align: right;
+        font-variant-numeric: tabular-nums;
+        font-weight: 700;
+        font-size: 14px;
+        white-space: nowrap
+      }
+
+      .item-amount.pending,
+      .item-amount.unspent {
+        font-weight: 550;
+        color: var(--muted);
+        font-size: 12px
+      }
+
+      .item-amount.merged {
+        font-weight: 550;
+        color: var(--muted);
+        font-size: 12px
+      }
+
+      .item-amount.transfer {
+        color: var(--sage)
+      }
+
+      .cat-tag {
+        font-size: 11px;
+        color: var(--muted);
+        display: inline-block;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        padding: 3px 8px;
+        white-space: nowrap
+      }
+
+      .edit-btn {
+        border: 1px solid transparent;
+        border-radius: 10px;
+        background: transparent;
+        color: var(--muted);
+        padding: 7px 8px;
+        font-size: 12px
+      }
+
+      .edit-btn:hover {
+        color: var(--terracotta);
+        border-color: var(--line)
+      }
+
+      .ledger-empty {
+        padding: 25px;
+        text-align: center;
+        color: var(--muted);
+        font-size: 13px
+      }
+
+      .day-footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 15px;
+        flex-wrap: wrap;
+        margin-top: 14px
+      }
+
+      .day-footer .minor {
+        font-size: 12px;
+        color: var(--muted)
+      }
+
+      .backtop {
+        display: inline-flex;
+        margin-top: 23px;
+        font-size: 12px;
+        color: var(--muted);
+        border-bottom: 1px solid var(--line)
+      }
+
+      .related-guide-card {
+        max-width: 920px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        padding: 19px 22px;
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        background: var(--card);
+        box-shadow: var(--shadow)
+      }
+
+      .related-guide-eyebrow {
+        display: block;
+        font-size: 11px;
+        font-weight: 800;
+        letter-spacing: .12em;
+        text-transform: uppercase;
+        color: var(--terracotta)
+      }
+
+      .related-guide-card h2 {
+        margin: 4px 0 5px;
+        font-size: 17px;
+        line-height: 1.5
+      }
+
+      .related-guide-card p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 13px
+      }
+
+      .related-guide-action {
+        flex-shrink: 0;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        padding: 10px 15px;
+        border: 1px solid var(--terracotta);
+        border-radius: 999px;
+        color: var(--terracotta);
+        font-size: 13px;
+        font-weight: 750;
+        text-decoration: none;
+        white-space: nowrap;
+        transition: background .18s, color .18s
+      }
+
+      .related-guide-action:hover,
+      .related-guide-action:focus-visible {
+        background: var(--terracotta);
+        color: var(--paper-2)
+      }
+
+      .detail-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px
+      }
+
+      .detail-card {
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        background: var(--card);
+        padding: 22px;
+        min-width: 0
+      }
+
+      .detail-card h3 {
+        font-size: 15px;
+        margin: 0 0 15px
+      }
+
+      .detail-card p,
+      .detail-card li {
+        font-size: 13px;
+        color: var(--muted)
+      }
+
+      .detail-card.full {
+        grid-column: 1/-1
+      }
+
+      .data-table {
+        border-collapse: collapse;
+        width: 100%;
+        font-size: 13px
+      }
+
+      .data-table th,
+      .data-table td {
+        padding: 10px 5px;
+        border-bottom: 1px solid var(--line);
+        text-align: left;
+        vertical-align: top
+      }
+
+      .data-table th {
+        font-weight: 600;
+        color: var(--muted)
+      }
+
+      .data-table td:last-child {
+        text-align: right;
+        font-variant-numeric: tabular-nums
+      }
+
+      .data-table tr:last-child th,
+      .data-table tr:last-child td {
+        border-bottom: 0
+      }
+
+      .data-table tr.total {
+        font-weight: 750
+      }
+
+      .rental-stat {
+        font-family: Georgia, serif;
+        font-size: 45px;
+        line-height: 1.2;
+        font-variant-numeric: tabular-nums;
+        margin: 5px 0 10px;
+        color: var(--terracotta)
+      }
+
+      .rental-stat small {
+        font: 600 13px system-ui, sans-serif;
+        color: var(--muted)
+      }
+
+      .muted {
+        color: var(--muted)
+      }
+
+      .audit-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: grid;
+        gap: 10px
+      }
+
+      .audit-list li {
+        padding: 13px 15px;
+        border: 1px solid var(--line);
+        border-radius: 13px;
+        background: var(--card);
+        font-size: 13px
+      }
+
+      .audit-list strong {
+        display: block;
+        font-size: 12px;
+        color: var(--terracotta);
+        margin-bottom: 3px
+      }
+
+      .pending-list {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+        margin-top: 15px
+      }
+
+      .pending-link {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        padding: 10px 12px;
+        border: 1px solid var(--line);
+        border-radius: 11px;
+        font-size: 12px;
+        background: var(--card)
+      }
+
+      .pending-link span {
+        color: var(--muted);
+        font-size: 11px;
+        flex-shrink: 0
+      }
+
+      .pending-link:hover {
+        border-color: var(--terracotta);
+        text-decoration: none
+      }
+
+      .footer {
+        border-top: 1px solid var(--line);
+        padding: 28px 0 40px;
+        color: var(--muted);
+        font-size: 11px
+      }
+
+      .footer-inner {
+        display: flex;
+        justify-content: space-between;
+        gap: 15px;
+        flex-wrap: wrap
+      }
+
+      .dialog {
+        border: 1px solid var(--line);
+        background: var(--paper-2);
+        color: var(--ink);
+        border-radius: 22px;
+        width: min(550px, calc(100vw - 28px));
+        max-height: min(90vh, 780px);
+        padding: 25px;
+        box-shadow: 0 28px 70px rgba(0, 0, 0, .24)
+      }
+
+      .dialog::backdrop {
+        background: rgba(25, 22, 20, .62);
+        backdrop-filter: blur(3px)
+      }
+
+      .dialog h2 {
+        font-family: Georgia, "Noto Serif TC", serif;
+        font-size: 26px;
+        font-weight: 500;
+        margin: 0 0 4px
+      }
+
+      .dialog p {
+        font-size: 12px;
+        color: var(--muted);
+        margin: 0 0 18px
+      }
+
+      .form-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 13px
+      }
+
+      .field {
+        display: flex;
+        flex-direction: column;
+        gap: 5px
+      }
+
+      .field.full {
+        grid-column: 1/-1
+      }
+
+      .field label {
+        font-size: 12px;
+        font-weight: 650
+      }
+
+      .field input,
+      .field select,
+      .field textarea {
+        width: 100%;
+        padding: 10px 12px;
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        background: var(--input);
+        color: var(--ink);
+        font-size: 14px
+      }
+
+      .field textarea {
+        min-height: 74px;
+        resize: vertical
+      }
+
+      .form-help {
+        font-size: 11px;
+        color: var(--muted);
+        margin-top: 4px
+      }
+
+      .dialog-actions {
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-top: 21px
+      }
+
+      .dialog-actions .right {
+        display: flex;
+        gap: 8px
+      }
+
+      .notice {
+        border-left: 3px solid var(--sage);
+        background: var(--soft);
+        padding: 13px 16px;
+        font-size: 12px;
+        color: var(--muted);
+        border-radius: 0 10px 10px 0;
+        margin-top: 18px
+      }
+
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0
+      }
+
+      @media(max-width:1000px) {
+        .summary-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr))
+        }
+
+        .cover {
+          grid-template-columns: 1fr .85fr;
+          gap: 25px
+        }
+
+        .ledger-head,
+        .ledger-row {
+          grid-template-columns: minmax(170px, 1.6fr) 85px 100px minmax(145px, 1fr) 45px;
+          gap: 8px;
+          padding-left: 12px;
+          padding-right: 12px
+        }
+      }
+
+      @media(max-width:780px) {
+        .cover {
+          grid-template-columns: 1fr;
+          padding: 57px 0 65px;
+          min-height: auto
+        }
+
+        .hero-art {
+          min-height: 220px;
+          max-width: 290px;
+          margin: 0 auto
+        }
+
+        .report-grid,
+        .detail-grid {
+          grid-template-columns: 1fr
+        }
+
+        .agenda {
+          grid-template-columns: repeat(2, minmax(0, 1fr))
+        }
+
+        .day-head {
+          align-items: flex-start
+        }
+
+        .pending-list {
+          grid-template-columns: 1fr
+        }
+      }
+
+      @media(max-width:650px) {
+        .related-guide-card {
+          flex-direction: column;
+          align-items: stretch;
+          padding: 17px
+        }
+
+        .related-guide-action {
+          align-self: flex-start;
+          white-space: normal;
+          text-align: center
+        }
+      }
+
+      @media(max-width:650px) {
+        .shell {
+          width: calc(100% - 26px)
+        }
+
+        .topbar-inner {
+          min-height: 56px
+        }
+
+        .brand {
+          font-size: 10px
+        }
+
+        .toolbar .guidebook-link {
+          display: none
+        }
+
+        .toolbar .agenda-link {
+          display: none
+        }
+
+        .cover h1 {
+          font-size: 47px
+        }
+
+        .cover-total .amount {
+          font-size: clamp(18px, 7vw, 28px);
+          column-gap: 10px
+        }
+
+        .lead {
+          font-size: 15px
+        }
+
+        .section,
+        .day-section {
+          padding: 64px 0
+        }
+
+        .summary-card {
+          padding: 15px
+        }
+
+        .summary-card strong {
+          font-size: 24px
+        }
+
+        .report-card {
+          padding: 19px
+        }
+
+        .agenda {
+          grid-template-columns: 1fr
+        }
+
+        .agenda-card {
+          min-height: 160px
+        }
+
+        .day-head {
+          flex-direction: column;
+          gap: 12px
+        }
+
+        .day-side {
+          text-align: left
+        }
+
+        .day-side strong {
+          font-size: 24px
+        }
+
+        .ledger-head {
+          display: none
+        }
+
+        .ledger {
+          border: 0;
+          background: transparent;
+          display: grid;
+          gap: 9px;
+          overflow: visible
+        }
+
+        .ledger-row {
+          display: grid;
+          grid-template-columns: 1fr auto;
+          grid-template-areas: "name amount" "cat cat" "note edit";
+          gap: 7px 12px;
+          border: 1px solid var(--line);
+          border-radius: 15px;
+          padding: 15px;
+          background: var(--card);
+          min-height: 0
+        }
+
+        .ledger-row:first-child {
+          border-top: 1px solid var(--line)
+        }
+
+        .item-name {
+          grid-area: name
+        }
+
+        .item-amount {
+          grid-area: amount
+        }
+
+        .item-category {
+          grid-area: cat
+        }
+
+        .item-note {
+          grid-area: note
+        }
+
+        .edit-btn {
+          grid-area: edit;
+          justify-self: end
+        }
+
+        .bar-item {
+          grid-template-columns: 75px minmax(0, 1fr) 70px;
+          gap: 8px
+        }
+
+        .tool-panel {
+          align-items: stretch
+        }
+
+        .tool-actions {
+          width: 100%
+        }
+
+        .tool-actions>* {
+          flex: 1
+        }
+
+        .form-grid {
+          grid-template-columns: 1fr
+        }
+
+        .field.full {
+          grid-column: 1
+        }
+
+        .dialog {
+          padding: 20px
+        }
+      }
+
+      @media print {
+
+        .topbar,
+        .toolbar,
+        .tool-panel,
+        .edit-btn,
+        .day-footer .pill-btn,
+        .backtop,
+        .footer .links,
+        .pending-link .arrow {
+          display: none !important
+        }
+
+        html,
+        body {
+          background: #fff !important;
+          color: #222 !important
+        }
+
+        body:before {
+          display: none
+        }
+
+        .cover {
+          min-height: 0;
+          padding: 20px 0 25px;
+          grid-template-columns: 1fr .55fr
+        }
+
+        .hero-art {
+          max-width: 180px;
+          min-height: 160px
+        }
+
+        .section,
+        .day-section {
+          padding: 25px 0;
+          break-inside: avoid
+        }
+
+        .day-section {
+          break-before: page
+        }
+
+        .ledger-row,
+        .detail-card,
+        .report-card {
+          break-inside: avoid;
+          box-shadow: none
+        }
+
+        .summary-card {
+          box-shadow: none
+        }
+
+        .dialog {
+          display: none !important
+        }
+
+        * {
+          animation: none !important;
+          transition: none !important
+        }
+      }
+
+      /* Multi-currency controls and provenance */
+      .exchange-panel {display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;border:1px solid var(--line);border-radius:18px;background:var(--card);padding:15px 20px;margin:22px 0 4px}
+      .exchange-copy {display:flex;flex-direction:column;gap:3px;max-width:570px;font-size:13px}
+      .exchange-copy span {font-size:11px;color:var(--muted)}
+      .exchange-controls {display:flex;gap:10px;align-items:center;flex-wrap:wrap;font-size:13px;font-weight:650}
+      .exchange-controls input {min-width:90px;width:105px;padding:8px 10px;border:1px solid var(--line);border-radius:10px;background:var(--input);color:var(--ink);font-variant-numeric:tabular-nums}
+      .conversion-preview {display:block;padding:10px 13px;border:1px solid var(--line);border-radius:10px;background:var(--soft);font-size:12px;color:var(--sage)}
+      .amount-source {display:block;color:var(--muted);font-size:10px;font-weight:500;line-height:1.4}
+      .cover-total .amount #cover-grand-secondary {font-size:.65em;color:var(--muted)}
+      .source-panel {border:1px solid var(--line);border-radius:17px;background:var(--card);padding:16px 20px;margin:14px 0 18px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+      .source-panel-title {font-size:12px;font-weight:800;letter-spacing:.025em}
+      .source-panel-meta {display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-top:7px;font-size:12px}
+      .source-tag {display:inline-flex;align-items:center;border:1px solid var(--line);border-radius:999px;padding:3px 10px;font-weight:750;color:var(--sage);background:var(--soft)}
+      .source-time {color:var(--muted);font-variant-numeric:tabular-nums}
+      .source-note {color:var(--muted);font-size:11px;margin:7px 0 0;max-width:800px}
+      .source-note.warning {color:var(--terracotta)}
+      @media(max-width:650px) {.exchange-panel{padding:14px}.exchange-controls{width:100%}.exchange-controls input{flex:1;min-width:75px}.topbar-inner{flex-wrap:wrap;padding:7px 0}.toolbar{gap:4px}.toolbar .toggle{padding:6px 8px;font-size:11px}.source-panel{padding:14px}}
+      @media print {.source-panel {break-inside:avoid}}
+    </style>
+  </head>
+
+  <body>
+    <div id="top"></div>
+    <header class="topbar">
+      <div class="shell topbar-inner">
+        <a class="brand" href="#top"><span class="brand-mark"></span><span>TOKYO · FUJI 2026 / LEDGER</span></a>
+        <nav class="toolbar" aria-label="頁面導覽">
+          <a class="mini-btn guidebook-link" href="Tokyo_Fuji_2026_guidebook.html" target="_blank" rel="noopener"
+            title="兩份 HTML 放在同一資料夾即可開啟">Guidebook ↗</a>
+          <a class="mini-btn agenda-link" href="#agenda">Agenda</a>
+          <button class="toggle" id="currency-toggle" type="button" aria-label="切換全頁顯示幣別">顯示：JPY ⇄</button>
+          <button class="toggle" id="theme-toggle" type="button" aria-label="切換深色與淺色模式">Light / Dark</button>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <section class="cover shell" aria-labelledby="cover-title">
+        <div>
+          <div class="kicker">Family Road Ledger · 11–16 Oct 2026</div>
+          <h1 id="cover-title">旅程費用<br>結算手帳。</h1>
+          <p class="lead">從關西前泊、成田取車、御殿場與富士五湖，到返回高雄。依日期整理每一筆支出，保留待補項目，讓旅行結算像 Guidebook 一樣清楚。</p>
+          <div class="chips"><span class="chip">2 Adults + 2 Kids</span><span class="chip">2026 / 10 / 11–16</span><span
+              class="chip">JPY · ¥</span><span class="chip">NTD · $</span><span class="chip">實際支出紀錄</span></div>
+          <div class="cover-total">
+            <div class="amount"><small>KNOWN EXPENSES · 已知支出（含前泊）</small><span class="cover-currency"
+                id="cover-grand-primary">JPY ¥350,173</span><span class="cover-currency" id="cover-grand-secondary">NTD
+                $46,493</span>
+            </div>
+            <div class="hint" id="cover-rate">1 JPY = 0.21 NTD</div>
+            <div class="hint">未填金額尚未計入，儲值不重複列為消費。</div>
+          </div>
+        </div>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="art-frame"><svg class="hero-svg" viewBox="0 0 520 520">
+              <path d="M74 390 C157 378 313 379 446 390" stroke="var(--ink)" stroke-width="2.7" fill="none" opacity=".7"
+                stroke-linecap="round" />
+              <path d="M113 331 L226 171 L316 331 Z" fill="var(--sage)" opacity=".9" />
+              <path d="M212 190 L226 171 L244 194 L228 190 L219 203 Z" fill="var(--paper-2)" />
+              <g transform="rotate(6 331 289)">
+                <rect x="270" y="150" width="160" height="252" rx="11" fill="var(--paper-2)" stroke="var(--ink)"
+                  stroke-width="2.7" />
+                <path d="M289 189 H407 M289 217 H398 M289 249 H406 M289 280 H371 M289 311 H406 M289 342 H406"
+                  stroke="var(--ink)" stroke-width="2.2" opacity=".55" stroke-linecap="round" />
+                <path d="M289 368 H407" stroke="var(--terracotta)" stroke-width="5" stroke-linecap="round" />
+              </g>
+              <circle cx="153" cy="327" r="54" fill="var(--mustard)" stroke="var(--ink)" stroke-width="2.5" />
+              <path d="M129 302 L153 330 L177 302 M153 330 V356 M130 329 H176" fill="none" stroke="var(--ink)"
+                stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M185 380 C207 351 240 347 265 368 L279 381 L280 399 H178 V387 Z" fill="var(--terracotta)"
+                stroke="var(--ink)" stroke-width="2.2" />
+              <circle cx="205" cy="401" r="12" fill="var(--paper-2)" stroke="var(--ink)" stroke-width="2.2" />
+              <circle cx="261" cy="401" r="12" fill="var(--paper-2)" stroke="var(--ink)" stroke-width="2.2" />
+              <path d="M101 147 C116 134 137 132 154 139" stroke="var(--mustard)" stroke-width="8" fill="none"
+                stroke-linecap="round" />
+            </svg></div>
+        </div>
+      </section>
+      <section class="section" id="overview">
+        <div class="shell">
+          <div class="eyebrow">01 / Overview</div>
+          <h2 class="section-title">一眼看清整趟旅費。</h2>
+          <p class="section-intro">所有金額都從下方逐筆明細計算，並依手動匯率換算。尚未取得收據的項目保留「待補」，不把未知金額當作零元。</p>
+          <div class="exchange-panel" aria-label="匯率設定">
+            <div class="exchange-copy"><strong>換算設定</strong><span>1 JPY 可換多少 NTD。換算不改變每筆原始實付金額；此匯率不是即時報價。</span></div>
+            <div class="exchange-controls"><label for="rate-input">1 JPY =</label><input id="rate-input" type="number" min="0.000001" max="1000" step="any" inputmode="decimal" value="0.21"><span>NTD</span><button class="pill-btn primary" id="apply-rate" type="button">套用匯率</button></div>
+          </div>
+          <section class="source-panel" aria-label="目前帳本資料來源" aria-live="polite">
+            <div><div class="source-panel-title">目前使用的帳本資料</div>
+              <div class="source-panel-meta"><span class="source-tag" id="data-source-label">載入中…</span><span class="source-time" id="data-source-updated">資料更新時間：讀取中…</span></div>
+              <p class="source-note" id="data-source-note">正在確認 GitHub JSON、HTML 備援及本機草稿。</p>
+            </div>
+          </section>
+          <div class="summary-grid">
+            <div class="summary-card"><span class="label">全期已知支出（含 10/11）</span><strong
+                id="sum-all">¥350,173</strong><span class="foot">包含行前住宿</span></div>
+            <div class="summary-card"><span class="label">主行程已知支出</span><strong id="sum-trip">¥344,855</strong><span
+                class="foot">10/12–10/16</span></div>
+            <div class="summary-card"><span class="label">待補項目</span><strong id="sum-pending">—</strong><span
+                class="foot">金額未確認，未計入合計</span></div>
+            <div class="summary-card"><span class="label">另列儲值</span><strong id="sum-transfer">¥0</strong><span
+                class="foot">PayPay 入金，不列消費</span></div>
+          </div>
+          <div class="report-grid">
+            <div class="report-card">
+              <h3>費用類別</h3>
+              <p class="caption">依已知支出分類 · 不含儲值</p>
+              <div id="category-bars"></div>
+              <p class="report-note">住宿兩晚只計一次；租車費用已包含保險及選配。</p>
+            </div>
+            <div class="report-card">
+              <h3>每日支出</h3>
+              <p class="caption">Day 00 為行前住宿；以消費紀錄日期歸類</p>
+              <div id="daily-bars"></div>
+              <div class="progress-line"><span>已填寫明細</span><span id="progress-label"></span></div>
+              <div class="progress-track"><span id="progress-bar"></span></div>
+            </div>
+          </div>
+          <div class="tool-panel" id="tools">
+            <div><strong>這份帳本可以直接編輯</strong>
+              <p id="save-status">每筆明細可修改金額、備註或新增項目。建議定期匯出備份。</p>
+            </div>
+            <div class="tool-actions"><button class="pill-btn" type="button" id="export-md">匯出 Markdown</button><button
+                class="pill-btn" type="button" id="export-csv">匯出 CSV</button><button class="pill-btn" type="button"
+                data-export-json>備份 JSON</button><button class="pill-btn" type="button"
+                id="import-json">匯入備份</button><input id="import-file" class="sr-only" type="file"
+                accept=".json,application/json"></div>
+          </div>
+        </div>
+      </section>
+      <section class="section" id="day3-guide" aria-labelledby="day3-guide-title">
+        <div class="shell">
+          <aside class="related-guide-card" aria-label="富士急親子遊玩與最佳購票策略">
+            <div><span class="related-guide-eyebrow">DAY 03 / 遊玩與購票詳細攻略</span>
+              <h2 id="day3-guide-title">富士急親子遊玩與最佳購票策略</h2>
+              <p>包含 Thomas Land 購票方案、必玩設施、分組午睡與雨天備案。</p>
+            </div>
+            <a class="related-guide-action" href="20261014_富士急親子遊玩與最佳購票策略.html" target="_blank"
+              rel="noopener noreferrer">開啟 10/14 詳細攻略 ↗</a>
+          </aside>
+        </div>
+      </section>
+      <section class="section" id="agenda">
+        <div class="shell">
+          <div class="eyebrow">02 / Agenda</div>
+          <h2 class="section-title">每天一頁，逐筆對帳。</h2>
+          <p class="section-intro">點選日期跳到該日消費清單。每一筆支出都可以開啟編輯，補入 ETC、機票或其他尚未填寫的金額。</p>
+          <div class="agenda" id="agenda-cards"></div>
+        </div>
+      </section>
+      <div id="day-sections"></div>
+      <section class="section" id="rental">
+        <div class="shell">
+          <div class="eyebrow">03 / Toyota Rent a Car</div>
+          <h2 class="section-title">這趟自駕的帳。</h2>
+          <p class="section-intro">租車明細與實際行駛紀錄。租金總額已列 Day 01，以下僅作拆解說明，不重複加總。</p>
+          <div class="detail-grid">
+            <article class="detail-card">
+              <h3>租金明細</h3>
+              <table class="data-table">
+                <tbody>
+                  <tr>
+                    <th>基本料金</th>
+                    <td data-jpy="59268">¥59,268</td>
+                  </tr>
+                  <tr>
+                    <th>メンバー割引（10%）</th>
+                    <td data-jpy="-5927">−¥5,927</td>
+                  </tr>
+                  <tr>
+                    <th>利用マイル還元額</th>
+                    <td data-jpy="-1250">−¥1,250</td>
+                  </tr>
+                  <tr>
+                    <th>免責補償料</th>
+                    <td data-jpy="4400">¥4,400</td>
+                  </tr>
+                  <tr>
+                    <th>オプション</th>
+                    <td data-jpy="4950">¥4,950</td>
+                  </tr>
+                  <tr class="total">
+                    <th>ご利用総額（税込）</th>
+                    <td data-jpy="61441">¥61,441</td>
+                  </tr>
+                  <tr>
+                    <th>其中消費稅（已包含）</th>
+                    <td data-jpy="5587">¥5,587</td>
+                  </tr>
+                </tbody>
+              </table>
+              <p class="muted" id="rental-equation">¥59,268 − ¥5,927 − ¥1,250 + ¥4,400 + ¥4,950 = ¥61,441</p>
+            </article>
+            <article class="detail-card">
+              <h3>車輛與里程</h3>
+              <div class="rental-stat">477 <small>km</small></div>
+              <p><strong>ヤリス クロス（YARIS CROSS）</strong><br>SUV1 クラス · 登録 No. 品川 302 わ 4768</p>
+              <table class="data-table">
+                <tbody>
+                  <tr>
+                    <th>出發</th>
+                    <td>10/12 13:00 · 53,304 km</td>
+                  </tr>
+                  <tr>
+                    <th>歸還</th>
+                    <td>10/15 19:57 · 53,781 km</td>
+                  </tr>
+                  <tr>
+                    <th>使用時間</th>
+                    <td>3 日 6 小時 57 分</td>
+                  </tr>
+                  <tr>
+                    <th>預定歸還</th>
+                    <td>10/15 20:00</td>
+                  </tr>
+                </tbody>
+              </table>
+            </article>
+            <article class="detail-card full">
+              <h3>租車與油資的記帳方式</h3>
+              <p>租車 ¥61,441 已含保險、選配與稅金；10/15 加油 ¥5,100 是另外一筆支出。高速公路 ETC 尚待補充，未包含在這兩筆費用中。租車明細中的預定歸還 20:00 與 Guidebook 記載的
+                19:00 不同，以實際租車紀錄為準。</p>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section class="section" id="reconcile">
+        <div class="shell">
+          <div class="eyebrow">04 / Reconciliation</div>
+          <h2 class="section-title">還需要核對的細節。</h2>
+          <p class="section-intro">以下保留來源 Markdown 的待核對事項，不擅自以行程規劃取代實際收據。</p>
+          <ul class="audit-list">
+            <li><strong>01 · 還車時間</strong>租車明細為預定 10/15 20:00、實際 19:57；與 Guidebook 的 19:00 不同。</li>
+            <li><strong>02 · 加油金額</strong>實付 ¥5,100；31.35 L × ¥163/L = ¥5,110.05，約差 ¥10，待收據核對。</li>
+            <li><strong>03 · 河口湖天鵝船</strong>¥2,000 已計入 Day 02，但先前備考「停車／點心等」與項目不一致。</li>
+          </ul>
+          <div class="report-card" style="margin-top:20px">
+            <h3>尚待補入的明細</h3>
+            <p class="caption">以下清單隨帳本修改自動更新。按項目可跳到對應日期。</p>
+            <div id="pending-list" class="pending-list"></div>
+          </div>
+          <div class="notice">目前總額是「已知支出」，不是最終完整旅費。PayPay 儲值屬於資金移轉，若將來使用 PayPay 消費，請另外記錄實際付款項目，避免重複加總。</div>
+          <div class="tool-panel">
+            <div><strong>完成對帳後，記得保留備份</strong>
+              <p>瀏覽器內的修改可能因清除網站資料或更換電腦而遺失。</p>
+            </div>
+            <div class="tool-actions">
+              <button type="button" class="pill-btn" id="reset-data">重設為網站預設資料</button>
+              <button type="button" class="pill-btn" data-export-json>備份 JSON</button>
+              <button type="button" class="pill-btn primary" id="print-page">列印／存成 PDF</button>
+            </div>
+          </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="shell footer-inner"><span>Tokyo · Fuji Family Road Ledger · 2026</span><span
+          class="links">資料來源：Tokyo_Fuji_2026_旅程費用結算_更新版.md　·　<a href="#top">回到首頁 ↑</a></span></div>
+    </footer>
+    <dialog id="entry-dialog" class="dialog" aria-labelledby="dialog-title">
+      <form id="entry-form" novalidate>
+        <h2 id="dialog-title">編輯費用明細</h2>
+        <p>金額留空代表「待補」；「未消費」不計入總額。已合併住宿與儲值也不列入消費總額。</p>
+        <div class="form-grid">
+          <div class="field full"><label for="field-name">商店／項目</label><input id="field-name" name="name" required
+              maxlength="160"></div>
+          <div class="field"><label for="field-day">日期</label><select id="field-day" name="day"></select></div>
+          <div class="field"><label for="field-cat">類別</label><select id="field-cat" name="category"></select></div>
+          <div class="field"><label for="field-status">記帳狀態</label><select id="field-status" name="status">
+              <option value="known">已知支出</option>
+              <option value="pending">待補</option>
+              <option value="unspent">未消費</option>
+              <option value="merged">已合併／不重複</option>
+              <option value="transfer">儲值／資金移轉</option>
+            </select></div>
+          <div class="field"><label for="field-amount">原始實付金額</label><input id="field-amount" name="amount"
+              type="number" step="1" inputmode="numeric" placeholder="尚未確認可留空"><span class="form-help">請輸入整數，不需要 ¥
+              或逗號。</span></div>
+          <div class="field"><label for="field-currency">金額幣別</label><select id="field-currency" name="currency"><option value="JPY">JPY · 日圓 ¥</option><option value="NTD">NTD · 新臺幣 NT$</option></select></div>
+          <div class="field full"><span id="amount-preview" class="conversion-preview" aria-live="polite"></span></div>
+          <div class="field full"><label for="field-note">備註／收據</label><textarea id="field-note" name="note"
+              maxlength="600"></textarea></div>
+        </div>
+        <div class="dialog-actions"><button type="button" id="delete-entry" class="quiet-btn">刪除這筆</button>
+          <div class="right"><button type="button" id="cancel-entry" class="quiet-btn">取消</button><button type="submit"
+              class="pill-btn primary">儲存明細</button></div>
+        </div>
+      </form>
+    </dialog>
+    <script type="application/json"
+      id="initial-ledger">{"version":2,"source":"Tokyo_Fuji_2026_旅程費用結算_更新版.md","days":[{"id":0,"date":"10/11（日）","title":"10/11（日）出發前住宿","short":"關西機場周邊 · 行前住宿","brief":"前泊與出發準備"},{"id":1,"date":"10/12（一）","title":"10/12（一）成田 → 海老名 SA → 御殿場","short":"成田 → 海老名 SA → 御殿場","brief":"機票、租車、御殿場住宿與晚餐"},{"id":2,"date":"10/13（二）","title":"10/13（二）御殿場 → Safari → Highland Resort → 河口湖","short":"御殿場 → Safari → Highland Resort → 河口湖","brief":"Safari、河口湖與親子晚餐"},{"id":3,"date":"10/14（三）","title":"10/14（三）富士急 Highland・Thomas Land","short":"富士急 Highland · Thomas Land","brief":"Thomas Land、餐飲與兩晚住宿"},{"id":4,"date":"10/15（四）","title":"10/15（四）富士五湖 → 成田購物 → Toyota 還車","short":"富士五湖 → 成田購物 → Toyota 還車","brief":"返程高速、購物、加油與成田住宿"},{"id":5,"date":"10/16（五）","title":"10/16（五）成田 → 關西 → 高雄","short":"成田 → 關西 → 高雄","brief":"返程機票與消費紀錄"}],"entries":[{"id":"base-0-1","day":0,"name":"izumisano center Hotel","category":"住宿","rawCategory":"住宿","amount":5318,"status":"known","note":"宿泊 Agoda","currency":"JPY"},{"id":"base-1-1","day":1,"name":"関西旅日記 第2ターミナル国内線","category":"購物","rawCategory":"購物","amount":756,"status":"known","note":"生八橋","currency":"JPY"},{"id":"base-1-2","day":1,"name":"KHH→NRT","category":"交通","rawCategory":"交通／機票","amount":null,"status":"merged","note":"Day 05","currency":"JPY"},{"id":"base-1-3","day":1,"name":"KIX→NRT","category":"交通","rawCategory":"交通／機票","amount":10450,"status":"known","note":"Peach","currency":"JPY"},{"id":"base-1-4","day":1,"name":"Toyota Rent a Car","category":"交通","rawCategory":"交通／租車","amount":61441,"status":"known","note":"全期租車，詳見下方","currency":"JPY"},{"id":"base-1-5","day":1,"name":"成田機場 T2 P2 停車費","category":"交通","rawCategory":"交通／停車","amount":520,"status":"known","note":"P2 北入口","currency":"JPY"},{"id":"base-1-6","day":1,"name":"高速公路 ETC","category":"交通","rawCategory":"交通","amount":null,"status":"pending","note":"成田 → 御殿場","currency":"JPY"},{"id":"base-1-7","day":1,"name":"EXPASA 海老名（下り）","category":"餐飲","rawCategory":"餐飲","amount":null,"status":"merged","note":"","currency":"JPY"},{"id":"base-1-8","day":1,"name":"御殿場 Premium Outlets","category":"購物","rawCategory":"購物","amount":null,"status":"pending","note":"購物及其他消費","currency":"JPY"},{"id":"base-1-9","day":1,"name":"SALON GINZA SABOU...","category":"餐飲","rawCategory":"餐飲","amount":2200,"status":"known","note":"晚餐 kz","currency":"JPY"},{"id":"base-1-10","day":1,"name":"SALON GINZA SABOU...","category":"餐飲","rawCategory":"餐飲","amount":2805,"status":"known","note":"晚餐 Anti","currency":"JPY"},{"id":"base-1-11","day":1,"name":"SALON GINZA SABOU...","category":"餐飲","rawCategory":"餐飲","amount":1320,"status":"known","note":"晚餐 kk","currency":"JPY"},{"id":"base-1-12","day":1,"name":"Dormy Inn御殿場","category":"住宿","rawCategory":"住宿","amount":16844,"status":"known","note":"宿泊 Agoda","currency":"JPY"},{"id":"base-1-13","day":1,"name":"ファミリーマート御殿場東山","category":"餐飲","rawCategory":"餐飲","amount":2191,"status":"known","note":"隔天早餐","currency":"JPY"},{"id":"starbucks-20261012","day":1,"name":"Starbucks 成田第二ターミナル","category":"餐飲","rawCategory":"餐飲","amount":614,"currency":"JPY","status":"known","note":"13:25 grande チャイティーラテ"},{"id":"base-2-5","day":2,"name":"Highland Resort 第一晚","category":"住宿","rawCategory":"住宿","amount":null,"status":"merged","note":"包含在 Day 03 記錄的 10/13–10/14 兩晚房費","currency":"JPY"},{"id":"base-2-6","day":2,"name":"河口湖天鵝船","category":"活動／門票","rawCategory":"活動／門票","amount":2000,"status":"known","note":"原備考寫「停車／點心等」，與項目不符，待核對","currency":"JPY"},{"id":"base-2-7","day":2,"name":"ほうとう蔵 歩成 - 河口湖店","category":"餐飲","rawCategory":"餐飲","amount":5148,"status":"known","note":"午餐","currency":"JPY"},{"id":"base-2-8","day":2,"name":"ローソン 富士吉田新屋","category":"餐飲","rawCategory":"餐飲","amount":2379,"status":"known","note":"晚餐（泡湯回程）","currency":"JPY"},{"id":"base-2-9","day":2,"name":"ハイランドリゾートマカロニ","category":"餐飲","rawCategory":"餐飲","amount":1700,"status":"known","note":"宵夜","currency":"JPY"},{"id":"base-2-10","day":2,"name":"其他 ETC／停車","category":"交通","rawCategory":"交通","amount":null,"status":"pending","note":"如有","currency":"JPY"},{"id":"starbucks-20261013","day":2,"name":"Starbucks 富士急ハイランド","category":"餐飲","rawCategory":"餐飲","amount":614,"currency":"JPY","status":"known","note":"17:34 grande チャイティーラテ"},{"id":"base-3-1","day":3,"name":"Highland Resort 早餐／其他餐飲","category":"餐飲","rawCategory":"餐飲","amount":null,"status":"merged","note":"","currency":"JPY"},{"id":"base-3-2","day":3,"name":"富士急ハイランドチケット","category":"活動／門票","rawCategory":"活動／門票","amount":7500,"status":"known","note":"大人 ¥3,500、大人 ¥0、子供 ¥2,000 × 2","currency":"JPY"},{"id":"base-3-3","day":3,"name":"トーマスランド アトラクション","category":"活動／門票","rawCategory":"活動／門票","amount":500,"status":"known","note":"第 1 筆","currency":"JPY"},{"id":"base-3-4","day":3,"name":"トーマスランド アトラクション","category":"活動／門票","rawCategory":"活動／門票","amount":500,"status":"known","note":"第 2 筆","currency":"JPY"},{"id":"base-3-5","day":3,"name":"トーマスランド アトラクション","category":"活動／門票","rawCategory":"活動／門票","amount":500,"status":"known","note":"第 3 筆","currency":"JPY"},{"id":"base-3-6","day":3,"name":"ティドマス","category":"活動／門票","rawCategory":"活動／照片","amount":1400,"status":"known","note":"family photo","currency":"JPY"},{"id":"base-3-7","day":3,"name":"フジヤマ写真館","category":"餐飲","rawCategory":"餐飲","amount":600,"status":"known","note":"31 冰淇淋","currency":"JPY"},{"id":"base-3-8","day":3,"name":"かっぱ寿司 河口湖インター店","category":"餐飲","rawCategory":"餐飲","amount":4575,"status":"known","note":"","currency":"JPY"},{"id":"base-3-9","day":3,"name":"ハイランドリゾートマカロニ","category":"餐飲","rawCategory":"餐飲","amount":8310,"status":"known","note":"晚餐 pasta × 2、pizza × 1","currency":"JPY"},{"id":"base-3-10","day":3,"name":"富士急ハイランドリゾート","category":"住宿","rawCategory":"住宿","amount":51137,"status":"known","note":"KKday，2 泊（10/13–10/14）","currency":"JPY"},{"id":"base-3-11","day":3,"name":"其他設施／伴手禮","category":"購物","rawCategory":"購物／活動","amount":null,"status":"merged","note":"","currency":"JPY"},{"id":"base-4-1","day":4,"name":"高速公路 ETC","category":"交通","rawCategory":"交通","amount":null,"status":"pending","note":"富士五湖 → 成田","currency":"JPY"},{"id":"base-4-3","day":4,"name":"Birthday","category":"購物","rawCategory":"購物","amount":null,"status":"pending","note":"","currency":"JPY"},{"id":"base-4-4","day":4,"name":"AEON Market","category":"購物","rawCategory":"購物／食品","amount":1063,"status":"known","note":"隔天早餐；依原表歸類購物","currency":"JPY"},{"id":"base-4-5","day":4,"name":"AEON MALL 其他購物","category":"購物","rawCategory":"購物","amount":null,"status":"pending","note":"如有","currency":"JPY"},{"id":"base-4-6","day":4,"name":"スシロー 成田店","category":"餐飲","rawCategory":"餐飲","amount":4900,"status":"known","note":"","currency":"JPY"},{"id":"base-4-7","day":4,"name":"レギュラーガソリン","category":"交通","rawCategory":"交通／油資","amount":5100,"status":"known","note":"31.35 L @ ¥163/L，19:51；金額與乘積有約 ¥10 差異，待核對","currency":"JPY"},{"id":"base-4-8","day":4,"name":"東横INN 成田","category":"住宿","rawCategory":"住宿","amount":9100,"status":"known","note":"宿泊","currency":"JPY"},{"id":"base-4-9","day":4,"name":"Toyota 還車追加費","category":"交通","rawCategory":"交通","amount":null,"status":"merged","note":"租車本金已列 Day 01","currency":"JPY"},{"id":"base-4-10","day":4,"name":"其他停車／交通","category":"交通","rawCategory":"交通","amount":null,"status":"merged","note":"","currency":"JPY"},{"id":"new-1792296775034-64364","day":4,"name":"えびせんべいの里 御殿場店","category":"餐飲","rawCategory":"餐飲","amount":10000,"status":"known","note":"試食コーナーでは約20種類のおせんべいを試食することができます","currency":"JPY"},{"id":"starbucks-20261015","day":4,"name":"Starbucks イオンモール成田","category":"餐飲","rawCategory":"餐飲","amount":663,"currency":"JPY","status":"known","note":"17:34 venti チャイティーラテ"},{"id":"base-5-1","day":5,"name":"NRT→KIX","category":"交通","rawCategory":"交通／機票","amount":11140,"status":"known","note":"Jetstar, 大人x1","currency":"JPY"},{"id":"base-5-2","day":5,"name":"KIX→KHH","category":"交通","rawCategory":"交通／機票","amount":116885,"status":"known","note":"Tiger Air 大人 x1, 小孩x2","currency":"JPY"}],"rental":{"plate":"品川 302 わ 4768","class":"SUV1","model":"ヤリス クロス（YARIS CROSS）","base":59268,"memberDiscount":-5927,"miles":-1250,"coverage":4400,"options":4950,"total":61441,"taxIncluded":5587,"startPlanned":"10/12 13:00","startActual":"10/12 13:00","endPlanned":"10/15 20:00","endActual":"10/15 19:57","odometerStart":53304,"odometerEnd":53781},"exchangeRate":0.21,"displayCurrency":"JPY","updatedAt":"2026-10-18T09:08:52Z","exportedAt":"2026-10-18T09:08:52Z"}</script>
+    <script>
+(function () {
+  'use strict';
+  const INITIAL = JSON.parse(document.getElementById('initial-ledger').textContent);
+  const KEY = 'tokyo-fuji-expense-ledger-2026-v2';
+  const THEME_KEY = 'tokyo-fuji-expense-theme';
+  const DATA_FILE = 'Tokyo_Fuji_2026_旅程費用結算_data.json';
+  const CATEGORIES = ['住宿', '交通', '餐飲', '活動／門票', '購物', '其他', '儲值'];
+  const STATUSES = ['known', 'pending', 'unspent', 'merged', 'transfer'];
+  const COLORS = {'住宿':'var(--sage)','交通':'var(--terracotta)','餐飲':'var(--mustard)','活動／門票':'#a17c70','購物':'#8e9180','其他':'var(--chart-other)'};
+  const DAYS = INITIAL.days;
+  const $ = selector => document.querySelector(selector);
+  const storage = {
+    get(k) {try {return localStorage.getItem(k)} catch(e) {return null}},
+    set(k,v) {try {localStorage.setItem(k,v);return true} catch(e) {return false}},
+    remove(k) {try {localStorage.removeItem(k)} catch(e) {}}
+  };
+  const esc = s => String(s ?? '').replace(/[&<>"']/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const validRate = n => Number.isFinite(n) && n>0 && n<=1000;
+  let base = null, entries = [], exchangeRate=.21, displayCurrency='JPY', editingId=null;
+  let defaultFrom='HTML 內嵌備援', baseUpdatedAt=null, localSavedAt=null, localIsOutdated=false;
+  let usingLocal=false, siteLoadError=false, localCompareUnknown=false, volatileDraft=false;
+  const stamp = () => new Date().toISOString();
+  const dateLabel = raw => {
+    if (!raw) return '未記錄';
+    const d=new Date(raw);
+    if (Number.isNaN(d.getTime())) return '未記錄';
+    return new Intl.DateTimeFormat('zh-TW',{year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',hour12:false,timeZone:'Asia/Taipei',timeZoneName:'short'}).format(d);
+  };
+  function validateEntries(items) {
+    if (!Array.isArray(items) || items.length>2000) throw new Error('明細格式或筆數不正確');
+    const ids=new Set();
+    return items.map((x,i)=>{
+      if (!x || typeof x.name!=='string' || !Number.isInteger(Number(x.day)) || Number(x.day)<0 || Number(x.day)>5 || !CATEGORIES.includes(x.category) || !STATUSES.includes(x.status)) throw new Error('明細欄位不正確');
+      const id=String(x.id||('import-'+i));if(ids.has(id))throw new Error('重複明細 ID');ids.add(id);
+      const currency=x.currency??'JPY';if(!['JPY','NTD'].includes(currency))throw new Error('不支援的幣別');
+      let amount=x.amount===null||x.amount===undefined||x.amount===''?null:Number(x.amount);
+      if(amount!==null&&(!Number.isFinite(amount)||amount<0||amount>1e10||Math.abs(amount*100-Math.round(amount*100))>1e-5))throw new Error('金額不正確');
+      let status=x.category==='儲值'&&x.status==='known'?'transfer':x.status;
+      if(['known','transfer'].includes(status)&&amount===null)throw new Error('已知金額不能為空');
+      if(['pending','unspent','merged'].includes(status))amount=null;
+      return {id,day:Number(x.day),name:x.name.slice(0,160),category:x.category,rawCategory:String(x.rawCategory||x.category).slice(0,80),amount,currency,status,note:String(x.note||'').slice(0,600)};
+    });
+  }
+  function normalize(obj) {
+    if(!obj||![1,2].includes(obj.version)||!Array.isArray(obj.entries))throw new Error('需要版本 1 或 2 的 JSON');
+    const rate=obj.exchangeRate===undefined?.21:Number(obj.exchangeRate);
+    if(!validRate(rate))throw new Error('匯率不正確');
+    return {entries:validateEntries(obj.entries),exchangeRate:rate,displayCurrency:obj.displayCurrency==='NTD'?'NTD':'JPY',updatedAt:obj.updatedAt||obj.exportedAt||null};
+  }
+  function fingerprint(obj){return JSON.stringify([obj.entries,obj.exchangeRate]);}
+  function setTheme(t){document.documentElement.dataset.theme=t;$('#theme-toggle').textContent=t==='dark'?'Dark / Light':'Light / Dark';storage.set(THEME_KEY,t);}
+  function rawValue(x,currency){if(x.amount===null)return 0;if(x.currency===currency)return Number(x.amount);return currency==='JPY'?x.amount/exchangeRate:x.amount*exchangeRate;}
+  function money(n,currency){const num=Math.round(Number(n)||0);return currency==='JPY'?'¥'+num.toLocaleString('ja-JP'):'NT$'+num.toLocaleString('zh-TW');}
+  function fmt(n){return money(n,displayCurrency);}
+  function isKnown(x){return x.status==='known'&&x.category!=='儲值'&&Number.isFinite(x.amount);}
+  function expense(list,currency=displayCurrency){return list.reduce((s,x)=>s+(isKnown(x)?rawValue(x,currency):0),0);}
+  function transfer(list,currency=displayCurrency){return list.reduce((s,x)=>s+(x.status==='transfer'||x.category==='儲值'?rawValue(x,currency):0),0);}
+  function daySum(day){return expense(entries.filter(x=>x.day===day));}
+  function updateProvenance(){
+    const label=$('#data-source-label'),time=$('#data-source-updated'),note=$('#data-source-note');
+    if(volatileDraft){
+      label.textContent='未儲存的頁面修改';
+      time.textContent='本次修改：'+dateLabel(localSavedAt);
+      note.textContent='瀏覽器無法儲存這次修改；重新整理可能遺失。請立即匯出 JSON 備份。';
+      note.classList.add('warning');
+    }else if(usingLocal){
+      label.textContent='本機草稿（localStorage）';
+      time.textContent='本機最後儲存：'+dateLabel(localSavedAt);
+      note.textContent=localIsOutdated?'網站預設 JSON 已更新，但目前仍顯示本機草稿。請先匯出備份，再使用「重設為網站預設資料」套用新版。':localCompareUnknown?'本機草稿沒有記錄來源版本，無法判斷是否與網站 JSON 相同。建議先備份。':'這是此瀏覽器的資料，不代表已同步至 GitHub。網站正式資料：'+defaultFrom+'（更新時間 '+dateLabel(baseUpdatedAt)+'）。';
+      note.classList.toggle('warning',localIsOutdated||localCompareUnknown);
+    }else{
+      label.textContent=defaultFrom;
+      time.textContent='資料更新時間：'+dateLabel(baseUpdatedAt);
+      note.textContent=siteLoadError?'外部 JSON 無法讀取，已使用 HTML 內嵌備援。請確認 JSON 檔名、位置與網路連線。':defaultFrom==='HTML 內嵌備援'?'目前使用 HTML 內嵌資料（例如離線開啟）；未讀取 GitHub JSON。':'目前使用網站發布的 JSON；編輯後將切換成此瀏覽器的本機草稿。';
+      note.classList.toggle('warning',siteLoadError);
+    }
+  }
+  function saveStatus(t){$('#save-status').textContent=t;}
+  function persist(){
+    const savedAt=stamp();
+    const payload={version:2,baseFingerprint:fingerprint(base),savedAt,exchangeRate,displayCurrency,entries};
+    const ok=storage.set(KEY,JSON.stringify(payload));
+    if(ok){usingLocal=true;volatileDraft=false;localSavedAt=savedAt;localIsOutdated=false;localCompareUnknown=false;}
+    else {volatileDraft=true;localSavedAt=savedAt;}
+    saveStatus(ok?'已儲存於此瀏覽器（非 Git）；發布變更請匯出 JSON 並更新 Git 中的資料檔案。':'瀏覽器無法儲存，請匯出 JSON 備份。');
+    updateProvenance();return ok;
+  }
+  function bars(selector,values,colors){const max=Math.max(1,...values.map(x=>x.value));$(selector).innerHTML=values.map(x=>`<div class="bar-item"><span class="bar-label">${esc(x.label)}</span><div class="bar-track" aria-label="${esc(x.label)} ${esc(fmt(x.value))}"><div class="bar-fill" style="width:${Math.max(0,Math.min(100,100*x.value/max))}%;background:${colors[x.key]||'var(--sage)'}"></div></div><span class="bar-value">${fmt(x.value)}</span></div>`).join('');}
+  function renderOverview(){
+    const grand=expense(entries),trip=expense(entries.filter(x=>x.day!==0));
+    const other=displayCurrency==='JPY'?'NTD':'JPY';
+    const pending=entries.filter(x=>x.status==='pending').length,known=entries.filter(isKnown).length;
+    $('#cover-grand-primary').textContent=displayCurrency+' '+fmt(grand);
+    $('#cover-grand-secondary').textContent=other+' '+money(expense(entries,other),other);
+    $('#cover-rate').textContent='手動匯率：1 JPY = '+exchangeRate+' NTD（非即時匯率）';
+    $('#sum-all').textContent=fmt(grand);$('#sum-trip').textContent=fmt(trip);
+    $('#sum-pending').textContent=String(pending);$('#sum-transfer').textContent=fmt(transfer(entries));
+    bars('#category-bars',CATEGORIES.filter(x=>x!=='儲值').map(c=>({key:c,label:c,value:expense(entries.filter(x=>x.category===c))})),COLORS);
+    bars('#daily-bars',DAYS.map(d=>({key:String(d.id),label:'10/'+String(11+d.id).padStart(2,'0'),value:daySum(d.id)})),{});
+    $('#progress-label').textContent=known+' 筆已知 / '+pending+' 筆待補';
+    $('#progress-bar').style.width=(known+pending?100*known/(known+pending):100)+'%';
+  }
+  function renderAgenda(){$('#agenda-cards').innerHTML=DAYS.map(d=>`<a class="agenda-card" href="#day-${d.id}"><div class="agenda-no">${String(d.id).padStart(2,'0')}</div><h3>${esc(d.title)}</h3><p>${esc(d.brief)}</p><strong class="agenda-total">${fmt(daySum(d.id))}</strong></a>`).join('');}
+  function amountLabel(x){
+    if(x.status==='merged')return '<span class="item-amount merged">已合併</span>';
+    if(x.status==='pending')return '<span class="item-amount pending">待補</span>';
+    if(x.status==='unspent')return '<span class="item-amount unspent">未消費</span>';
+    const isTransfer=x.status==='transfer'||x.category==='儲值';
+    const source=x.currency!==displayCurrency?`<small class="amount-source">原始 ${x.currency} ${money(x.amount,x.currency)}</small>`:'';
+    return `<span class="item-amount ${isTransfer?'transfer':''}">${money(rawValue(x,displayCurrency),displayCurrency)}${source}${isTransfer?'<small class="amount-source">儲值 · 不計入消費</small>':''}</span>`;
+  }
+  function renderDays(){
+    $('#day-sections').innerHTML=DAYS.map(d=>{
+      const rows=entries.filter(x=>x.day===d.id),pending=rows.filter(x=>x.status==='pending').length;
+      return `<section class="day-section" id="day-${d.id}"><div class="shell">
+      <div class="day-head"><div><div class="day-no">Day ${String(d.id).padStart(2,'0')} · ${esc(d.date)}</div><h2>${esc(d.short)}</h2><p>${esc(d.brief)}</p></div><div class="day-side"><strong>${fmt(daySum(d.id))}</strong><small>已知支出 · ${pending} 筆待補</small></div></div>
+      <div class="ledger" role="table" aria-label="${esc(d.title)} 費用明細"><div class="ledger-head" role="row"><span>商店／項目</span><span>類別</span><span style="text-align:right">金額</span><span>備註／收據</span><span></span></div>
+      ${rows.length?rows.map(x=>`<div class="ledger-row" role="row" id="entry-${esc(x.id)}"><div class="item-name" role="cell">${esc(x.name)}</div><div class="item-category" role="cell"><span class="cat-tag" title="來源分類：${esc(x.rawCategory)}">${esc(x.category)}</span></div>${amountLabel(x)}<div class="item-note" role="cell">${esc(x.note)||'<span class="muted">—</span>'}</div><button type="button" class="edit-btn" data-edit="${esc(x.id)}" aria-label="編輯 ${esc(x.name)}">編輯</button></div>`).join(''):'<div class="ledger-empty">尚無明細，請新增一筆。</div>'}</div>
+      <div class="day-footer"><span class="minor">${rows.filter(isKnown).length} 筆已知支出 · ${pending} 筆待補${rows.some(x=>x.status==='merged')?' · 已合併項目':''}${rows.some(x=>x.status==='transfer')?' · 儲值另列':''}</span><button class="pill-btn primary" type="button" data-add="${d.id}">＋ 新增一筆費用</button></div><a class="backtop" href="#agenda">↑ Back to Agenda</a></div></section>`;
+    }).join('');
+  }
+  function renderPending(){const items=entries.filter(x=>x.status==='pending');$('#pending-list').innerHTML=items.length?items.map(x=>`<a class="pending-link" href="#entry-${esc(x.id)}"><strong>${esc(x.name)}</strong><span>Day ${String(x.day).padStart(2,'0')} ↗</span></a>`).join(''):'<p class="muted">目前沒有待補項目。</p>';}
+  function renderRental(){
+    const factor=displayCurrency==='JPY'?1:exchangeRate;
+    document.querySelectorAll('[data-jpy]').forEach(el=>{el.textContent=money(Number(el.dataset.jpy)*factor,displayCurrency).replace('¥-','−¥').replace('NT$-','−NT$');});
+    const equation=document.querySelector('#rental-equation');
+    if(equation)equation.textContent=[59268,-5927,-1250,4400,4950].map((n,i)=>(i?(n<0?' − ':' + '):'')+money(Math.abs(n)*factor,displayCurrency)).join('')+' = '+money(61441*factor,displayCurrency);
+  }
+  function render(){
+    $('#currency-toggle').textContent='顯示：'+displayCurrency+' ⇄';
+    $('#rate-input').value=exchangeRate;
+    renderOverview();renderAgenda();renderDays();renderPending();renderRental();updateProvenance();
+  }
+  function syncPreview(){
+    const currency=$('#field-currency').value,s=$('#field-amount').value.trim(),status=$('#field-status').value;
+    if(['pending','merged','unspent'].includes(status)){$('#amount-preview').textContent='不計入金額，無需輸入。';return;}
+    if(!s){$('#amount-preview').textContent='請輸入原始實付金額；切換幣別不會修改數字。';return;}
+    const n=Number(s),converted=currency==='JPY'?n*exchangeRate:n/exchangeRate;
+    $('#amount-preview').textContent=Number.isFinite(n)&&n>=0?`約 ${money(converted,currency==='JPY'?'NTD':'JPY')}（1 JPY = ${exchangeRate} NTD）`:'請輸入有效金額';
+  }
+  function syncAmount(){const disabled=['merged','pending','unspent'].includes($('#field-status').value);$('#field-amount').disabled=disabled;$('#field-currency').disabled=disabled;if(disabled)$('#field-amount').value='';syncPreview();}
+  const dlg=$('#entry-dialog');
+  function openDialog(id,day){
+    editingId=id||null;
+    const x=id?entries.find(e=>e.id===id):{name:'',day,category:'餐飲',status:'known',amount:null,currency:displayCurrency,note:''};if(!x)return;
+    $('#dialog-title').textContent=id?'編輯費用明細':'新增費用明細';
+    $('#field-name').value=x.name;$('#field-day').value=x.day;$('#field-cat').value=x.category;$('#field-status').value=x.status;
+    $('#field-amount').value=x.amount===null?'':x.amount;$('#field-currency').value=x.currency;$('#field-note').value=x.note;
+    $('#delete-entry').style.visibility=id?'visible':'hidden';syncAmount();dlg.showModal();$('#field-name').focus();
+  }
+  function makeExport(){return {version:2,source:INITIAL.source,exportedAt:stamp(),updatedAt:usingLocal?(localSavedAt||stamp()):(baseUpdatedAt||stamp()),exchangeRate,displayCurrency,entries};}
+  function download(name,content,type){const blob=new Blob([content],{type}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);}
+  function exportJSON(){download(DATA_FILE,JSON.stringify(makeExport(),null,2)+'\n','application/json;charset=utf-8');}
+  function exportMD(){
+    const other=displayCurrency==='JPY'?'NTD':'JPY';let s='# 東京・富士五湖親子自駕｜旅程費用結算表\n\n';
+    s+='**主要行程：** 2026/10/12–10/16　**前泊：** 2026/10/11　**顯示幣別：** '+displayCurrency+'\n\n';
+    s+='**手動匯率：** 1 JPY = '+exchangeRate+' NTD（非即時匯率）\n\n';
+    s+='**已知支出（含前泊）：** '+fmt(expense(entries))+'（約 '+money(expense(entries,other),other)+'）　**主行程：** '+fmt(expense(entries.filter(x=>x.day!==0)))+'\n\n';
+    s+='> 每筆保留原始幣別；待補、已合併與儲值不計入消費總額。\n\n';
+    const clean=v=>String(v??'').replace(/\|/g,'\\|').replace(/\r?\n/g,' ');
+    for(const d of DAYS){s+='## Day '+String(d.id).padStart(2,'0')+'｜'+d.title+'\n\n| 商店／項目 | 類別 | 原始金額 | '+displayCurrency+' 換算 | 備考 |\n|---|---|---:|---:|---|\n';
+      for(const x of entries.filter(x=>x.day===d.id)){
+        const state=x.status==='pending'?'待補':x.status==='unspent'?'未消費':x.status==='merged'?'已合併':null;
+        s+='| '+clean(x.name)+' | '+clean(x.rawCategory||x.category)+' | '+(state||money(x.amount,x.currency))+' | '+(state||(money(rawValue(x,displayCurrency),displayCurrency)+(x.status==='transfer'?'（儲值）':'')))+' | '+clean(x.note)+' |\n';
+      }s+='| **本日已知消費小計** | | | **'+fmt(daySum(d.id))+'** | |\n\n';}
+    s+='## 分類統計（含前泊）\n\n| 類別 | 已知支出 |\n|---|---:|\n';
+    for(const c of CATEGORIES.filter(x=>x!=='儲值'))s+='| '+c+' | '+fmt(expense(entries.filter(x=>x.category===c)))+' |\n';
+    s+='| **合計** | **'+fmt(expense(entries))+'** |\n\n## Toyota Rent a Car\n\n- 車型：ヤリス クロス（YARIS CROSS），SUV1，品川 302 わ 4768\n- 租車原始金額：¥61,441（已記 Day 01）\n- 10/12 13:00 出發；10/15 19:57 歸還；行駛 477 km\n';
+    download('Tokyo_Fuji_2026_旅程費用結算_匯出.md',s,'text/markdown;charset=utf-8');
+  }
+  function exportCSV(){const quote=v=>'"'+String(v??'').replace(/"/g,'""')+'"';const rows=[['日期','Day','商店／項目','類別','來源分類','原始金額','原始幣別','JPY換算','NTD換算','記帳狀態','備註','使用匯率 JPY→NTD']];
+    for(const x of entries){const d=DAYS.find(z=>z.id===x.day);rows.push([d?.date||'',x.day,x.name,x.category,x.rawCategory,x.amount??'',x.currency,x.amount===null?'':Number(rawValue(x,'JPY').toFixed(2)),x.amount===null?'':Number(rawValue(x,'NTD').toFixed(2)),x.status,x.note,exchangeRate]);}
+    download('Tokyo_Fuji_2026_旅程費用結算_匯出.csv','\ufeff'+rows.map(r=>r.map(quote).join(',')).join('\r\n'),'text/csv;charset=utf-8');
+  }
+  async function initialize(){
+    base=normalize(INITIAL);baseUpdatedAt=base.updatedAt;
+    if(location.protocol==='http:'||location.protocol==='https:'){
+      try{const response=await fetch(DATA_FILE,{cache:'no-cache'});if(!response.ok)throw new Error('HTTP '+response.status);base=normalize(await response.json());baseUpdatedAt=base.updatedAt;defaultFrom='網站 JSON（GitHub Pages）';}
+      catch(e){siteLoadError=true;console.info('External JSON unavailable, using embedded fallback',e);}
+    }
+    const saved=storage.get(KEY);
+    if(saved){try{
+      const obj=JSON.parse(saved),local=normalize(obj);entries=local.entries;exchangeRate=local.exchangeRate;displayCurrency=local.displayCurrency;
+      usingLocal=true;localSavedAt=obj.savedAt||null;
+      localCompareUnknown=!obj.baseFingerprint;localIsOutdated=!!obj.baseFingerprint&&obj.baseFingerprint!==fingerprint(base);
+      saveStatus(localIsOutdated?'網站預設 JSON 已更新；目前仍顯示本機草稿。請先備份，再重設為網站預設。':'目前使用本機編輯資料；修改不會自動寫回 Git。');
+    }catch(e){console.warn('Invalid local data',e);entries=base.entries.map(x=>({...x}));exchangeRate=base.exchangeRate;displayCurrency=base.displayCurrency;saveStatus('本機資料無法讀取，已使用'+defaultFrom+'。');}}
+    else{entries=base.entries.map(x=>({...x}));exchangeRate=base.exchangeRate;displayCurrency=base.displayCurrency;saveStatus('目前使用'+defaultFrom+'；修改後會自動儲存在此瀏覽器。');}
+    render();
+  }
+  $('#field-day').innerHTML=DAYS.map(d=>`<option value="${d.id}">${esc(d.date)} · Day ${String(d.id).padStart(2,'0')}</option>`).join('');
+  $('#field-cat').innerHTML=CATEGORIES.map(c=>`<option value="${esc(c)}">${esc(c)}</option>`).join('');
+  const pref=window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';setTheme(storage.get(THEME_KEY)||pref);
+  $('#theme-toggle').addEventListener('click',()=>setTheme(document.documentElement.dataset.theme==='dark'?'light':'dark'));
+  $('#currency-toggle').addEventListener('click',()=>{displayCurrency=displayCurrency==='JPY'?'NTD':'JPY';persist();render();});
+  function setRate(){const n=Number($('#rate-input').value);if(!validRate(n)){alert('匯率必須大於 0。');$('#rate-input').value=exchangeRate;return;}exchangeRate=n;persist();render();syncPreview();}
+  $('#apply-rate').addEventListener('click',setRate);$('#rate-input').addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();setRate();}});
+  $('#field-status').addEventListener('change',syncAmount);$('#field-amount').addEventListener('input',syncPreview);$('#field-currency').addEventListener('change',syncPreview);
+  document.addEventListener('click',e=>{const edit=e.target.closest('[data-edit]');if(edit){openDialog(edit.dataset.edit);return;}const add=e.target.closest('[data-add]');if(add){openDialog(null,Number(add.dataset.add));}});
+  $('#cancel-entry').addEventListener('click',()=>dlg.close());
+  $('#delete-entry').addEventListener('click',()=>{if(!editingId||!confirm('確定刪除這筆費用？'))return;entries=entries.filter(x=>x.id!==editingId);persist();render();dlg.close();});
+  $('#entry-form').addEventListener('submit',e=>{
+    e.preventDefault();const name=$('#field-name').value.trim(),status=$('#field-status').value,currency=$('#field-currency').value;
+    if(!name){alert('請填寫商店或項目名稱');return;}
+    let amount=$('#field-amount').value.trim()===''?null:Number($('#field-amount').value);
+    if(['pending','merged','unspent'].includes(status))amount=null;
+    if(['known','transfer'].includes(status)&&amount===null){alert('已知支出或儲值必須填入金額。');return;}
+    if(amount!==null&&(!Number.isFinite(amount)||amount<0||amount>1e10||Math.abs(amount*100-Math.round(amount*100))>1e-5)){alert('請輸入有效金額（最多兩位小數）');return;}
+    const category=$('#field-cat').value;
+    const x={id:editingId||('new-'+Date.now()+'-'+Math.floor(Math.random()*100000)),day:Number($('#field-day').value),name,category,rawCategory:category,amount,currency,status:category==='儲值'&&status==='known'?'transfer':status,note:$('#field-note').value.trim()};
+    if(editingId){const i=entries.findIndex(v=>v.id===editingId);if(i>=0){x.rawCategory=entries[i].category===category?entries[i].rawCategory:category;entries[i]=x;}}else entries.push(x);
+    persist();render();dlg.close();
+  });
+  $('#export-md').addEventListener('click',exportMD);$('#export-csv').addEventListener('click',exportCSV);
+  document.querySelectorAll('[data-export-json]').forEach(el=>el.addEventListener('click',exportJSON));
+  $('#import-json').addEventListener('click',()=>$('#import-file').click());
+  $('#import-file').addEventListener('change',async e=>{
+    const file=e.target.files[0];if(!file)return;
+    try{const data=normalize(JSON.parse(await file.text()));if(!confirm('匯入 '+data.entries.length+' 筆資料並覆蓋目前明細、匯率和幣別？建議先備份。'))return;
+      entries=data.entries;exchangeRate=data.exchangeRate;displayCurrency=data.displayCurrency;persist();render();alert('已匯入備份。');
+    }catch(err){alert('匯入失敗：'+err.message);}finally{e.target.value='';}
+  });
+  $('#reset-data').addEventListener('click',()=>{
+    if(!confirm('恢復網站預設資料？本機修改將被覆蓋，建議先匯出 JSON 備份。'))return;
+    entries=base.entries.map(x=>({...x}));exchangeRate=base.exchangeRate;displayCurrency=base.displayCurrency;
+    storage.remove(KEY);usingLocal=false;volatileDraft=false;localSavedAt=null;localIsOutdated=false;localCompareUnknown=false;
+    saveStatus('已恢復'+defaultFrom+'。');render();
+  });
+  $('#print-page').addEventListener('click',()=>window.print());
+  initialize();
+})();
+
+    </script>
+  </body>
+
+</html>

@@ -1,6 +1,8 @@
 {
   "version": 2,
   "source": "Tokyo_Fuji_2026_旅程費用結算_更新版.md",
+  "exportedAt": "2026-10-18T09:29:17.942Z",
+  "updatedAt": "2026-10-18T09:29:17.942Z",
   "exchangeRate": 0.21,
   "displayCurrency": "JPY",
   "entries": [
@@ -11,9 +13,9 @@
       "category": "住宿",
       "rawCategory": "住宿",
       "amount": 5318,
+      "currency": "JPY",
       "status": "known",
-      "note": "宿泊 Agoda",
-      "currency": "JPY"
+      "note": "宿泊 Agoda"
     },
     {
       "id": "base-1-1",
@@ -22,9 +24,9 @@
       "category": "購物",
       "rawCategory": "購物",
       "amount": 756,
+      "currency": "JPY",
       "status": "known",
-      "note": "生八橋",
-      "currency": "JPY"
+      "note": "生八橋"
     },
     {
       "id": "base-1-2",
@@ -33,9 +35,9 @@
       "category": "交通",
       "rawCategory": "交通／機票",
       "amount": null,
+      "currency": "JPY",
       "status": "merged",
-      "note": "Day 05",
-      "currency": "JPY"
+      "note": "Day 05"
     },
     {
       "id": "base-1-3",
@@ -44,9 +46,9 @@
       "category": "交通",
       "rawCategory": "交通／機票",
       "amount": 10450,
+      "currency": "JPY",
       "status": "known",
-      "note": "Peach",
-      "currency": "JPY"
+      "note": "Peach"
     },
     {
       "id": "base-1-4",
@@ -55,9 +57,9 @@
       "category": "交通",
       "rawCategory": "交通／租車",
       "amount": 61441,
+      "currency": "JPY",
       "status": "known",
-      "note": "全期租車，詳見下方",
-      "currency": "JPY"
+      "note": "5日租車，詳見下方"
     },
     {
       "id": "base-1-5",
@@ -66,20 +68,20 @@
       "category": "交通",
       "rawCategory": "交通／停車",
       "amount": 520,
+      "currency": "JPY",
       "status": "known",
-      "note": "P2 北入口",
-      "currency": "JPY"
+      "note": "P2 北入口"
     },
     {
       "id": "base-1-6",
       "day": 1,
-      "name": "高速公路 ETC",
+      "name": "高速公路 ETC｜新空港 → 湾岸市川",
       "category": "交通",
-      "rawCategory": "交通",
-      "amount": null,
-      "status": "pending",
-      "note": "成田 → 御殿場",
-      "currency": "JPY"
+      "rawCategory": "交通／ETC",
+      "amount": 1750,
+      "currency": "JPY",
+      "status": "known",
+      "note": "14:03–14:26 · CSV：確認中 · 車輛末四碼 4768"
     },
     {
       "id": "base-1-7",
@@ -88,9 +90,9 @@
       "category": "餐飲",
       "rawCategory": "餐飲",
       "amount": null,
+      "currency": "JPY",
       "status": "merged",
-      "note": "",
-      "currency": "JPY"
+      "note": ""
     },
     {
       "id": "base-1-8",
@@ -99,9 +101,9 @@
       "category": "購物",
       "rawCategory": "購物",
       "amount": null,
+      "currency": "JPY",
       "status": "pending",
-      "note": "購物及其他消費",
-      "currency": "JPY"
+      "note": "購物及其他消費"
     },
     {
       "id": "base-1-9",
@@ -110,9 +112,9 @@
       "category": "餐飲",
       "rawCategory": "餐飲",
       "amount": 2200,
+      "currency": "JPY",
       "status": "known",
-      "note": "晚餐 kz",
-      "currency": "JPY"
+      "note": "晚餐 kz"
     },
     {
       "id": "base-1-10",
@@ -121,9 +123,9 @@
       "category": "餐飲",
       "rawCategory": "餐飲",
       "amount": 2805,
+      "currency": "JPY",
       "status": "known",
-      "note": "晚餐 Anti",
-      "currency": "JPY"
+      "note": "晚餐 Anti"
     },
     {
       "id": "base-1-11",
@@ -132,9 +134,9 @@
       "category": "餐飲",
       "rawCategory": "餐飲",
       "amount": 1320,
+      "currency": "JPY",
       "status": "known",
-      "note": "晚餐 kk",
-      "currency": "JPY"
+      "note": "晚餐 kk"
     },
     {
       "id": "base-1-12",
@@ -143,9 +145,9 @@
       "category": "住宿",
       "rawCategory": "住宿",
       "amount": 16844,
+      "currency": "JPY",
       "status": "known",
-      "note": "宿泊 Agoda",
-      "currency": "JPY"
+      "note": "宿泊 Agoda"
     },
     {
       "id": "base-1-13",
@@ -154,9 +156,9 @@
       "category": "餐飲",
       "rawCategory": "餐飲",
       "amount": 2191,
+      "currency": "JPY",
       "status": "known",
-      "note": "隔天早餐",
-      "currency": "JPY"
+      "note": "隔天早餐"
     },
     {
       "id": "starbucks-20261012",
@@ -170,15 +172,37 @@
       "note": "13:25 grande チャイティーラテ"
     },
     {
+      "id": "etc-20261012-02",
+      "day": 1,
+      "name": "高速公路 ETC｜市川本線 → 首都横浜青葉",
+      "category": "交通",
+      "rawCategory": "交通／ETC",
+      "amount": 2120,
+      "currency": "JPY",
+      "status": "known",
+      "note": "14:34–15:15 · CSV：確認中 · 車輛末四碼 4768"
+    },
+    {
+      "id": "etc-20261012-03",
+      "day": 1,
+      "name": "高速公路 ETC｜横浜青葉本線 → 御殿場",
+      "category": "交通",
+      "rawCategory": "交通／ETC",
+      "amount": 2190,
+      "currency": "JPY",
+      "status": "known",
+      "note": "15:15–16:34 · CSV：確認中 · 車輛末四碼 4768"
+    },
+    {
       "id": "base-2-5",
       "day": 2,
       "name": "Highland Resort 第一晚",
       "category": "住宿",
       "rawCategory": "住宿",
       "amount": null,
+      "currency": "JPY",
       "status": "merged",
-      "note": "包含在 Day 03 記錄的 10/13–10/14 兩晚房費",
-      "currency": "JPY"
+      "note": "包含在 Day 03 記錄的 10/13–10/14 兩晚房費"
     },
     {
       "id": "base-2-6",
@@ -187,9 +211,9 @@
       "category": "活動／門票",
       "rawCategory": "活動／門票",
       "amount": 2000,
+      "currency": "JPY",
       "status": "known",
-      "note": "原備考寫「停車／點心等」，與項目不符，待核對",
-      "currency": "JPY"
+      "note": "原備考寫「停車／點心等」，與項目不符，待核對"
     },
     {
       "id": "base-2-7",
@@ -198,9 +222,9 @@
       "category": "餐飲",
       "rawCategory": "餐飲",
       "amount": 5148,
+      "currency": "JPY",
       "status": "known",
-      "note": "午餐",
-      "currency": "JPY"
+      "note": "午餐"
     },
     {
       "id": "base-2-8",
@@ -209,9 +233,9 @@
       "category": "餐飲",
       "rawCategory": "餐飲",
       "amount": 2379,
+      "currency": "JPY",
       "status": "known",
-      "note": "晚餐（泡湯回程）",
-      "currency": "JPY"
+      "note": "晚餐（泡湯回程）"
     },
     {
       "id": "base-2-9",
@@ -220,20 +244,9 @@
       "category": "餐飲",
       "rawCategory": "餐飲",
       "amount": 1700,
+      "currency": "JPY",
       "status": "known",
-      "note": "宵夜",
-      "currency": "JPY"
-    },
-    {
-      "id": "base-2-10",
-      "day": 2,
-      "name": "其他 ETC／停車",
-      "category": "交通",
-      "rawCategory": "交通",
-      "amount": null,
-      "status": "pending",
-      "note": "如有",
-      "currency": "JPY"
+      "note": "宵夜"
     },
     {
       "id": "starbucks-20261013",
@@ -253,9 +266,9 @@
       "category": "餐飲",
       "rawCategory": "餐飲",
       "amount": null,
+      "currency": "JPY",
       "status": "merged",
-      "note": "",
-      "currency": "JPY"
+      "note": ""
     },
     {
       "id": "base-3-2",
@@ -264,9 +277,9 @@
       "category": "活動／門票",
       "rawCategory": "活動／門票",
       "amount": 7500,
+      "currency": "JPY",
       "status": "known",
-      "note": "大人 ¥3,500、大人 ¥0、子供 ¥2,000 × 2",
-      "currency": "JPY"
+      "note": "大人 ¥3,500、大人 ¥0、子供 ¥2,000 × 2"
     },
     {
       "id": "base-3-3",
@@ -275,9 +288,9 @@
       "category": "活動／門票",
       "rawCategory": "活動／門票",
       "amount": 500,
+      "currency": "JPY",
       "status": "known",
-      "note": "第 1 筆",
-      "currency": "JPY"
+      "note": "第 1 筆"
     },
     {
       "id": "base-3-4",
@@ -286,9 +299,9 @@
       "category": "活動／門票",
       "rawCategory": "活動／門票",
       "amount": 500,
+      "currency": "JPY",
       "status": "known",
-      "note": "第 2 筆",
-      "currency": "JPY"
+      "note": "第 2 筆"
     },
     {
       "id": "base-3-5",
@@ -297,9 +310,9 @@
       "category": "活動／門票",
       "rawCategory": "活動／門票",
       "amount": 500,
+      "currency": "JPY",
       "status": "known",
-      "note": "第 3 筆",
-      "currency": "JPY"
+      "note": "第 3 筆"
     },
     {
       "id": "base-3-6",
@@ -308,9 +321,9 @@
       "category": "活動／門票",
       "rawCategory": "活動／照片",
       "amount": 1400,
+      "currency": "JPY",
       "status": "known",
-      "note": "family photo",
-      "currency": "JPY"
+      "note": "family photo"
     },
     {
       "id": "base-3-7",
@@ -319,9 +332,9 @@
       "category": "餐飲",
       "rawCategory": "餐飲",
       "amount": 600,
+      "currency": "JPY",
       "status": "known",
-      "note": "31 冰淇淋",
-      "currency": "JPY"
+      "note": "31 冰淇淋"
     },
     {
       "id": "base-3-8",
@@ -330,9 +343,9 @@
       "category": "餐飲",
       "rawCategory": "餐飲",
       "amount": 4575,
+      "currency": "JPY",
       "status": "known",
-      "note": "",
-      "currency": "JPY"
+      "note": ""
     },
     {
       "id": "base-3-9",
@@ -341,9 +354,9 @@
       "category": "餐飲",
       "rawCategory": "餐飲",
       "amount": 8310,
+      "currency": "JPY",
       "status": "known",
-      "note": "晚餐 pasta × 2、pizza × 1",
-      "currency": "JPY"
+      "note": "晚餐 pasta × 2、pizza × 1"
     },
     {
       "id": "base-3-10",
@@ -352,9 +365,9 @@
       "category": "住宿",
       "rawCategory": "住宿",
       "amount": 51137,
+      "currency": "JPY",
       "status": "known",
-      "note": "KKday，2 泊（10/13–10/14）",
-      "currency": "JPY"
+      "note": "KKday，2 泊（10/13–10/14）"
     },
     {
       "id": "base-3-11",
@@ -363,20 +376,20 @@
       "category": "購物",
       "rawCategory": "購物／活動",
       "amount": null,
+      "currency": "JPY",
       "status": "merged",
-      "note": "",
-      "currency": "JPY"
+      "note": ""
     },
     {
       "id": "base-4-1",
       "day": 4,
-      "name": "高速公路 ETC",
+      "name": "高速公路 ETC｜富士吉田本線 → 須走",
       "category": "交通",
-      "rawCategory": "交通",
-      "amount": null,
-      "status": "pending",
-      "note": "富士五湖 → 成田",
-      "currency": "JPY"
+      "rawCategory": "交通／ETC",
+      "amount": 1080,
+      "currency": "JPY",
+      "status": "known",
+      "note": "11:29–11:43 · CSV：確認中 · 車輛末四碼 4768"
     },
     {
       "id": "base-4-3",
@@ -385,9 +398,9 @@
       "category": "購物",
       "rawCategory": "購物",
       "amount": null,
+      "currency": "JPY",
       "status": "pending",
-      "note": "",
-      "currency": "JPY"
+      "note": ""
     },
     {
       "id": "base-4-4",
@@ -396,9 +409,9 @@
       "category": "購物",
       "rawCategory": "購物／食品",
       "amount": 1063,
+      "currency": "JPY",
       "status": "known",
-      "note": "隔天早餐；依原表歸類購物",
-      "currency": "JPY"
+      "note": "隔天早餐；依原表歸類購物"
     },
     {
       "id": "base-4-5",
@@ -407,9 +420,9 @@
       "category": "購物",
       "rawCategory": "購物",
       "amount": null,
+      "currency": "JPY",
       "status": "pending",
-      "note": "如有",
-      "currency": "JPY"
+      "note": "如有"
     },
     {
       "id": "base-4-6",
@@ -418,9 +431,9 @@
       "category": "餐飲",
       "rawCategory": "餐飲",
       "amount": 4900,
+      "currency": "JPY",
       "status": "known",
-      "note": "",
-      "currency": "JPY"
+      "note": ""
     },
     {
       "id": "base-4-7",
@@ -429,9 +442,9 @@
       "category": "交通",
       "rawCategory": "交通／油資",
       "amount": 5100,
+      "currency": "JPY",
       "status": "known",
-      "note": "31.35 L @ ¥163/L，19:51；金額與乘積有約 ¥10 差異，待核對",
-      "currency": "JPY"
+      "note": "31.35 L @ ¥163/L，19:51；金額與乘積有約 ¥10 差異，待核對"
     },
     {
       "id": "base-4-8",
@@ -440,9 +453,9 @@
       "category": "住宿",
       "rawCategory": "住宿",
       "amount": 9100,
+      "currency": "JPY",
       "status": "known",
-      "note": "宿泊",
-      "currency": "JPY"
+      "note": "宿泊"
     },
     {
       "id": "base-4-9",
@@ -451,9 +464,9 @@
       "category": "交通",
       "rawCategory": "交通",
       "amount": null,
+      "currency": "JPY",
       "status": "merged",
-      "note": "租車本金已列 Day 01",
-      "currency": "JPY"
+      "note": "租車本金已列 Day 01"
     },
     {
       "id": "base-4-10",
@@ -462,9 +475,9 @@
       "category": "交通",
       "rawCategory": "交通",
       "amount": null,
+      "currency": "JPY",
       "status": "merged",
-      "note": "",
-      "currency": "JPY"
+      "note": ""
     },
     {
       "id": "new-1792296775034-64364",
@@ -473,9 +486,9 @@
       "category": "餐飲",
       "rawCategory": "餐飲",
       "amount": 10000,
+      "currency": "JPY",
       "status": "known",
-      "note": "試食コーナーでは約20種類のおせんべいを試食することができます",
-      "currency": "JPY"
+      "note": "試食コーナーでは約20種類のおせんべいを試食できる"
     },
     {
       "id": "starbucks-20261015",
@@ -489,15 +502,48 @@
       "note": "17:34 venti チャイティーラテ"
     },
     {
+      "id": "etc-20261015-02",
+      "day": 4,
+      "name": "高速公路 ETC｜御殿場 → 東京",
+      "category": "交通",
+      "rawCategory": "交通／ETC",
+      "amount": 2620,
+      "currency": "JPY",
+      "status": "known",
+      "note": "13:16–14:11 · CSV：確認中 · 車輛末四碼 4768"
+    },
+    {
+      "id": "etc-20261015-03",
+      "day": 4,
+      "name": "高速公路 ETC｜東名接続 → 東関道接続",
+      "category": "交通",
+      "rawCategory": "交通／ETC",
+      "amount": 1530,
+      "currency": "JPY",
+      "status": "known",
+      "note": "14:16–14:48 · CSV：確認中 · 車輛末四碼 4768"
+    },
+    {
+      "id": "etc-20261015-04",
+      "day": 4,
+      "name": "高速公路 ETC｜湾岸市川 → 富里",
+      "category": "交通",
+      "rawCategory": "交通／ETC",
+      "amount": 1450,
+      "currency": "JPY",
+      "status": "known",
+      "note": "14:54–15:13 · CSV：確認中 · 車輛末四碼 4768"
+    },
+    {
       "id": "base-5-1",
       "day": 5,
       "name": "NRT→KIX",
       "category": "交通",
       "rawCategory": "交通／機票",
       "amount": 11140,
+      "currency": "JPY",
       "status": "known",
-      "note": "Jetstar, 大人x1",
-      "currency": "JPY"
+      "note": "Jetstar, 大人x1"
     },
     {
       "id": "base-5-2",
@@ -506,11 +552,9 @@
       "category": "交通",
       "rawCategory": "交通／機票",
       "amount": 116885,
+      "currency": "JPY",
       "status": "known",
-      "note": "Tiger Air 大人 x1, 小孩x2",
-      "currency": "JPY"
+      "note": "Tiger Air 大人 x1, 小孩x2"
     }
-  ],
-  "updatedAt": "2026-10-18T09:08:52Z",
-  "exportedAt": "2026-10-18T09:08:52Z"
+  ]
 }

@@ -868,6 +868,18 @@
         font-weight: 750
       }
 
+      .etc-table-wrap {
+        overflow-x: auto
+      }
+
+      .etc-table {
+        min-width: 680px
+      }
+
+      .etc-table th:last-child {
+        text-align: right
+      }
+
       .rental-stat {
         font-family: Georgia, serif;
         font-size: 45px;
@@ -1343,23 +1355,168 @@
       }
 
       /* Multi-currency controls and provenance */
-      .exchange-panel {display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;border:1px solid var(--line);border-radius:18px;background:var(--card);padding:15px 20px;margin:22px 0 4px}
-      .exchange-copy {display:flex;flex-direction:column;gap:3px;max-width:570px;font-size:13px}
-      .exchange-copy span {font-size:11px;color:var(--muted)}
-      .exchange-controls {display:flex;gap:10px;align-items:center;flex-wrap:wrap;font-size:13px;font-weight:650}
-      .exchange-controls input {min-width:90px;width:105px;padding:8px 10px;border:1px solid var(--line);border-radius:10px;background:var(--input);color:var(--ink);font-variant-numeric:tabular-nums}
-      .conversion-preview {display:block;padding:10px 13px;border:1px solid var(--line);border-radius:10px;background:var(--soft);font-size:12px;color:var(--sage)}
-      .amount-source {display:block;color:var(--muted);font-size:10px;font-weight:500;line-height:1.4}
-      .cover-total .amount #cover-grand-secondary {font-size:.65em;color:var(--muted)}
-      .source-panel {border:1px solid var(--line);border-radius:17px;background:var(--card);padding:16px 20px;margin:14px 0 18px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
-      .source-panel-title {font-size:12px;font-weight:800;letter-spacing:.025em}
-      .source-panel-meta {display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-top:7px;font-size:12px}
-      .source-tag {display:inline-flex;align-items:center;border:1px solid var(--line);border-radius:999px;padding:3px 10px;font-weight:750;color:var(--sage);background:var(--soft)}
-      .source-time {color:var(--muted);font-variant-numeric:tabular-nums}
-      .source-note {color:var(--muted);font-size:11px;margin:7px 0 0;max-width:800px}
-      .source-note.warning {color:var(--terracotta)}
-      @media(max-width:650px) {.exchange-panel{padding:14px}.exchange-controls{width:100%}.exchange-controls input{flex:1;min-width:75px}.topbar-inner{flex-wrap:wrap;padding:7px 0}.toolbar{gap:4px}.toolbar .toggle{padding:6px 8px;font-size:11px}.source-panel{padding:14px}}
-      @media print {.source-panel {break-inside:avoid}}
+      .exchange-panel {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        flex-wrap: wrap;
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        background: var(--card);
+        padding: 15px 20px;
+        margin: 22px 0 4px
+      }
+
+      .exchange-copy {
+        display: flex;
+        flex-direction: column;
+        gap: 3px;
+        max-width: 570px;
+        font-size: 13px
+      }
+
+      .exchange-copy span {
+        font-size: 11px;
+        color: var(--muted)
+      }
+
+      .exchange-controls {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        flex-wrap: wrap;
+        font-size: 13px;
+        font-weight: 650
+      }
+
+      .exchange-controls input {
+        min-width: 90px;
+        width: 105px;
+        padding: 8px 10px;
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        background: var(--input);
+        color: var(--ink);
+        font-variant-numeric: tabular-nums
+      }
+
+      .conversion-preview {
+        display: block;
+        padding: 10px 13px;
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        background: var(--soft);
+        font-size: 12px;
+        color: var(--sage)
+      }
+
+      .amount-source {
+        display: block;
+        color: var(--muted);
+        font-size: 10px;
+        font-weight: 500;
+        line-height: 1.4
+      }
+
+      .cover-total .amount #cover-grand-secondary {
+        font-size: .65em;
+        color: var(--muted)
+      }
+
+      .source-panel {
+        border: 1px solid var(--line);
+        border-radius: 17px;
+        background: var(--card);
+        padding: 16px 20px;
+        margin: 14px 0 18px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        flex-wrap: wrap
+      }
+
+      .source-panel-title {
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: .025em
+      }
+
+      .source-panel-meta {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-top: 7px;
+        font-size: 12px
+      }
+
+      .source-tag {
+        display: inline-flex;
+        align-items: center;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        padding: 3px 10px;
+        font-weight: 750;
+        color: var(--sage);
+        background: var(--soft)
+      }
+
+      .source-time {
+        color: var(--muted);
+        font-variant-numeric: tabular-nums
+      }
+
+      .source-note {
+        color: var(--muted);
+        font-size: 11px;
+        margin: 7px 0 0;
+        max-width: 800px
+      }
+
+      .source-note.warning {
+        color: var(--terracotta)
+      }
+
+      @media(max-width:650px) {
+        .exchange-panel {
+          padding: 14px
+        }
+
+        .exchange-controls {
+          width: 100%
+        }
+
+        .exchange-controls input {
+          flex: 1;
+          min-width: 75px
+        }
+
+        .topbar-inner {
+          flex-wrap: wrap;
+          padding: 7px 0
+        }
+
+        .toolbar {
+          gap: 4px
+        }
+
+        .toolbar .toggle {
+          padding: 6px 8px;
+          font-size: 11px
+        }
+
+        .source-panel {
+          padding: 14px
+        }
+      }
+
+      @media print {
+        .source-panel {
+          break-inside: avoid
+        }
+      }
     </style>
   </head>
 
@@ -1427,11 +1584,15 @@
           <p class="section-intro">所有金額都從下方逐筆明細計算，並依手動匯率換算。尚未取得收據的項目保留「待補」，不把未知金額當作零元。</p>
           <div class="exchange-panel" aria-label="匯率設定">
             <div class="exchange-copy"><strong>換算設定</strong><span>1 JPY 可換多少 NTD。換算不改變每筆原始實付金額；此匯率不是即時報價。</span></div>
-            <div class="exchange-controls"><label for="rate-input">1 JPY =</label><input id="rate-input" type="number" min="0.000001" max="1000" step="any" inputmode="decimal" value="0.21"><span>NTD</span><button class="pill-btn primary" id="apply-rate" type="button">套用匯率</button></div>
+            <div class="exchange-controls"><label for="rate-input">1 JPY =</label><input id="rate-input" type="number"
+                min="0.000001" max="1000" step="any" inputmode="decimal" value="0.21"><span>NTD</span><button
+                class="pill-btn primary" id="apply-rate" type="button">套用匯率</button></div>
           </div>
           <section class="source-panel" aria-label="目前帳本資料來源" aria-live="polite">
-            <div><div class="source-panel-title">目前使用的帳本資料</div>
-              <div class="source-panel-meta"><span class="source-tag" id="data-source-label">載入中…</span><span class="source-time" id="data-source-updated">資料更新時間：讀取中…</span></div>
+            <div>
+              <div class="source-panel-title">目前使用的帳本資料</div>
+              <div class="source-panel-meta"><span class="source-tag" id="data-source-label">載入中…</span><span
+                  class="source-time" id="data-source-updated">資料更新時間：讀取中…</span></div>
               <p class="source-note" id="data-source-note">正在確認 GitHub JSON、HTML 備援及本機草稿。</p>
             </div>
           </section>
@@ -1472,18 +1633,6 @@
           </div>
         </div>
       </section>
-      <section class="section" id="day3-guide" aria-labelledby="day3-guide-title">
-        <div class="shell">
-          <aside class="related-guide-card" aria-label="富士急親子遊玩與最佳購票策略">
-            <div><span class="related-guide-eyebrow">DAY 03 / 遊玩與購票詳細攻略</span>
-              <h2 id="day3-guide-title">富士急親子遊玩與最佳購票策略</h2>
-              <p>包含 Thomas Land 購票方案、必玩設施、分組午睡與雨天備案。</p>
-            </div>
-            <a class="related-guide-action" href="20261014_富士急親子遊玩與最佳購票策略.html" target="_blank"
-              rel="noopener noreferrer">開啟 10/14 詳細攻略 ↗</a>
-          </aside>
-        </div>
-      </section>
       <section class="section" id="agenda">
         <div class="shell">
           <div class="eyebrow">02 / Agenda</div>
@@ -1497,7 +1646,7 @@
         <div class="shell">
           <div class="eyebrow">03 / Toyota Rent a Car</div>
           <h2 class="section-title">這趟自駕的帳。</h2>
-          <p class="section-intro">租車明細與實際行駛紀錄。租金總額已列 Day 01，以下僅作拆解說明，不重複加總。</p>
+          <p class="section-intro">租車明細、實際行駛紀錄與 ETC 通行摘要。租金已列 Day 01；下方 ETC 資料僅供核對，不重複計入總額。</p>
           <div class="detail-grid">
             <article class="detail-card">
               <h3>租金明細</h3>
@@ -1562,8 +1711,81 @@
             </article>
             <article class="detail-card full">
               <h3>租車與油資的記帳方式</h3>
-              <p>租車 ¥61,441 已含保險、選配與稅金；10/15 加油 ¥5,100 是另外一筆支出。高速公路 ETC 尚待補充，未包含在這兩筆費用中。租車明細中的預定歸還 20:00 與 Guidebook 記載的
+              <p>租車 ¥61,441 已含保險、選配與稅金；10/15 加油 ¥5,100 是另外一筆支出。ETC 通行費詳列於下方摘要，摘要只供核對，不額外併入總額。租車明細中的預定歸還 20:00 與
+                Guidebook 記載的
                 19:00 不同，以實際租車紀錄為準。</p>
+            </article>
+            <article class="detail-card full">
+              <h3>ETC 通行費摘要</h3>
+              <p class="muted">共 7 趟通行；以下為 ETC 明細摘要，不另加計於帳本總額。</p>
+              <div class="etc-table-wrap" role="region" aria-label="ETC 通行費明細" tabindex="0">
+                <table class="data-table etc-table">
+                  <thead>
+                    <tr>
+                      <th scope="col">利用年月日</th>
+                      <th scope="col">通行時間</th>
+                      <th scope="col">利用 IC（自）</th>
+                      <th scope="col">利用 IC（至）</th>
+                      <th scope="col">通行料金</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>2026/10/12</td>
+                      <td>14:03–14:26</td>
+                      <td>新空港</td>
+                      <td>湾岸市川</td>
+                      <td data-jpy="1750">¥1,750</td>
+                    </tr>
+                    <tr>
+                      <td>2026/10/12</td>
+                      <td>14:34–15:15</td>
+                      <td>市川本線</td>
+                      <td>首都横浜青葉</td>
+                      <td data-jpy="2120">¥2,120</td>
+                    </tr>
+                    <tr>
+                      <td>2026/10/12</td>
+                      <td>15:15–16:34</td>
+                      <td>横浜青葉本線</td>
+                      <td>御殿場</td>
+                      <td data-jpy="2190">¥2,190</td>
+                    </tr>
+                    <tr>
+                      <td>2026/10/15</td>
+                      <td>11:29–11:43</td>
+                      <td>富士吉田本線</td>
+                      <td>須走</td>
+                      <td data-jpy="1080">¥1,080</td>
+                    </tr>
+                    <tr>
+                      <td>2026/10/15</td>
+                      <td>13:16–14:11</td>
+                      <td>御殿場</td>
+                      <td>東京</td>
+                      <td data-jpy="2620">¥2,620</td>
+                    </tr>
+                    <tr>
+                      <td>2026/10/15</td>
+                      <td>14:16–14:48</td>
+                      <td>東名接続</td>
+                      <td>東関道接続</td>
+                      <td data-jpy="1530">¥1,530</td>
+                    </tr>
+                    <tr>
+                      <td>2026/10/15</td>
+                      <td>14:54–15:13</td>
+                      <td>湾岸市川</td>
+                      <td>富里</td>
+                      <td data-jpy="1450">¥1,450</td>
+                    </tr>
+                    <tr class="total">
+                      <th scope="row" colspan="4">合計 · 7 趟</th>
+                      <td data-jpy="12740">¥12,740</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
             </article>
           </div>
         </div>
@@ -1619,7 +1841,10 @@
           <div class="field"><label for="field-amount">原始實付金額</label><input id="field-amount" name="amount"
               type="number" step="1" inputmode="numeric" placeholder="尚未確認可留空"><span class="form-help">請輸入整數，不需要 ¥
               或逗號。</span></div>
-          <div class="field"><label for="field-currency">金額幣別</label><select id="field-currency" name="currency"><option value="JPY">JPY · 日圓 ¥</option><option value="NTD">NTD · 新臺幣 NT$</option></select></div>
+          <div class="field"><label for="field-currency">金額幣別</label><select id="field-currency" name="currency">
+              <option value="JPY">JPY · 日圓 ¥</option>
+              <option value="NTD">NTD · 新臺幣 NT$</option>
+            </select></div>
           <div class="field full"><span id="amount-preview" class="conversion-preview" aria-live="polite"></span></div>
           <div class="field full"><label for="field-note">備註／收據</label><textarea id="field-note" name="note"
               maxlength="600"></textarea></div>
@@ -1633,237 +1858,243 @@
     <script type="application/json"
       id="initial-ledger">{"version":2,"source":"Tokyo_Fuji_2026_旅程費用結算_更新版.md","days":[{"id":0,"date":"10/11（日）","title":"10/11（日）出發前住宿","short":"關西機場周邊 · 行前住宿","brief":"前泊與出發準備"},{"id":1,"date":"10/12（一）","title":"10/12（一）成田 → 海老名 SA → 御殿場","short":"成田 → 海老名 SA → 御殿場","brief":"機票、租車、御殿場住宿與晚餐"},{"id":2,"date":"10/13（二）","title":"10/13（二）御殿場 → Safari → Highland Resort → 河口湖","short":"御殿場 → Safari → Highland Resort → 河口湖","brief":"Safari、河口湖與親子晚餐"},{"id":3,"date":"10/14（三）","title":"10/14（三）富士急 Highland・Thomas Land","short":"富士急 Highland · Thomas Land","brief":"Thomas Land、餐飲與兩晚住宿"},{"id":4,"date":"10/15（四）","title":"10/15（四）富士五湖 → 成田購物 → Toyota 還車","short":"富士五湖 → 成田購物 → Toyota 還車","brief":"返程高速、購物、加油與成田住宿"},{"id":5,"date":"10/16（五）","title":"10/16（五）成田 → 關西 → 高雄","short":"成田 → 關西 → 高雄","brief":"返程機票與消費紀錄"}],"entries":[{"id":"base-0-1","day":0,"name":"izumisano center Hotel","category":"住宿","rawCategory":"住宿","amount":5318,"status":"known","note":"宿泊 Agoda","currency":"JPY"},{"id":"base-1-1","day":1,"name":"関西旅日記 第2ターミナル国内線","category":"購物","rawCategory":"購物","amount":756,"status":"known","note":"生八橋","currency":"JPY"},{"id":"base-1-2","day":1,"name":"KHH→NRT","category":"交通","rawCategory":"交通／機票","amount":null,"status":"merged","note":"Day 05","currency":"JPY"},{"id":"base-1-3","day":1,"name":"KIX→NRT","category":"交通","rawCategory":"交通／機票","amount":10450,"status":"known","note":"Peach","currency":"JPY"},{"id":"base-1-4","day":1,"name":"Toyota Rent a Car","category":"交通","rawCategory":"交通／租車","amount":61441,"status":"known","note":"全期租車，詳見下方","currency":"JPY"},{"id":"base-1-5","day":1,"name":"成田機場 T2 P2 停車費","category":"交通","rawCategory":"交通／停車","amount":520,"status":"known","note":"P2 北入口","currency":"JPY"},{"id":"base-1-6","day":1,"name":"高速公路 ETC","category":"交通","rawCategory":"交通","amount":null,"status":"pending","note":"成田 → 御殿場","currency":"JPY"},{"id":"base-1-7","day":1,"name":"EXPASA 海老名（下り）","category":"餐飲","rawCategory":"餐飲","amount":null,"status":"merged","note":"","currency":"JPY"},{"id":"base-1-8","day":1,"name":"御殿場 Premium Outlets","category":"購物","rawCategory":"購物","amount":null,"status":"pending","note":"購物及其他消費","currency":"JPY"},{"id":"base-1-9","day":1,"name":"SALON GINZA SABOU...","category":"餐飲","rawCategory":"餐飲","amount":2200,"status":"known","note":"晚餐 kz","currency":"JPY"},{"id":"base-1-10","day":1,"name":"SALON GINZA SABOU...","category":"餐飲","rawCategory":"餐飲","amount":2805,"status":"known","note":"晚餐 Anti","currency":"JPY"},{"id":"base-1-11","day":1,"name":"SALON GINZA SABOU...","category":"餐飲","rawCategory":"餐飲","amount":1320,"status":"known","note":"晚餐 kk","currency":"JPY"},{"id":"base-1-12","day":1,"name":"Dormy Inn御殿場","category":"住宿","rawCategory":"住宿","amount":16844,"status":"known","note":"宿泊 Agoda","currency":"JPY"},{"id":"base-1-13","day":1,"name":"ファミリーマート御殿場東山","category":"餐飲","rawCategory":"餐飲","amount":2191,"status":"known","note":"隔天早餐","currency":"JPY"},{"id":"starbucks-20261012","day":1,"name":"Starbucks 成田第二ターミナル","category":"餐飲","rawCategory":"餐飲","amount":614,"currency":"JPY","status":"known","note":"13:25 grande チャイティーラテ"},{"id":"base-2-5","day":2,"name":"Highland Resort 第一晚","category":"住宿","rawCategory":"住宿","amount":null,"status":"merged","note":"包含在 Day 03 記錄的 10/13–10/14 兩晚房費","currency":"JPY"},{"id":"base-2-6","day":2,"name":"河口湖天鵝船","category":"活動／門票","rawCategory":"活動／門票","amount":2000,"status":"known","note":"原備考寫「停車／點心等」，與項目不符，待核對","currency":"JPY"},{"id":"base-2-7","day":2,"name":"ほうとう蔵 歩成 - 河口湖店","category":"餐飲","rawCategory":"餐飲","amount":5148,"status":"known","note":"午餐","currency":"JPY"},{"id":"base-2-8","day":2,"name":"ローソン 富士吉田新屋","category":"餐飲","rawCategory":"餐飲","amount":2379,"status":"known","note":"晚餐（泡湯回程）","currency":"JPY"},{"id":"base-2-9","day":2,"name":"ハイランドリゾートマカロニ","category":"餐飲","rawCategory":"餐飲","amount":1700,"status":"known","note":"宵夜","currency":"JPY"},{"id":"base-2-10","day":2,"name":"其他 ETC／停車","category":"交通","rawCategory":"交通","amount":null,"status":"pending","note":"如有","currency":"JPY"},{"id":"starbucks-20261013","day":2,"name":"Starbucks 富士急ハイランド","category":"餐飲","rawCategory":"餐飲","amount":614,"currency":"JPY","status":"known","note":"17:34 grande チャイティーラテ"},{"id":"base-3-1","day":3,"name":"Highland Resort 早餐／其他餐飲","category":"餐飲","rawCategory":"餐飲","amount":null,"status":"merged","note":"","currency":"JPY"},{"id":"base-3-2","day":3,"name":"富士急ハイランドチケット","category":"活動／門票","rawCategory":"活動／門票","amount":7500,"status":"known","note":"大人 ¥3,500、大人 ¥0、子供 ¥2,000 × 2","currency":"JPY"},{"id":"base-3-3","day":3,"name":"トーマスランド アトラクション","category":"活動／門票","rawCategory":"活動／門票","amount":500,"status":"known","note":"第 1 筆","currency":"JPY"},{"id":"base-3-4","day":3,"name":"トーマスランド アトラクション","category":"活動／門票","rawCategory":"活動／門票","amount":500,"status":"known","note":"第 2 筆","currency":"JPY"},{"id":"base-3-5","day":3,"name":"トーマスランド アトラクション","category":"活動／門票","rawCategory":"活動／門票","amount":500,"status":"known","note":"第 3 筆","currency":"JPY"},{"id":"base-3-6","day":3,"name":"ティドマス","category":"活動／門票","rawCategory":"活動／照片","amount":1400,"status":"known","note":"family photo","currency":"JPY"},{"id":"base-3-7","day":3,"name":"フジヤマ写真館","category":"餐飲","rawCategory":"餐飲","amount":600,"status":"known","note":"31 冰淇淋","currency":"JPY"},{"id":"base-3-8","day":3,"name":"かっぱ寿司 河口湖インター店","category":"餐飲","rawCategory":"餐飲","amount":4575,"status":"known","note":"","currency":"JPY"},{"id":"base-3-9","day":3,"name":"ハイランドリゾートマカロニ","category":"餐飲","rawCategory":"餐飲","amount":8310,"status":"known","note":"晚餐 pasta × 2、pizza × 1","currency":"JPY"},{"id":"base-3-10","day":3,"name":"富士急ハイランドリゾート","category":"住宿","rawCategory":"住宿","amount":51137,"status":"known","note":"KKday，2 泊（10/13–10/14）","currency":"JPY"},{"id":"base-3-11","day":3,"name":"其他設施／伴手禮","category":"購物","rawCategory":"購物／活動","amount":null,"status":"merged","note":"","currency":"JPY"},{"id":"base-4-1","day":4,"name":"高速公路 ETC","category":"交通","rawCategory":"交通","amount":null,"status":"pending","note":"富士五湖 → 成田","currency":"JPY"},{"id":"base-4-3","day":4,"name":"Birthday","category":"購物","rawCategory":"購物","amount":null,"status":"pending","note":"","currency":"JPY"},{"id":"base-4-4","day":4,"name":"AEON Market","category":"購物","rawCategory":"購物／食品","amount":1063,"status":"known","note":"隔天早餐；依原表歸類購物","currency":"JPY"},{"id":"base-4-5","day":4,"name":"AEON MALL 其他購物","category":"購物","rawCategory":"購物","amount":null,"status":"pending","note":"如有","currency":"JPY"},{"id":"base-4-6","day":4,"name":"スシロー 成田店","category":"餐飲","rawCategory":"餐飲","amount":4900,"status":"known","note":"","currency":"JPY"},{"id":"base-4-7","day":4,"name":"レギュラーガソリン","category":"交通","rawCategory":"交通／油資","amount":5100,"status":"known","note":"31.35 L @ ¥163/L，19:51；金額與乘積有約 ¥10 差異，待核對","currency":"JPY"},{"id":"base-4-8","day":4,"name":"東横INN 成田","category":"住宿","rawCategory":"住宿","amount":9100,"status":"known","note":"宿泊","currency":"JPY"},{"id":"base-4-9","day":4,"name":"Toyota 還車追加費","category":"交通","rawCategory":"交通","amount":null,"status":"merged","note":"租車本金已列 Day 01","currency":"JPY"},{"id":"base-4-10","day":4,"name":"其他停車／交通","category":"交通","rawCategory":"交通","amount":null,"status":"merged","note":"","currency":"JPY"},{"id":"new-1792296775034-64364","day":4,"name":"えびせんべいの里 御殿場店","category":"餐飲","rawCategory":"餐飲","amount":10000,"status":"known","note":"試食コーナーでは約20種類のおせんべいを試食することができます","currency":"JPY"},{"id":"starbucks-20261015","day":4,"name":"Starbucks イオンモール成田","category":"餐飲","rawCategory":"餐飲","amount":663,"currency":"JPY","status":"known","note":"17:34 venti チャイティーラテ"},{"id":"base-5-1","day":5,"name":"NRT→KIX","category":"交通","rawCategory":"交通／機票","amount":11140,"status":"known","note":"Jetstar, 大人x1","currency":"JPY"},{"id":"base-5-2","day":5,"name":"KIX→KHH","category":"交通","rawCategory":"交通／機票","amount":116885,"status":"known","note":"Tiger Air 大人 x1, 小孩x2","currency":"JPY"}],"rental":{"plate":"品川 302 わ 4768","class":"SUV1","model":"ヤリス クロス（YARIS CROSS）","base":59268,"memberDiscount":-5927,"miles":-1250,"coverage":4400,"options":4950,"total":61441,"taxIncluded":5587,"startPlanned":"10/12 13:00","startActual":"10/12 13:00","endPlanned":"10/15 20:00","endActual":"10/15 19:57","odometerStart":53304,"odometerEnd":53781},"exchangeRate":0.21,"displayCurrency":"JPY","updatedAt":"2026-10-18T09:08:52Z","exportedAt":"2026-10-18T09:08:52Z"}</script>
     <script>
-(function () {
-  'use strict';
-  const INITIAL = JSON.parse(document.getElementById('initial-ledger').textContent);
-  const KEY = 'tokyo-fuji-expense-ledger-2026-v2';
-  const THEME_KEY = 'tokyo-fuji-expense-theme';
-  const DATA_FILE = 'Tokyo_Fuji_2026_旅程費用結算_data.json';
-  const CATEGORIES = ['住宿', '交通', '餐飲', '活動／門票', '購物', '其他', '儲值'];
-  const STATUSES = ['known', 'pending', 'unspent', 'merged', 'transfer'];
-  const COLORS = {'住宿':'var(--sage)','交通':'var(--terracotta)','餐飲':'var(--mustard)','活動／門票':'#a17c70','購物':'#8e9180','其他':'var(--chart-other)'};
-  const DAYS = INITIAL.days;
-  const $ = selector => document.querySelector(selector);
-  const storage = {
-    get(k) {try {return localStorage.getItem(k)} catch(e) {return null}},
-    set(k,v) {try {localStorage.setItem(k,v);return true} catch(e) {return false}},
-    remove(k) {try {localStorage.removeItem(k)} catch(e) {}}
-  };
-  const esc = s => String(s ?? '').replace(/[&<>"']/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-  const validRate = n => Number.isFinite(n) && n>0 && n<=1000;
-  let base = null, entries = [], exchangeRate=.21, displayCurrency='JPY', editingId=null;
-  let defaultFrom='HTML 內嵌備援', baseUpdatedAt=null, localSavedAt=null, localIsOutdated=false;
-  let usingLocal=false, siteLoadError=false, localCompareUnknown=false, volatileDraft=false;
-  const stamp = () => new Date().toISOString();
-  const dateLabel = raw => {
-    if (!raw) return '未記錄';
-    const d=new Date(raw);
-    if (Number.isNaN(d.getTime())) return '未記錄';
-    return new Intl.DateTimeFormat('zh-TW',{year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',hour12:false,timeZone:'Asia/Taipei',timeZoneName:'short'}).format(d);
-  };
-  function validateEntries(items) {
-    if (!Array.isArray(items) || items.length>2000) throw new Error('明細格式或筆數不正確');
-    const ids=new Set();
-    return items.map((x,i)=>{
-      if (!x || typeof x.name!=='string' || !Number.isInteger(Number(x.day)) || Number(x.day)<0 || Number(x.day)>5 || !CATEGORIES.includes(x.category) || !STATUSES.includes(x.status)) throw new Error('明細欄位不正確');
-      const id=String(x.id||('import-'+i));if(ids.has(id))throw new Error('重複明細 ID');ids.add(id);
-      const currency=x.currency??'JPY';if(!['JPY','NTD'].includes(currency))throw new Error('不支援的幣別');
-      let amount=x.amount===null||x.amount===undefined||x.amount===''?null:Number(x.amount);
-      if(amount!==null&&(!Number.isFinite(amount)||amount<0||amount>1e10||Math.abs(amount*100-Math.round(amount*100))>1e-5))throw new Error('金額不正確');
-      let status=x.category==='儲值'&&x.status==='known'?'transfer':x.status;
-      if(['known','transfer'].includes(status)&&amount===null)throw new Error('已知金額不能為空');
-      if(['pending','unspent','merged'].includes(status))amount=null;
-      return {id,day:Number(x.day),name:x.name.slice(0,160),category:x.category,rawCategory:String(x.rawCategory||x.category).slice(0,80),amount,currency,status,note:String(x.note||'').slice(0,600)};
-    });
-  }
-  function normalize(obj) {
-    if(!obj||![1,2].includes(obj.version)||!Array.isArray(obj.entries))throw new Error('需要版本 1 或 2 的 JSON');
-    const rate=obj.exchangeRate===undefined?.21:Number(obj.exchangeRate);
-    if(!validRate(rate))throw new Error('匯率不正確');
-    return {entries:validateEntries(obj.entries),exchangeRate:rate,displayCurrency:obj.displayCurrency==='NTD'?'NTD':'JPY',updatedAt:obj.updatedAt||obj.exportedAt||null};
-  }
-  function fingerprint(obj){return JSON.stringify([obj.entries,obj.exchangeRate]);}
-  function setTheme(t){document.documentElement.dataset.theme=t;$('#theme-toggle').textContent=t==='dark'?'Dark / Light':'Light / Dark';storage.set(THEME_KEY,t);}
-  function rawValue(x,currency){if(x.amount===null)return 0;if(x.currency===currency)return Number(x.amount);return currency==='JPY'?x.amount/exchangeRate:x.amount*exchangeRate;}
-  function money(n,currency){const num=Math.round(Number(n)||0);return currency==='JPY'?'¥'+num.toLocaleString('ja-JP'):'NT$'+num.toLocaleString('zh-TW');}
-  function fmt(n){return money(n,displayCurrency);}
-  function isKnown(x){return x.status==='known'&&x.category!=='儲值'&&Number.isFinite(x.amount);}
-  function expense(list,currency=displayCurrency){return list.reduce((s,x)=>s+(isKnown(x)?rawValue(x,currency):0),0);}
-  function transfer(list,currency=displayCurrency){return list.reduce((s,x)=>s+(x.status==='transfer'||x.category==='儲值'?rawValue(x,currency):0),0);}
-  function daySum(day){return expense(entries.filter(x=>x.day===day));}
-  function updateProvenance(){
-    const label=$('#data-source-label'),time=$('#data-source-updated'),note=$('#data-source-note');
-    if(volatileDraft){
-      label.textContent='未儲存的頁面修改';
-      time.textContent='本次修改：'+dateLabel(localSavedAt);
-      note.textContent='瀏覽器無法儲存這次修改；重新整理可能遺失。請立即匯出 JSON 備份。';
-      note.classList.add('warning');
-    }else if(usingLocal){
-      label.textContent='本機草稿（localStorage）';
-      time.textContent='本機最後儲存：'+dateLabel(localSavedAt);
-      note.textContent=localIsOutdated?'網站預設 JSON 已更新，但目前仍顯示本機草稿。請先匯出備份，再使用「重設為網站預設資料」套用新版。':localCompareUnknown?'本機草稿沒有記錄來源版本，無法判斷是否與網站 JSON 相同。建議先備份。':'這是此瀏覽器的資料，不代表已同步至 GitHub。網站正式資料：'+defaultFrom+'（更新時間 '+dateLabel(baseUpdatedAt)+'）。';
-      note.classList.toggle('warning',localIsOutdated||localCompareUnknown);
-    }else{
-      label.textContent=defaultFrom;
-      time.textContent='資料更新時間：'+dateLabel(baseUpdatedAt);
-      note.textContent=siteLoadError?'外部 JSON 無法讀取，已使用 HTML 內嵌備援。請確認 JSON 檔名、位置與網路連線。':defaultFrom==='HTML 內嵌備援'?'目前使用 HTML 內嵌資料（例如離線開啟）；未讀取 GitHub JSON。':'目前使用網站發布的 JSON；編輯後將切換成此瀏覽器的本機草稿。';
-      note.classList.toggle('warning',siteLoadError);
-    }
-  }
-  function saveStatus(t){$('#save-status').textContent=t;}
-  function persist(){
-    const savedAt=stamp();
-    const payload={version:2,baseFingerprint:fingerprint(base),savedAt,exchangeRate,displayCurrency,entries};
-    const ok=storage.set(KEY,JSON.stringify(payload));
-    if(ok){usingLocal=true;volatileDraft=false;localSavedAt=savedAt;localIsOutdated=false;localCompareUnknown=false;}
-    else {volatileDraft=true;localSavedAt=savedAt;}
-    saveStatus(ok?'已儲存於此瀏覽器（非 Git）；發布變更請匯出 JSON 並更新 Git 中的資料檔案。':'瀏覽器無法儲存，請匯出 JSON 備份。');
-    updateProvenance();return ok;
-  }
-  function bars(selector,values,colors){const max=Math.max(1,...values.map(x=>x.value));$(selector).innerHTML=values.map(x=>`<div class="bar-item"><span class="bar-label">${esc(x.label)}</span><div class="bar-track" aria-label="${esc(x.label)} ${esc(fmt(x.value))}"><div class="bar-fill" style="width:${Math.max(0,Math.min(100,100*x.value/max))}%;background:${colors[x.key]||'var(--sage)'}"></div></div><span class="bar-value">${fmt(x.value)}</span></div>`).join('');}
-  function renderOverview(){
-    const grand=expense(entries),trip=expense(entries.filter(x=>x.day!==0));
-    const other=displayCurrency==='JPY'?'NTD':'JPY';
-    const pending=entries.filter(x=>x.status==='pending').length,known=entries.filter(isKnown).length;
-    $('#cover-grand-primary').textContent=displayCurrency+' '+fmt(grand);
-    $('#cover-grand-secondary').textContent=other+' '+money(expense(entries,other),other);
-    $('#cover-rate').textContent='手動匯率：1 JPY = '+exchangeRate+' NTD（非即時匯率）';
-    $('#sum-all').textContent=fmt(grand);$('#sum-trip').textContent=fmt(trip);
-    $('#sum-pending').textContent=String(pending);$('#sum-transfer').textContent=fmt(transfer(entries));
-    bars('#category-bars',CATEGORIES.filter(x=>x!=='儲值').map(c=>({key:c,label:c,value:expense(entries.filter(x=>x.category===c))})),COLORS);
-    bars('#daily-bars',DAYS.map(d=>({key:String(d.id),label:'10/'+String(11+d.id).padStart(2,'0'),value:daySum(d.id)})),{});
-    $('#progress-label').textContent=known+' 筆已知 / '+pending+' 筆待補';
-    $('#progress-bar').style.width=(known+pending?100*known/(known+pending):100)+'%';
-  }
-  function renderAgenda(){$('#agenda-cards').innerHTML=DAYS.map(d=>`<a class="agenda-card" href="#day-${d.id}"><div class="agenda-no">${String(d.id).padStart(2,'0')}</div><h3>${esc(d.title)}</h3><p>${esc(d.brief)}</p><strong class="agenda-total">${fmt(daySum(d.id))}</strong></a>`).join('');}
-  function amountLabel(x){
-    if(x.status==='merged')return '<span class="item-amount merged">已合併</span>';
-    if(x.status==='pending')return '<span class="item-amount pending">待補</span>';
-    if(x.status==='unspent')return '<span class="item-amount unspent">未消費</span>';
-    const isTransfer=x.status==='transfer'||x.category==='儲值';
-    const source=x.currency!==displayCurrency?`<small class="amount-source">原始 ${x.currency} ${money(x.amount,x.currency)}</small>`:'';
-    return `<span class="item-amount ${isTransfer?'transfer':''}">${money(rawValue(x,displayCurrency),displayCurrency)}${source}${isTransfer?'<small class="amount-source">儲值 · 不計入消費</small>':''}</span>`;
-  }
-  function renderDays(){
-    $('#day-sections').innerHTML=DAYS.map(d=>{
-      const rows=entries.filter(x=>x.day===d.id),pending=rows.filter(x=>x.status==='pending').length;
-      return `<section class="day-section" id="day-${d.id}"><div class="shell">
-      <div class="day-head"><div><div class="day-no">Day ${String(d.id).padStart(2,'0')} · ${esc(d.date)}</div><h2>${esc(d.short)}</h2><p>${esc(d.brief)}</p></div><div class="day-side"><strong>${fmt(daySum(d.id))}</strong><small>已知支出 · ${pending} 筆待補</small></div></div>
+      (function () {
+        'use strict';
+        const INITIAL = JSON.parse(document.getElementById('initial-ledger').textContent);
+        const KEY = 'tokyo-fuji-expense-ledger-2026-v2';
+        const THEME_KEY = 'tokyo-fuji-expense-theme';
+        const DATA_FILE = 'Tokyo_Fuji_2026_旅程費用結算_data.json';
+        const CATEGORIES = ['住宿', '交通', '餐飲', '活動／門票', '購物', '其他', '儲值'];
+        const STATUSES = ['known', 'pending', 'unspent', 'merged', 'transfer'];
+        const COLORS = { '住宿': 'var(--sage)', '交通': 'var(--terracotta)', '餐飲': 'var(--mustard)', '活動／門票': '#a17c70', '購物': '#8e9180', '其他': 'var(--chart-other)' };
+        const DAYS = INITIAL.days;
+        const $ = selector => document.querySelector(selector);
+        const storage = {
+          get(k) { try { return localStorage.getItem(k) } catch (e) { return null } },
+          set(k, v) { try { localStorage.setItem(k, v); return true } catch (e) { return false } },
+          remove(k) { try { localStorage.removeItem(k) } catch (e) { } }
+        };
+        const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+        const validRate = n => Number.isFinite(n) && n > 0 && n <= 1000;
+        let base = null, entries = [], exchangeRate = .21, displayCurrency = 'JPY', editingId = null;
+        let defaultFrom = 'HTML 內嵌備援', baseUpdatedAt = null, localSavedAt = null, localIsOutdated = false;
+        let usingLocal = false, siteLoadError = false, localCompareUnknown = false, volatileDraft = false;
+        const stamp = () => new Date().toISOString();
+        const dateLabel = raw => {
+          if (!raw) return '未記錄';
+          const d = new Date(raw);
+          if (Number.isNaN(d.getTime())) return '未記錄';
+          return new Intl.DateTimeFormat('zh-TW', { year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', hour12: false, timeZone: 'Asia/Taipei', timeZoneName: 'short' }).format(d);
+        };
+        function validateEntries(items) {
+          if (!Array.isArray(items) || items.length > 2000) throw new Error('明細格式或筆數不正確');
+          const ids = new Set();
+          return items.map((x, i) => {
+            if (!x || typeof x.name !== 'string' || !Number.isInteger(Number(x.day)) || Number(x.day) < 0 || Number(x.day) > 5 || !CATEGORIES.includes(x.category) || !STATUSES.includes(x.status)) throw new Error('明細欄位不正確');
+            const id = String(x.id || ('import-' + i)); if (ids.has(id)) throw new Error('重複明細 ID'); ids.add(id);
+            const currency = x.currency ?? 'JPY'; if (!['JPY', 'NTD'].includes(currency)) throw new Error('不支援的幣別');
+            let amount = x.amount === null || x.amount === undefined || x.amount === '' ? null : Number(x.amount);
+            if (amount !== null && (!Number.isFinite(amount) || amount < 0 || amount > 1e10 || Math.abs(amount * 100 - Math.round(amount * 100)) > 1e-5)) throw new Error('金額不正確');
+            let status = x.category === '儲值' && x.status === 'known' ? 'transfer' : x.status;
+            if (['known', 'transfer'].includes(status) && amount === null) throw new Error('已知金額不能為空');
+            if (['pending', 'unspent', 'merged'].includes(status)) amount = null;
+            return { id, day: Number(x.day), name: x.name.slice(0, 160), category: x.category, rawCategory: String(x.rawCategory || x.category).slice(0, 80), amount, currency, status, note: String(x.note || '').slice(0, 600) };
+          });
+        }
+        function normalize(obj) {
+          if (!obj || ![1, 2].includes(obj.version) || !Array.isArray(obj.entries)) throw new Error('需要版本 1 或 2 的 JSON');
+          const rate = obj.exchangeRate === undefined ? .21 : Number(obj.exchangeRate);
+          if (!validRate(rate)) throw new Error('匯率不正確');
+          return { entries: validateEntries(obj.entries), exchangeRate: rate, displayCurrency: obj.displayCurrency === 'NTD' ? 'NTD' : 'JPY', updatedAt: obj.updatedAt || obj.exportedAt || null };
+        }
+        function fingerprint(obj) { return JSON.stringify([obj.entries, obj.exchangeRate]); }
+        function setTheme(t) { document.documentElement.dataset.theme = t; $('#theme-toggle').textContent = t === 'dark' ? 'Dark / Light' : 'Light / Dark'; storage.set(THEME_KEY, t); }
+        function rawValue(x, currency) { if (x.amount === null) return 0; if (x.currency === currency) return Number(x.amount); return currency === 'JPY' ? x.amount / exchangeRate : x.amount * exchangeRate; }
+        function money(n, currency) { const num = Math.round(Number(n) || 0); return currency === 'JPY' ? '¥' + num.toLocaleString('ja-JP') : 'NT$' + num.toLocaleString('zh-TW'); }
+        function fmt(n) { return money(n, displayCurrency); }
+        function isKnown(x) { return x.status === 'known' && x.category !== '儲值' && Number.isFinite(x.amount); }
+        function expense(list, currency = displayCurrency) { return list.reduce((s, x) => s + (isKnown(x) ? rawValue(x, currency) : 0), 0); }
+        function transfer(list, currency = displayCurrency) { return list.reduce((s, x) => s + (x.status === 'transfer' || x.category === '儲值' ? rawValue(x, currency) : 0), 0); }
+        function daySum(day) { return expense(entries.filter(x => x.day === day)); }
+        function updateProvenance() {
+          const label = $('#data-source-label'), time = $('#data-source-updated'), note = $('#data-source-note');
+          if (volatileDraft) {
+            label.textContent = '未儲存的頁面修改';
+            time.textContent = '本次修改：' + dateLabel(localSavedAt);
+            note.textContent = '瀏覽器無法儲存這次修改；重新整理可能遺失。請立即匯出 JSON 備份。';
+            note.classList.add('warning');
+          } else if (usingLocal) {
+            label.textContent = '本機草稿（localStorage）';
+            time.textContent = '本機最後儲存：' + dateLabel(localSavedAt);
+            note.textContent = localIsOutdated ? '網站預設 JSON 已更新，但目前仍顯示本機草稿。請先匯出備份，再使用「重設為網站預設資料」套用新版。' : localCompareUnknown ? '本機草稿沒有記錄來源版本，無法判斷是否與網站 JSON 相同。建議先備份。' : '這是此瀏覽器的資料，不代表已同步至 GitHub。網站正式資料：' + defaultFrom + '（更新時間 ' + dateLabel(baseUpdatedAt) + '）。';
+            note.classList.toggle('warning', localIsOutdated || localCompareUnknown);
+          } else {
+            label.textContent = defaultFrom;
+            time.textContent = '資料更新時間：' + dateLabel(baseUpdatedAt);
+            note.textContent = siteLoadError ? '外部 JSON 無法讀取，已使用 HTML 內嵌備援。請確認 JSON 檔名、位置與網路連線。' : defaultFrom === 'HTML 內嵌備援' ? '目前使用 HTML 內嵌資料（例如離線開啟）；未讀取 GitHub JSON。' : '目前使用網站發布的 JSON；編輯後將切換成此瀏覽器的本機草稿。';
+            note.classList.toggle('warning', siteLoadError);
+          }
+        }
+        function saveStatus(t) { $('#save-status').textContent = t; }
+        function persist() {
+          const savedAt = stamp();
+          const payload = { version: 2, baseFingerprint: fingerprint(base), savedAt, exchangeRate, displayCurrency, entries };
+          const ok = storage.set(KEY, JSON.stringify(payload));
+          if (ok) { usingLocal = true; volatileDraft = false; localSavedAt = savedAt; localIsOutdated = false; localCompareUnknown = false; }
+          else { volatileDraft = true; localSavedAt = savedAt; }
+          saveStatus(ok ? '已儲存於此瀏覽器（非 Git）；發布變更請匯出 JSON 並更新 Git 中的資料檔案。' : '瀏覽器無法儲存，請匯出 JSON 備份。');
+          updateProvenance(); return ok;
+        }
+        function bars(selector, values, colors) { const max = Math.max(1, ...values.map(x => x.value)); $(selector).innerHTML = values.map(x => `<div class="bar-item"><span class="bar-label">${esc(x.label)}</span><div class="bar-track" aria-label="${esc(x.label)} ${esc(fmt(x.value))}"><div class="bar-fill" style="width:${Math.max(0, Math.min(100, 100 * x.value / max))}%;background:${colors[x.key] || 'var(--sage)'}"></div></div><span class="bar-value">${fmt(x.value)}</span></div>`).join(''); }
+        function renderOverview() {
+          const grand = expense(entries), trip = expense(entries.filter(x => x.day !== 0));
+          const other = displayCurrency === 'JPY' ? 'NTD' : 'JPY';
+          const pending = entries.filter(x => x.status === 'pending').length, known = entries.filter(isKnown).length;
+          $('#cover-grand-primary').textContent = displayCurrency + ' ' + fmt(grand);
+          $('#cover-grand-secondary').textContent = other + ' ' + money(expense(entries, other), other);
+          $('#cover-rate').textContent = '手動匯率：1 JPY = ' + exchangeRate + ' NTD（非即時匯率）';
+          $('#sum-all').textContent = fmt(grand); $('#sum-trip').textContent = fmt(trip);
+          $('#sum-pending').textContent = String(pending); $('#sum-transfer').textContent = fmt(transfer(entries));
+          bars('#category-bars', CATEGORIES.filter(x => x !== '儲值').map(c => ({ key: c, label: c, value: expense(entries.filter(x => x.category === c)) })), COLORS);
+          bars('#daily-bars', DAYS.map(d => ({ key: String(d.id), label: '10/' + String(11 + d.id).padStart(2, '0'), value: daySum(d.id) })), {});
+          $('#progress-label').textContent = known + ' 筆已知 / ' + pending + ' 筆待補';
+          $('#progress-bar').style.width = (known + pending ? 100 * known / (known + pending) : 100) + '%';
+        }
+        function renderAgenda() { $('#agenda-cards').innerHTML = DAYS.map(d => `<a class="agenda-card" href="#day-${d.id}"><div class="agenda-no">${String(d.id).padStart(2, '0')}</div><h3>${esc(d.title)}</h3><p>${esc(d.brief)}</p><strong class="agenda-total">${fmt(daySum(d.id))}</strong></a>`).join(''); }
+        function amountLabel(x) {
+          if (x.status === 'merged') return '<span class="item-amount merged">已合併</span>';
+          if (x.status === 'pending') return '<span class="item-amount pending">待補</span>';
+          if (x.status === 'unspent') return '<span class="item-amount unspent">未消費</span>';
+          const isTransfer = x.status === 'transfer' || x.category === '儲值';
+          const source = x.currency !== displayCurrency ? `<small class="amount-source">原始 ${x.currency} ${money(x.amount, x.currency)}</small>` : '';
+          return `<span class="item-amount ${isTransfer ? 'transfer' : ''}">${money(rawValue(x, displayCurrency), displayCurrency)}${source}${isTransfer ? '<small class="amount-source">儲值 · 不計入消費</small>' : ''}</span>`;
+        }
+        function renderDays() {
+          $('#day-sections').innerHTML = DAYS.map(d => {
+            const rows = entries.filter(x => x.day === d.id), pending = rows.filter(x => x.status === 'pending').length;
+            return `<section class="day-section" id="day-${d.id}"><div class="shell">
+      <div class="day-head"><div><div class="day-no">Day ${String(d.id).padStart(2, '0')} · ${esc(d.date)}</div><h2>${esc(d.short)}</h2><p>${esc(d.brief)}</p></div><div class="day-side"><strong>${fmt(daySum(d.id))}</strong><small>已知支出 · ${pending} 筆待補</small></div></div>
       <div class="ledger" role="table" aria-label="${esc(d.title)} 費用明細"><div class="ledger-head" role="row"><span>商店／項目</span><span>類別</span><span style="text-align:right">金額</span><span>備註／收據</span><span></span></div>
-      ${rows.length?rows.map(x=>`<div class="ledger-row" role="row" id="entry-${esc(x.id)}"><div class="item-name" role="cell">${esc(x.name)}</div><div class="item-category" role="cell"><span class="cat-tag" title="來源分類：${esc(x.rawCategory)}">${esc(x.category)}</span></div>${amountLabel(x)}<div class="item-note" role="cell">${esc(x.note)||'<span class="muted">—</span>'}</div><button type="button" class="edit-btn" data-edit="${esc(x.id)}" aria-label="編輯 ${esc(x.name)}">編輯</button></div>`).join(''):'<div class="ledger-empty">尚無明細，請新增一筆。</div>'}</div>
-      <div class="day-footer"><span class="minor">${rows.filter(isKnown).length} 筆已知支出 · ${pending} 筆待補${rows.some(x=>x.status==='merged')?' · 已合併項目':''}${rows.some(x=>x.status==='transfer')?' · 儲值另列':''}</span><button class="pill-btn primary" type="button" data-add="${d.id}">＋ 新增一筆費用</button></div><a class="backtop" href="#agenda">↑ Back to Agenda</a></div></section>`;
-    }).join('');
-  }
-  function renderPending(){const items=entries.filter(x=>x.status==='pending');$('#pending-list').innerHTML=items.length?items.map(x=>`<a class="pending-link" href="#entry-${esc(x.id)}"><strong>${esc(x.name)}</strong><span>Day ${String(x.day).padStart(2,'0')} ↗</span></a>`).join(''):'<p class="muted">目前沒有待補項目。</p>';}
-  function renderRental(){
-    const factor=displayCurrency==='JPY'?1:exchangeRate;
-    document.querySelectorAll('[data-jpy]').forEach(el=>{el.textContent=money(Number(el.dataset.jpy)*factor,displayCurrency).replace('¥-','−¥').replace('NT$-','−NT$');});
-    const equation=document.querySelector('#rental-equation');
-    if(equation)equation.textContent=[59268,-5927,-1250,4400,4950].map((n,i)=>(i?(n<0?' − ':' + '):'')+money(Math.abs(n)*factor,displayCurrency)).join('')+' = '+money(61441*factor,displayCurrency);
-  }
-  function render(){
-    $('#currency-toggle').textContent='顯示：'+displayCurrency+' ⇄';
-    $('#rate-input').value=exchangeRate;
-    renderOverview();renderAgenda();renderDays();renderPending();renderRental();updateProvenance();
-  }
-  function syncPreview(){
-    const currency=$('#field-currency').value,s=$('#field-amount').value.trim(),status=$('#field-status').value;
-    if(['pending','merged','unspent'].includes(status)){$('#amount-preview').textContent='不計入金額，無需輸入。';return;}
-    if(!s){$('#amount-preview').textContent='請輸入原始實付金額；切換幣別不會修改數字。';return;}
-    const n=Number(s),converted=currency==='JPY'?n*exchangeRate:n/exchangeRate;
-    $('#amount-preview').textContent=Number.isFinite(n)&&n>=0?`約 ${money(converted,currency==='JPY'?'NTD':'JPY')}（1 JPY = ${exchangeRate} NTD）`:'請輸入有效金額';
-  }
-  function syncAmount(){const disabled=['merged','pending','unspent'].includes($('#field-status').value);$('#field-amount').disabled=disabled;$('#field-currency').disabled=disabled;if(disabled)$('#field-amount').value='';syncPreview();}
-  const dlg=$('#entry-dialog');
-  function openDialog(id,day){
-    editingId=id||null;
-    const x=id?entries.find(e=>e.id===id):{name:'',day,category:'餐飲',status:'known',amount:null,currency:displayCurrency,note:''};if(!x)return;
-    $('#dialog-title').textContent=id?'編輯費用明細':'新增費用明細';
-    $('#field-name').value=x.name;$('#field-day').value=x.day;$('#field-cat').value=x.category;$('#field-status').value=x.status;
-    $('#field-amount').value=x.amount===null?'':x.amount;$('#field-currency').value=x.currency;$('#field-note').value=x.note;
-    $('#delete-entry').style.visibility=id?'visible':'hidden';syncAmount();dlg.showModal();$('#field-name').focus();
-  }
-  function makeExport(){return {version:2,source:INITIAL.source,exportedAt:stamp(),updatedAt:usingLocal?(localSavedAt||stamp()):(baseUpdatedAt||stamp()),exchangeRate,displayCurrency,entries};}
-  function download(name,content,type){const blob=new Blob([content],{type}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);}
-  function exportJSON(){download(DATA_FILE,JSON.stringify(makeExport(),null,2)+'\n','application/json;charset=utf-8');}
-  function exportMD(){
-    const other=displayCurrency==='JPY'?'NTD':'JPY';let s='# 東京・富士五湖親子自駕｜旅程費用結算表\n\n';
-    s+='**主要行程：** 2026/10/12–10/16　**前泊：** 2026/10/11　**顯示幣別：** '+displayCurrency+'\n\n';
-    s+='**手動匯率：** 1 JPY = '+exchangeRate+' NTD（非即時匯率）\n\n';
-    s+='**已知支出（含前泊）：** '+fmt(expense(entries))+'（約 '+money(expense(entries,other),other)+'）　**主行程：** '+fmt(expense(entries.filter(x=>x.day!==0)))+'\n\n';
-    s+='> 每筆保留原始幣別；待補、已合併與儲值不計入消費總額。\n\n';
-    const clean=v=>String(v??'').replace(/\|/g,'\\|').replace(/\r?\n/g,' ');
-    for(const d of DAYS){s+='## Day '+String(d.id).padStart(2,'0')+'｜'+d.title+'\n\n| 商店／項目 | 類別 | 原始金額 | '+displayCurrency+' 換算 | 備考 |\n|---|---|---:|---:|---|\n';
-      for(const x of entries.filter(x=>x.day===d.id)){
-        const state=x.status==='pending'?'待補':x.status==='unspent'?'未消費':x.status==='merged'?'已合併':null;
-        s+='| '+clean(x.name)+' | '+clean(x.rawCategory||x.category)+' | '+(state||money(x.amount,x.currency))+' | '+(state||(money(rawValue(x,displayCurrency),displayCurrency)+(x.status==='transfer'?'（儲值）':'')))+' | '+clean(x.note)+' |\n';
-      }s+='| **本日已知消費小計** | | | **'+fmt(daySum(d.id))+'** | |\n\n';}
-    s+='## 分類統計（含前泊）\n\n| 類別 | 已知支出 |\n|---|---:|\n';
-    for(const c of CATEGORIES.filter(x=>x!=='儲值'))s+='| '+c+' | '+fmt(expense(entries.filter(x=>x.category===c)))+' |\n';
-    s+='| **合計** | **'+fmt(expense(entries))+'** |\n\n## Toyota Rent a Car\n\n- 車型：ヤリス クロス（YARIS CROSS），SUV1，品川 302 わ 4768\n- 租車原始金額：¥61,441（已記 Day 01）\n- 10/12 13:00 出發；10/15 19:57 歸還；行駛 477 km\n';
-    download('Tokyo_Fuji_2026_旅程費用結算_匯出.md',s,'text/markdown;charset=utf-8');
-  }
-  function exportCSV(){const quote=v=>'"'+String(v??'').replace(/"/g,'""')+'"';const rows=[['日期','Day','商店／項目','類別','來源分類','原始金額','原始幣別','JPY換算','NTD換算','記帳狀態','備註','使用匯率 JPY→NTD']];
-    for(const x of entries){const d=DAYS.find(z=>z.id===x.day);rows.push([d?.date||'',x.day,x.name,x.category,x.rawCategory,x.amount??'',x.currency,x.amount===null?'':Number(rawValue(x,'JPY').toFixed(2)),x.amount===null?'':Number(rawValue(x,'NTD').toFixed(2)),x.status,x.note,exchangeRate]);}
-    download('Tokyo_Fuji_2026_旅程費用結算_匯出.csv','\ufeff'+rows.map(r=>r.map(quote).join(',')).join('\r\n'),'text/csv;charset=utf-8');
-  }
-  async function initialize(){
-    base=normalize(INITIAL);baseUpdatedAt=base.updatedAt;
-    if(location.protocol==='http:'||location.protocol==='https:'){
-      try{const response=await fetch(DATA_FILE,{cache:'no-cache'});if(!response.ok)throw new Error('HTTP '+response.status);base=normalize(await response.json());baseUpdatedAt=base.updatedAt;defaultFrom='網站 JSON（GitHub Pages）';}
-      catch(e){siteLoadError=true;console.info('External JSON unavailable, using embedded fallback',e);}
-    }
-    const saved=storage.get(KEY);
-    if(saved){try{
-      const obj=JSON.parse(saved),local=normalize(obj);entries=local.entries;exchangeRate=local.exchangeRate;displayCurrency=local.displayCurrency;
-      usingLocal=true;localSavedAt=obj.savedAt||null;
-      localCompareUnknown=!obj.baseFingerprint;localIsOutdated=!!obj.baseFingerprint&&obj.baseFingerprint!==fingerprint(base);
-      saveStatus(localIsOutdated?'網站預設 JSON 已更新；目前仍顯示本機草稿。請先備份，再重設為網站預設。':'目前使用本機編輯資料；修改不會自動寫回 Git。');
-    }catch(e){console.warn('Invalid local data',e);entries=base.entries.map(x=>({...x}));exchangeRate=base.exchangeRate;displayCurrency=base.displayCurrency;saveStatus('本機資料無法讀取，已使用'+defaultFrom+'。');}}
-    else{entries=base.entries.map(x=>({...x}));exchangeRate=base.exchangeRate;displayCurrency=base.displayCurrency;saveStatus('目前使用'+defaultFrom+'；修改後會自動儲存在此瀏覽器。');}
-    render();
-  }
-  $('#field-day').innerHTML=DAYS.map(d=>`<option value="${d.id}">${esc(d.date)} · Day ${String(d.id).padStart(2,'0')}</option>`).join('');
-  $('#field-cat').innerHTML=CATEGORIES.map(c=>`<option value="${esc(c)}">${esc(c)}</option>`).join('');
-  const pref=window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';setTheme(storage.get(THEME_KEY)||pref);
-  $('#theme-toggle').addEventListener('click',()=>setTheme(document.documentElement.dataset.theme==='dark'?'light':'dark'));
-  $('#currency-toggle').addEventListener('click',()=>{displayCurrency=displayCurrency==='JPY'?'NTD':'JPY';persist();render();});
-  function setRate(){const n=Number($('#rate-input').value);if(!validRate(n)){alert('匯率必須大於 0。');$('#rate-input').value=exchangeRate;return;}exchangeRate=n;persist();render();syncPreview();}
-  $('#apply-rate').addEventListener('click',setRate);$('#rate-input').addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();setRate();}});
-  $('#field-status').addEventListener('change',syncAmount);$('#field-amount').addEventListener('input',syncPreview);$('#field-currency').addEventListener('change',syncPreview);
-  document.addEventListener('click',e=>{const edit=e.target.closest('[data-edit]');if(edit){openDialog(edit.dataset.edit);return;}const add=e.target.closest('[data-add]');if(add){openDialog(null,Number(add.dataset.add));}});
-  $('#cancel-entry').addEventListener('click',()=>dlg.close());
-  $('#delete-entry').addEventListener('click',()=>{if(!editingId||!confirm('確定刪除這筆費用？'))return;entries=entries.filter(x=>x.id!==editingId);persist();render();dlg.close();});
-  $('#entry-form').addEventListener('submit',e=>{
-    e.preventDefault();const name=$('#field-name').value.trim(),status=$('#field-status').value,currency=$('#field-currency').value;
-    if(!name){alert('請填寫商店或項目名稱');return;}
-    let amount=$('#field-amount').value.trim()===''?null:Number($('#field-amount').value);
-    if(['pending','merged','unspent'].includes(status))amount=null;
-    if(['known','transfer'].includes(status)&&amount===null){alert('已知支出或儲值必須填入金額。');return;}
-    if(amount!==null&&(!Number.isFinite(amount)||amount<0||amount>1e10||Math.abs(amount*100-Math.round(amount*100))>1e-5)){alert('請輸入有效金額（最多兩位小數）');return;}
-    const category=$('#field-cat').value;
-    const x={id:editingId||('new-'+Date.now()+'-'+Math.floor(Math.random()*100000)),day:Number($('#field-day').value),name,category,rawCategory:category,amount,currency,status:category==='儲值'&&status==='known'?'transfer':status,note:$('#field-note').value.trim()};
-    if(editingId){const i=entries.findIndex(v=>v.id===editingId);if(i>=0){x.rawCategory=entries[i].category===category?entries[i].rawCategory:category;entries[i]=x;}}else entries.push(x);
-    persist();render();dlg.close();
-  });
-  $('#export-md').addEventListener('click',exportMD);$('#export-csv').addEventListener('click',exportCSV);
-  document.querySelectorAll('[data-export-json]').forEach(el=>el.addEventListener('click',exportJSON));
-  $('#import-json').addEventListener('click',()=>$('#import-file').click());
-  $('#import-file').addEventListener('change',async e=>{
-    const file=e.target.files[0];if(!file)return;
-    try{const data=normalize(JSON.parse(await file.text()));if(!confirm('匯入 '+data.entries.length+' 筆資料並覆蓋目前明細、匯率和幣別？建議先備份。'))return;
-      entries=data.entries;exchangeRate=data.exchangeRate;displayCurrency=data.displayCurrency;persist();render();alert('已匯入備份。');
-    }catch(err){alert('匯入失敗：'+err.message);}finally{e.target.value='';}
-  });
-  $('#reset-data').addEventListener('click',()=>{
-    if(!confirm('恢復網站預設資料？本機修改將被覆蓋，建議先匯出 JSON 備份。'))return;
-    entries=base.entries.map(x=>({...x}));exchangeRate=base.exchangeRate;displayCurrency=base.displayCurrency;
-    storage.remove(KEY);usingLocal=false;volatileDraft=false;localSavedAt=null;localIsOutdated=false;localCompareUnknown=false;
-    saveStatus('已恢復'+defaultFrom+'。');render();
-  });
-  $('#print-page').addEventListener('click',()=>window.print());
-  initialize();
-})();
+      ${rows.length ? rows.map(x => `<div class="ledger-row" role="row" id="entry-${esc(x.id)}"><div class="item-name" role="cell">${esc(x.name)}</div><div class="item-category" role="cell"><span class="cat-tag" title="來源分類：${esc(x.rawCategory)}">${esc(x.category)}</span></div>${amountLabel(x)}<div class="item-note" role="cell">${esc(x.note) || '<span class="muted">—</span>'}</div><button type="button" class="edit-btn" data-edit="${esc(x.id)}" aria-label="編輯 ${esc(x.name)}">編輯</button></div>`).join('') : '<div class="ledger-empty">尚無明細，請新增一筆。</div>'}</div>
+      <div class="day-footer"><span class="minor">${rows.filter(isKnown).length} 筆已知支出 · ${pending} 筆待補${rows.some(x => x.status === 'merged') ? ' · 已合併項目' : ''}${rows.some(x => x.status === 'transfer') ? ' · 儲值另列' : ''}</span><button class="pill-btn primary" type="button" data-add="${d.id}">＋ 新增一筆費用</button></div><a class="backtop" href="#agenda">↑ Back to Agenda</a></div></section>`;
+          }).join('');
+        }
+        function renderPending() { const items = entries.filter(x => x.status === 'pending'); $('#pending-list').innerHTML = items.length ? items.map(x => `<a class="pending-link" href="#entry-${esc(x.id)}"><strong>${esc(x.name)}</strong><span>Day ${String(x.day).padStart(2, '0')} ↗</span></a>`).join('') : '<p class="muted">目前沒有待補項目。</p>'; }
+        function renderRental() {
+          const factor = displayCurrency === 'JPY' ? 1 : exchangeRate;
+          document.querySelectorAll('[data-jpy]').forEach(el => { el.textContent = money(Number(el.dataset.jpy) * factor, displayCurrency).replace('¥-', '−¥').replace('NT$-', '−NT$'); });
+          const equation = document.querySelector('#rental-equation');
+          if (equation) equation.textContent = [59268, -5927, -1250, 4400, 4950].map((n, i) => (i ? (n < 0 ? ' − ' : ' + ') : '') + money(Math.abs(n) * factor, displayCurrency)).join('') + ' = ' + money(61441 * factor, displayCurrency);
+        }
+        function render() {
+          $('#currency-toggle').textContent = '顯示：' + displayCurrency + ' ⇄';
+          $('#rate-input').value = exchangeRate;
+          renderOverview(); renderAgenda(); renderDays(); renderPending(); renderRental(); updateProvenance();
+        }
+        function syncPreview() {
+          const currency = $('#field-currency').value, s = $('#field-amount').value.trim(), status = $('#field-status').value;
+          if (['pending', 'merged', 'unspent'].includes(status)) { $('#amount-preview').textContent = '不計入金額，無需輸入。'; return; }
+          if (!s) { $('#amount-preview').textContent = '請輸入原始實付金額；切換幣別不會修改數字。'; return; }
+          const n = Number(s), converted = currency === 'JPY' ? n * exchangeRate : n / exchangeRate;
+          $('#amount-preview').textContent = Number.isFinite(n) && n >= 0 ? `約 ${money(converted, currency === 'JPY' ? 'NTD' : 'JPY')}（1 JPY = ${exchangeRate} NTD）` : '請輸入有效金額';
+        }
+        function syncAmount() { const disabled = ['merged', 'pending', 'unspent'].includes($('#field-status').value); $('#field-amount').disabled = disabled; $('#field-currency').disabled = disabled; if (disabled) $('#field-amount').value = ''; syncPreview(); }
+        const dlg = $('#entry-dialog');
+        function openDialog(id, day) {
+          editingId = id || null;
+          const x = id ? entries.find(e => e.id === id) : { name: '', day, category: '餐飲', status: 'known', amount: null, currency: displayCurrency, note: '' }; if (!x) return;
+          $('#dialog-title').textContent = id ? '編輯費用明細' : '新增費用明細';
+          $('#field-name').value = x.name; $('#field-day').value = x.day; $('#field-cat').value = x.category; $('#field-status').value = x.status;
+          $('#field-amount').value = x.amount === null ? '' : x.amount; $('#field-currency').value = x.currency; $('#field-note').value = x.note;
+          $('#delete-entry').style.visibility = id ? 'visible' : 'hidden'; syncAmount(); dlg.showModal(); $('#field-name').focus();
+        }
+        function makeExport() { return { version: 2, source: INITIAL.source, exportedAt: stamp(), updatedAt: usingLocal ? (localSavedAt || stamp()) : (baseUpdatedAt || stamp()), exchangeRate, displayCurrency, entries }; }
+        function download(name, content, type) { const blob = new Blob([content], { type }), url = URL.createObjectURL(blob), a = document.createElement('a'); a.href = url; a.download = name; document.body.appendChild(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(url), 1000); }
+        function exportJSON() { download(DATA_FILE, JSON.stringify(makeExport(), null, 2) + '\n', 'application/json;charset=utf-8'); }
+        function exportMD() {
+          const other = displayCurrency === 'JPY' ? 'NTD' : 'JPY'; let s = '# 東京・富士五湖親子自駕｜旅程費用結算表\n\n';
+          s += '**主要行程：** 2026/10/12–10/16　**前泊：** 2026/10/11　**顯示幣別：** ' + displayCurrency + '\n\n';
+          s += '**手動匯率：** 1 JPY = ' + exchangeRate + ' NTD（非即時匯率）\n\n';
+          s += '**已知支出（含前泊）：** ' + fmt(expense(entries)) + '（約 ' + money(expense(entries, other), other) + '）　**主行程：** ' + fmt(expense(entries.filter(x => x.day !== 0))) + '\n\n';
+          s += '> 每筆保留原始幣別；待補、已合併與儲值不計入消費總額。\n\n';
+          const clean = v => String(v ?? '').replace(/\|/g, '\\|').replace(/\r?\n/g, ' ');
+          for (const d of DAYS) {
+            s += '## Day ' + String(d.id).padStart(2, '0') + '｜' + d.title + '\n\n| 商店／項目 | 類別 | 原始金額 | ' + displayCurrency + ' 換算 | 備考 |\n|---|---|---:|---:|---|\n';
+            for (const x of entries.filter(x => x.day === d.id)) {
+              const state = x.status === 'pending' ? '待補' : x.status === 'unspent' ? '未消費' : x.status === 'merged' ? '已合併' : null;
+              s += '| ' + clean(x.name) + ' | ' + clean(x.rawCategory || x.category) + ' | ' + (state || money(x.amount, x.currency)) + ' | ' + (state || (money(rawValue(x, displayCurrency), displayCurrency) + (x.status === 'transfer' ? '（儲值）' : ''))) + ' | ' + clean(x.note) + ' |\n';
+            } s += '| **本日已知消費小計** | | | **' + fmt(daySum(d.id)) + '** | |\n\n';
+          }
+          s += '## 分類統計（含前泊）\n\n| 類別 | 已知支出 |\n|---|---:|\n';
+          for (const c of CATEGORIES.filter(x => x !== '儲值')) s += '| ' + c + ' | ' + fmt(expense(entries.filter(x => x.category === c))) + ' |\n';
+          s += '| **合計** | **' + fmt(expense(entries)) + '** |\n\n## Toyota Rent a Car\n\n- 車型：ヤリス クロス（YARIS CROSS），SUV1，品川 302 わ 4768\n- 租車原始金額：¥61,441（已記 Day 01）\n- 10/12 13:00 出發；10/15 19:57 歸還；行駛 477 km\n';
+          download('Tokyo_Fuji_2026_旅程費用結算_匯出.md', s, 'text/markdown;charset=utf-8');
+        }
+        function exportCSV() {
+          const quote = v => '"' + String(v ?? '').replace(/"/g, '""') + '"'; const rows = [['日期', 'Day', '商店／項目', '類別', '來源分類', '原始金額', '原始幣別', 'JPY換算', 'NTD換算', '記帳狀態', '備註', '使用匯率 JPY→NTD']];
+          for (const x of entries) { const d = DAYS.find(z => z.id === x.day); rows.push([d?.date || '', x.day, x.name, x.category, x.rawCategory, x.amount ?? '', x.currency, x.amount === null ? '' : Number(rawValue(x, 'JPY').toFixed(2)), x.amount === null ? '' : Number(rawValue(x, 'NTD').toFixed(2)), x.status, x.note, exchangeRate]); }
+          download('Tokyo_Fuji_2026_旅程費用結算_匯出.csv', '\ufeff' + rows.map(r => r.map(quote).join(',')).join('\r\n'), 'text/csv;charset=utf-8');
+        }
+        async function initialize() {
+          base = normalize(INITIAL); baseUpdatedAt = base.updatedAt;
+          if (location.protocol === 'http:' || location.protocol === 'https:') {
+            try { const response = await fetch(DATA_FILE, { cache: 'no-cache' }); if (!response.ok) throw new Error('HTTP ' + response.status); base = normalize(await response.json()); baseUpdatedAt = base.updatedAt; defaultFrom = '網站 JSON（GitHub Pages）'; }
+            catch (e) { siteLoadError = true; console.info('External JSON unavailable, using embedded fallback', e); }
+          }
+          const saved = storage.get(KEY);
+          if (saved) {
+            try {
+              const obj = JSON.parse(saved), local = normalize(obj); entries = local.entries; exchangeRate = local.exchangeRate; displayCurrency = local.displayCurrency;
+              usingLocal = true; localSavedAt = obj.savedAt || null;
+              localCompareUnknown = !obj.baseFingerprint; localIsOutdated = !!obj.baseFingerprint && obj.baseFingerprint !== fingerprint(base);
+              saveStatus(localIsOutdated ? '網站預設 JSON 已更新；目前仍顯示本機草稿。請先備份，再重設為網站預設。' : '目前使用本機編輯資料；修改不會自動寫回 Git。');
+            } catch (e) { console.warn('Invalid local data', e); entries = base.entries.map(x => ({ ...x })); exchangeRate = base.exchangeRate; displayCurrency = base.displayCurrency; saveStatus('本機資料無法讀取，已使用' + defaultFrom + '。'); }
+          }
+          else { entries = base.entries.map(x => ({ ...x })); exchangeRate = base.exchangeRate; displayCurrency = base.displayCurrency; saveStatus('目前使用' + defaultFrom + '；修改後會自動儲存在此瀏覽器。'); }
+          render();
+        }
+        $('#field-day').innerHTML = DAYS.map(d => `<option value="${d.id}">${esc(d.date)} · Day ${String(d.id).padStart(2, '0')}</option>`).join('');
+        $('#field-cat').innerHTML = CATEGORIES.map(c => `<option value="${esc(c)}">${esc(c)}</option>`).join('');
+        const pref = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'; setTheme(storage.get(THEME_KEY) || pref);
+        $('#theme-toggle').addEventListener('click', () => setTheme(document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark'));
+        $('#currency-toggle').addEventListener('click', () => { displayCurrency = displayCurrency === 'JPY' ? 'NTD' : 'JPY'; persist(); render(); });
+        function setRate() { const n = Number($('#rate-input').value); if (!validRate(n)) { alert('匯率必須大於 0。'); $('#rate-input').value = exchangeRate; return; } exchangeRate = n; persist(); render(); syncPreview(); }
+        $('#apply-rate').addEventListener('click', setRate); $('#rate-input').addEventListener('keydown', e => { if (e.key === 'Enter') { e.preventDefault(); setRate(); } });
+        $('#field-status').addEventListener('change', syncAmount); $('#field-amount').addEventListener('input', syncPreview); $('#field-currency').addEventListener('change', syncPreview);
+        document.addEventListener('click', e => { const edit = e.target.closest('[data-edit]'); if (edit) { openDialog(edit.dataset.edit); return; } const add = e.target.closest('[data-add]'); if (add) { openDialog(null, Number(add.dataset.add)); } });
+        $('#cancel-entry').addEventListener('click', () => dlg.close());
+        $('#delete-entry').addEventListener('click', () => { if (!editingId || !confirm('確定刪除這筆費用？')) return; entries = entries.filter(x => x.id !== editingId); persist(); render(); dlg.close(); });
+        $('#entry-form').addEventListener('submit', e => {
+          e.preventDefault(); const name = $('#field-name').value.trim(), status = $('#field-status').value, currency = $('#field-currency').value;
+          if (!name) { alert('請填寫商店或項目名稱'); return; }
+          let amount = $('#field-amount').value.trim() === '' ? null : Number($('#field-amount').value);
+          if (['pending', 'merged', 'unspent'].includes(status)) amount = null;
+          if (['known', 'transfer'].includes(status) && amount === null) { alert('已知支出或儲值必須填入金額。'); return; }
+          if (amount !== null && (!Number.isFinite(amount) || amount < 0 || amount > 1e10 || Math.abs(amount * 100 - Math.round(amount * 100)) > 1e-5)) { alert('請輸入有效金額（最多兩位小數）'); return; }
+          const category = $('#field-cat').value;
+          const x = { id: editingId || ('new-' + Date.now() + '-' + Math.floor(Math.random() * 100000)), day: Number($('#field-day').value), name, category, rawCategory: category, amount, currency, status: category === '儲值' && status === 'known' ? 'transfer' : status, note: $('#field-note').value.trim() };
+          if (editingId) { const i = entries.findIndex(v => v.id === editingId); if (i >= 0) { x.rawCategory = entries[i].category === category ? entries[i].rawCategory : category; entries[i] = x; } } else entries.push(x);
+          persist(); render(); dlg.close();
+        });
+        $('#export-md').addEventListener('click', exportMD); $('#export-csv').addEventListener('click', exportCSV);
+        document.querySelectorAll('[data-export-json]').forEach(el => el.addEventListener('click', exportJSON));
+        $('#import-json').addEventListener('click', () => $('#import-file').click());
+        $('#import-file').addEventListener('change', async e => {
+          const file = e.target.files[0]; if (!file) return;
+          try {
+            const data = normalize(JSON.parse(await file.text())); if (!confirm('匯入 ' + data.entries.length + ' 筆資料並覆蓋目前明細、匯率和幣別？建議先備份。')) return;
+            entries = data.entries; exchangeRate = data.exchangeRate; displayCurrency = data.displayCurrency; persist(); render(); alert('已匯入備份。');
+          } catch (err) { alert('匯入失敗：' + err.message); } finally { e.target.value = ''; }
+        });
+        $('#reset-data').addEventListener('click', () => {
+          if (!confirm('恢復網站預設資料？本機修改將被覆蓋，建議先匯出 JSON 備份。')) return;
+          entries = base.entries.map(x => ({ ...x })); exchangeRate = base.exchangeRate; displayCurrency = base.displayCurrency;
+          storage.remove(KEY); usingLocal = false; volatileDraft = false; localSavedAt = null; localIsOutdated = false; localCompareUnknown = false;
+          saveStatus('已恢復' + defaultFrom + '。'); render();
+        });
+        $('#print-page').addEventListener('click', () => window.print());
+        initialize();
+      })();
 
     </script>
   </body>
